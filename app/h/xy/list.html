@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <title>县衙</title>
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/xy.css">
+  <script src="../../vendors/art-template.js"></script>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+</head>
+<body>
+<div class="box laffiche userSelect">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span>县衙</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()" class="Back"></a>
+  </div>
+  <div class="change2">
+    <div class="boxList panel-body" id="boxList">
+      <div class="tabs">
+        <div class="tab-content">
+          <ul class="nav-tabs clear" role="tablist">
+            <li  id="judge">
+              <a href='javascript:void(0);' role="tab" data-toggle="tab">
+                <i class="fa fa-user-circle pr-5">纠纷仲裁</i>
+              </a>
+            </li>
+            <li  id="complain">
+              <a href='javascript:void(0);' role="tab" data-toggle="tab">
+                <i class="fa fa-user-circle pr-5">投&nbsp;&nbsp;诉</i>
+              </a>
+            </li>
+          </ul>
+          <div class="tab-pane" id="tableContainer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="btns">
+        <button class="btnStyle" id="addJudge">上&nbsp;&nbsp;诉</button>
+        <button class="btnStyle" id="addComplain">投&nbsp;&nbsp;诉</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script id="dataContainer" type="text/html">
+  {{if active==='judge'}}
+  <div class="space-line"></div>
+  <table class="table-origin" id="judgeTable">
+  <thead>
+  <tr>
+    <th data-order="num">序号</th>
+    <th data-order="title">标题</th>
+    <th data-order="true">上诉人</th>
+    <th data-order="true">状态</th>
+    <th data-order="true">上诉日期</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {{if hasData}}
+  {{each list value index}}
+  <tr>
+    <td>{{index+1}}</td>
+    <td>{{value.title}}</td>
+    <td>{{value.author.name}}</td>
+    <td>{{value.status==1?'已调解':(value.status==2?'已关闭':'上诉中')}}</td>
+    <td>{{value.created_at|dateChange}}</td>
+    <td>
+      <input data-id={{value._id}} type="button" class="btn-detail btn-lg" value="详情">
+    </td>
+  </tr>
+  {{/each}}
+  {{else}}
+  <tr>
+    <td colspan="6">暂无数据</td>
+  </tr>
+  {{/if}}
+  </tbody>
+  </table>
+  {{else}}
+  <div class="space-line"></div>
+  <table class="table-origin" id="complainTable">
+  <thead>
+  <tr>
+    <th>序号</th>
+    <th>标题</th>
+    <th>投诉人</th>
+    <th>状态</th>
+    <th>投诉日期</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {{if hasData}}
+  {{each list value index}}
+  <tr>
+    <td>{{index+1}}</td>
+    <td>{{value.title}}</td>
+    <td>{{value.author.name}}</td>
+    <td>{{value.status==1?'已回复':(value.status==2?'已关闭':'投诉中')}}</td>
+    <td>{{value.created_at|dateChange}}</td>
+    <td>
+      <input data-id={{value._id}} type="button" class="btn-detail btn-lg" value="详情">
+    </td>
+  </tr>
+  {{/each}}
+  {{else}}
+  <tr>
+    <td colspan="6">暂无数据</td>
+  </tr>
+  {{/if}}
+  </tbody>
+  </table>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../vendors/tableSort.js"></script>
+<script type="text/javascript" src="../../dist/s/mid.js"></script>
+<script type="text/javascript" src="../../dist/s/xy.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/xy/list.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+</html>

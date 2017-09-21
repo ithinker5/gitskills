@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <title>藏金阁</title>
+  <style>
+    th,td{
+      font-size: 1.60349373rem!important;
+    }
+  </style>
+</head>
+<body>
+<div class="box cjgBox userSelect" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">藏金阁</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()" class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer">
+    <div class="boxList panel-body" id="boxList">
+      <div class="tab-content">
+        <div class="tab-pane fade active in clear" id="tab1">
+          <ul class="nav-btns" id="navContainer">
+            <li id='departFaction'>联盟帮会</li>
+            <li id='personal' class='active'>个&nbsp;&nbsp;人</li>
+            <li id='task'>任&nbsp;&nbsp;务</li>
+          </ul>
+          <div class="contentWithTab">
+            <div class="tabs">
+              <div class="tab-content">
+                <ul class="nav-tabs clear" role="tablist">
+                  <li id="default">
+                    <a href="javascript:void(0)" role="tab" data-toggle="tab"><i class="fa fa-user-circle pr-5">审核额度</i></a>
+                  </li>
+                  <li id="memberNum" class="active">
+                    <a href="javascript:void(0)" role="tab" data-toggle="tab"><i class="fa fa-user-circle pr-5">成员数值</i></a>
+                  </li>
+                </ul>
+                <div class="contentTable" id="contentTable">
+                  <table id="accountTable1" class="table2 table-striped"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footerError" id="footerError">输入值必须是大于等于0的整数！</div>
+      <button class="btnStyle clearZero">一键清零</button>
+      <input type="file" id="file" name="filename" accept="application/vnd.ms-excel" style="display: none"/>
+      <label for="file" class="btnStyle" style="margin-left: 2rem">导&nbsp;&nbsp;入</label>
+      <button id="exportFile" class="btnStyle" style="margin-left: 2rem;margin-right: 4%">导&nbsp;&nbsp;出</button>
+      <!--<a id="exportFile" class="btnStyle" download="成员数值导出表.xls" style="margin-left: 2rem;margin-right: 4%">导&nbsp;&nbsp;出</a>-->
+    </footer>
+  </div>
+</div>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery.min.js"></script>
+<script type="text/javascript" src="../../vendors/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../vendors/dataTables.bootstrap.min.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/cjg.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/cjg/personalMember.js"></script>
+</html>

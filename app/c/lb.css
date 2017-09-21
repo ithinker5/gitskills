@@ -1,0 +1,62 @@
+@charset "utf-8";
+/*输入框可编辑，按钮划过色值*/
+/*输入框不可编辑*/
+/*上传附件按钮*/
+/*黄色字体*/
+/*白色字体*/
+/*表格头部及按钮所在尾部颜色，表单头部及尾部颜色*/
+/*表格中间，表单中间内容，选择框底色*/
+/*下划线*/
+/*表格顶部标题*/
+/*表单内部表格头部*/
+/*表单内部表格中间*/
+/*编辑队伍处背景色*/
+/*--------------------------------茶楼-----喇叭------------------------------------------------*/
+header.trumpet {
+  height: 17%;
+}
+header.trumpet .title {
+  font-size: 4.980786rem;
+}
+.contentBox.noForm {
+  height: 63%;
+  text-align: center;
+}
+.contentBox.noForm textarea {
+  padding: 1rem;
+  letter-spacing: 0.2rem;
+  font-size: 3.980786rem;
+  line-height: 3rem;
+  height: 50%;
+  color: #232323 !important;
+  width: 86%;
+  border: 1px solid #4e525b;
+  background: #979ea9;
+  resize: none;
+  margin: 2rem auto;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312;
+}
+footer.trumpet {
+  height: 20%;
+}
+footer.trumpet button {
+  font-size: 3.280786rem;
+  width: 18.5%;
+  height: 62%;
+  line-height: 0;
+}
+footer.trumpet button:active {
+  width: 18.5%;
+  height: 62%;
+}
+.m-Popup-title,
+.m-Popup-con,
+.m-Popup-footer > a {
+  font-size: 2.880786rem!important;
+}
+.g-Popup {
+  height: 19rem!important;
+}
+.buttons button + button {
+  margin-left: 6.4rem;
+}

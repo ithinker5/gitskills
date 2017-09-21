@@ -1,0 +1,381 @@
+@tabPaneBgColor: rgb(86, 92, 105);
+@borderColor: rgb(78, 82, 91);
+@descBgColor: rgb(86, 92, 105);
+@yellowFontColor: rgba(255, 248, 164, 1); /*黄色字体*/
+@whiteFontColor: rgba(255, 255, 255, 1); /*白色字体*/
+@tabBorderColor: rgb(164, 164, 164);
+@tableHeadTextColor: rgb(255, 247, 221);
+@tableThTextSize: 1.5rem;
+@tableBodyColor: rgba(62, 67, 80, 1); /*表格中间，表单中间内容，选择框底色*/
+@fontFamiliar: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+@baseFontSize: 21.2037;
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+.tab-pane,
+table.table-origin thead {
+  background-color: @tabPaneBgColor;
+}
+
+table.table-origin tbody tr td:nth-of-type(2),
+table.table-origin thead tr th:nth-of-type(2) {
+  width: 9rem;
+}
+.form {
+  text-align: left;
+  font-size: 1.60349373rem;
+  margin-top: 1%;
+  height: 98%;
+  color: @whiteFontColor;
+  overflow: auto;
+  width: 100%;
+  background: #3e4350;
+  .form-item-group {
+    .form-item {
+      margin: 0.5rem 0;
+      &.power {
+        margin: 2rem 0;
+      }
+      .item {
+        float: left;
+        width: 100%;
+        label {
+          line-height: 3rem;
+          width: 18%;
+          display: inline-block;
+          text-align: right;
+          vertical-align: baseline;
+          &.desc {
+            vertical-align: top;
+          }
+          &.radioImg {
+            //margin-left: 0.5rem;
+            vertical-align: middle;
+            display: inline-block;
+            width: 1.27336267rem;
+            height: 1.27336267rem;
+            background: url("../i/singleChioce.png") no-repeat;
+            background-size: cover;
+            cursor: pointer;
+          }
+        }
+        input[type='radio']:checked + label.radioImg {
+          vertical-align: middle;
+          display: inline-block;
+          width: 1.27336267rem;
+          height: 1.27336267rem;
+          background: url("../i/singleChioce2.png") no-repeat;
+          background-size: cover;
+          cursor: pointer;
+        }
+        input[type='radio']{
+          display: none;
+        }
+        input[type='text'],
+        input[type='date']{
+          text-align: left!important;
+          font-size: 1.60349373rem;
+          width: 15.44105038rem;
+          height: 1.88646321rem;
+          line-height: 1.88646321rem;
+          color: @whiteFontColor;
+          padding-left: 0.7074237rem;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-overflow: ellipsis;
+          border: 1px solid rgba(198, 198, 198, 0.5);
+          border-radius: 0.4716158rem;
+        }
+        textarea {
+          color: #232323;
+          border: 1px solid #5d5859;
+          background: #979ea9;
+          padding: 0.5rem;
+          word-break: break-all;
+          line-height: 2rem;
+          height: 14rem;
+          width: 76%;
+          display: inline-block;
+          overflow: auto;
+          font-size: 1.60349373rem;
+          resize: none;
+          font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+        }
+        span {
+          color: @yellowFontColor;
+          &.desc {
+            padding: 0.5rem;
+            word-break: break-all;
+            line-height: 2rem;
+            color: @whiteFontColor;
+            height: 14rem;
+            width: 76%;
+            background: @descBgColor;
+            display: inline-block;
+            overflow: auto;
+          }
+          &.radioText{
+            color: @whiteFontColor;
+          }
+        }
+      }
+      &.col-2 {
+        .item {
+          width: 50%;
+          label {
+            width: 36%;
+          }
+        }
+      }
+      &.col-3 {
+        .item {
+          width: 33.3%;
+          label {
+            width: 54%;
+          }
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        display: table;
+      }
+      &:after {
+        clear: both;
+      }
+    }
+    & + .form-item-group {
+      border-top: 2px solid @borderColor;
+    }
+  }
+}
+
+//右侧含有tab切换
+.contentWithTab {
+  margin: 1% 4% 0 0;
+  float: right;
+  width: 79.7%;
+  height: 99%;
+  background: lightblue;
+  .tabs {
+    .tab-content {
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      .contentTable {
+        padding: 0 1% 1%;
+        border: 1px solid @tabBorderColor;
+        height: 88%;
+      }
+    }
+  }
+}
+
+.exp input, #number input {
+  font-size: 1.60349373rem;
+  width: 6rem;
+  height: 1.88646321rem;
+  line-height: 1.88646321rem;
+  color: @whiteFontColor;
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  border-radius: 0.4716158rem;
+  background-color: transparent;
+  text-align: center;
+}
+
+//等级经验管理列表
+table.compact-table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+  thead {
+    width: 100%;
+    color: @tableHeadTextColor;
+    tr {
+      height: 2rem;
+      th {
+        border: 1px solid @borderColor;
+        font-size: @tableThTextSize;
+      }
+    }
+  }
+  tbody {
+    overflow: auto;
+    tr {
+      height: 1.7rem;
+      td {
+        border: 1px solid @borderColor;
+        font-size: 1.2rem;
+        &:nth-of-type(1),
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(7),
+        &:nth-of-type(9){
+          background-color: rgba(78, 84, 101, 0.25);
+        }
+      }
+    }
+  }
+  tfoot {
+    text-align: left;
+    tr {
+      height: 3.5rem;
+      td {
+        color: rgb(175, 175, 175);
+        padding: 0 2rem;
+        span + span {
+          margin-left: 5rem;
+        }
+      }
+    }
+  }
+}
+
+/*藏金阁*/
+.cjgBox {
+  .change2 .dataTables_scrollBody::-webkit-scrollbar {
+    display: none;
+  }
+  font-family: @fontFamiliar;
+  .margin4R{margin-right:4%;margin-top: 0.5%;}
+  .contentWithTable {
+    .px2rem(font-size, 38);
+    overflow-y: scroll;
+    padding: 1% 1%;
+    height: 85%;
+  }
+  .contentWithTab .tabs .tab-content .contentTable {
+    padding: 1% 1%;
+    overflow-y: scroll;
+    background: @descBgColor;
+  }
+  .contentWithTab .tabs .tab-content .contentTable .contentBg {
+    background: @tableBodyColor;
+    height: 100%;
+  }
+  .dataTables_scrollHead {
+    height: 2.8rem;
+    }
+  #contentTable thead tr th:nth-of-type(9){width:12rem;}
+  #contentTable tbody tr td:nth-of-type(9){width:12rem;}
+  #contentContainer thead tr th:nth-of-type(5){width:12rem;}
+  #contentContainer tbody tr td:nth-of-type(5){width:12rem;}
+    .contentBg {
+      width: 100%;
+      background: @tableBodyColor;
+      height: 100%;
+      overflow-y: scroll;
+      p {
+        width: 100%;
+        .px2rem(height, 68);
+        .px2rem(line-height, 68);
+        text-align: left;
+        display: inline-block;
+        position: relative;
+        border-bottom: 2px solid @borderColor;
+        font-size: 1.5rem;
+      }
+      div {
+        width: 100%;
+        color: @whiteFontColor;
+        p.divCenter{
+          text-align: center;
+          font-size: 1.8rem;
+          .px2rem(height, 80);
+          .px2rem(line-height, 80);
+        }
+      }
+      p span {
+        color: @yellowFontColor;
+      }
+      p input.btn-manager {
+        position: absolute;
+        left: 82%;
+        top: 14%;
+      }
+      p i {
+        display: inline-block;
+        width: 10rem;
+        text-align: right;
+        color: @whiteFontColor;
+        font-style: normal;
+      }
+      p b {
+        font-weight: 100;
+        font-size: 1.5rem;
+      }
+      p b.boss {
+        font-weight: 100;
+        position: absolute;
+        left: 40%;
+      }
+      p b.center {
+        font-weight: 100;
+        position: absolute;
+        left: 28%;
+      }
+      /*p b.right{  font-weight: 100;  position: absolute;  left:54%;  }*/
+      p input.btnRight, p input.btnRightA {
+        position: absolute;
+        left: 86%;
+        top: 14%;
+      }
+      p b em {
+        color: @whiteFontColor;
+        display: inline-block;
+        .px2rem(width, 240);
+        text-align: right;
+        font-style: normal;
+      }
+    }
+    .changeValue {
+      background: rgba(0, 0, 0, 0);
+      color: @whiteFontColor;
+      font-size: 1.4rem;
+      text-align: center;
+      width: 6rem !important;
+      border: 1px solid #b2b2b2;
+      border-radius: 5px;
+    }
+    .changeValue2 {
+      background: rgba(0, 0, 0, 0);
+      color: @yellowFontColor;
+      font-size: 1.4rem;
+      text-align: left;
+      width: 8rem !important;
+      border: 1px solid #b2b2b2;
+      border-radius: 5px;
+    }
+    input.btn-small:active {
+      width: 5.272926rem;
+      .px2rem(height, 48);
+      font-size: 1.3rem;
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    .change2 .table2 tbody tr td img {
+      width: 1.17903951rem;
+      height: 1.69781689rem;
+      vertical-align: middle;
+      margin-bottom: 0.14148474rem;
+      font-size: 1.3rem;
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    .change2 .table2 tbody tr td img {
+      width: 1.17903951rem;
+      height: 1.69781689rem;
+      vertical-align: middle;
+      margin-bottom: 0.14148474rem;
+    }
+    .footer {
+      justify-content: flex-end;
+      align-items: flex-start;
+      height:11%;
+      .btnStyle:nth-of-type(2) {
+        margin-right: 4%;
+      }
+  }
+}
+

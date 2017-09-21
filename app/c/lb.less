@@ -1,0 +1,69 @@
+@charset "utf-8";
+@baseFontSize: 21.2037;
+@errorColor:rgb(255,96,0);
+@editInputColor:rgba(151,158,169,1);/*输入框可编辑，按钮划过色值*/
+@checkInputColor:rgba(86,92,105,1);/*输入框不可编辑*/
+@uploadBtnColor:rgba(103,107,109,1);/*上传附件按钮*/
+@yellowFontColor:rgba(255,248,164,1);/*黄色字体*/
+@whiteFontColor:rgba(255,255,255,1);/*白色字体*/
+@tableHeadColor:rgba(86,92,105,1);/*表格头部及按钮所在尾部颜色，表单头部及尾部颜色*/
+@tableBodyColor:rgba(62,67,80,1);/*表格中间，表单中间内容，选择框底色*/
+@tableBorderColor:rgba(78,82,91,1);/*下划线*/
+@tableTitleColor:rgba(70,76,88,1);/*表格顶部标题*/
+@tableInnerHeadColor:rgba(79,83,96,1);/*表单内部表格头部*/
+@tableInnerBodyColor:rgba(46,50,60,1);/*表单内部表格中间*/
+@editTeamBoxColor:rgba(75,80,92,1);/*编辑队伍处背景色*/
+@btnFontColor:rgba(255, 247, 221, 1);
+@fontFamiliar: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+/*--------------------------------茶楼-----喇叭------------------------------------------------*/
+header.trumpet{
+  height:17%;
+  .title{
+    font-size: 4.980786rem;
+  }
+}
+.contentBox.noForm{
+  height:63%;
+  text-align: center;
+  textarea{
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    font-size: 3.980786rem;
+    line-height:3rem;
+    height:50%;
+    color: rgba(35, 35, 35, 1) !important;
+    width: 86%;
+    border: 1px solid @tableBorderColor;
+    background: @editInputColor;
+    resize: none;
+    margin:2rem auto;
+    font-family: @fontFamiliar;
+  }
+}
+footer.trumpet{
+  height:20%;
+  button{
+    font-size: 3.280786rem;
+    width: 18.5%;
+    height: 62%;
+    line-height: 0;
+    &:active{
+      width:18.5%;
+      height: 62%;
+    }
+  }
+}
+.m-Popup-title,.m-Popup-con,.m-Popup-footer>a{
+  font-size: 2.880786rem!important;
+}
+.g-Popup{
+  height: 19rem!important;
+}
+.buttons{
+  button+button{
+    margin-left: 6.4rem;
+  };
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/user.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>指定领队</title>
+</head>
+<body>
+<div class="assignLeader userSelect">
+  <div class="change2">
+    <div class="boxTask">
+      <div class="btnBack"></div>
+      <div class="boxList panel-body" id="boxList">
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="tab1">
+            <table id="accountTable1" class="table2 table-striped"></table>
+          </div>
+        </div>
+      </div>
+      <div class="boxBottom2">
+        <div class="footerError" id="footerError">未选择队伍，请重新选择！</div>
+        <!--<button class="btn bhtask">帮会任务</button>-->
+        <button class="btn btnStyle subBtn2" id="submit">确&nbsp;&nbsp;定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../vendors/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../dist/ctrl/getData.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/task.js"></script>
+<script src="../dist/ctrl/assignLeader.js"></script>
+</body>
+</html>

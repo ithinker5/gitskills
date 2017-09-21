@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <!--<link rel="stylesheet" href="../c/reset.css"/>-->
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>联盟管理</title>
+</head>
+<body class="userSelect">
+<div class="box" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">联盟管理</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()"
+       class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer"></div>
+</div>
+<!--整体结构-->
+<script id="container" type="text/html">
+  <div class="boxList panel-body" id="boxList">
+    <div class="tab-content">
+      <div class="tab-pane fade active in clear" id="tab1">
+        <ul class="nav-btns" id="navContainer">
+          {{include 'nav'}}
+        </ul>
+        <div class="contentWithTable" id="contentContainer">
+          {{include 'content'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="boxBottom2" id="footerContainer">
+    {{include 'footer'}}
+  </div>
+</script>
+<!--导航-->
+<script id="nav" type="text/html">
+  {{each nav value index}}
+  <li id={{value.domId}} class={{value.domId=='faction'?'active':''}} >{{value.name}}</li>
+  {{/each}}
+</script>
+<!--内容区域-->
+<script id="content" type="text/html">
+  {{if listPage}}
+  <table class="table-origin" id="table">
+    <thead>
+    <tr>
+      <th>序号</th>
+      <th>帮会名称</th>
+      <th>帮主</th>
+      <th>帮会人数</th>
+      <th>帮会VC</th>
+      <th>帮会金币</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{if list.length>0}}
+    {{each list value index}}
+    <tr role="row">
+      <td>{{index+1}}</td>
+      <td>{{value.name?value.name:'无'}}</td>
+      <td>{{(value.chief&&value.chief.name)?value.chief.name:'无'}}</td>
+      <td>{{value.member_count}}</td>
+      <td>{{value.vc}}</td>
+      <td>{{value.gold}}</td>
+      <td><button id="manager" class="btn-manager btn-small" data-id={{value._id}} >管理</button></td>
+    </tr>
+    {{/each}}
+    {{else}}
+    <tr role="row">
+      <td colspan="7">暂无数据</td>
+    </tr>
+    {{/if}}
+    </tbody>
+  </table>
+  {{else if detailPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>帮会名称：</label><span>{{factionObj.name}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>帮主：</label><span>{{(factionObj.chief&&factionObj.chief.name)?factionObj.chief.name:'无'}}</span></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>部门组织架构：</label><span>{{factionObj.org_info?factionObj.org_info:'无'}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>帮会人数：</label><span>{{factionObj.member_count}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>帮会VC：</label><span>{{factionObj.vc}}</span></div>
+        <div class="item"><label>帮会金币：</label><span>{{factionObj.gold}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>帮会总VC：</label><span>{{factionObj.vc_total}}</span></div>
+        <div class="item"><label>帮会总金币：</label><span>{{factionObj.gold_total}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>堂总数：</label><span>{{factionObj.sections?factionObj.sections.length:0}}</span></div>
+      </div>
+      {{if factionObj.sections&&factionObj.sections.length>0}}
+      {{each factionObj.sections value index}}
+      <div class="form-item col-2">
+        <div class="item"><label>堂名称：</label><span>{{value.name}}</span></div>
+        <div class="item"><label>长老：</label><span>{{(value.master&&value.master.name)?value.master.name:'无'}}</span></div>
+      </div>
+      {{/each}}
+      {{/if}}
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">帮会简介：</label><span class="desc">{{factionObj.desc}}</span></div>
+      </div>
+    </div>
+  </div>
+  {{else if addPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>帮会名称：</label><input type="text" title="name" id="nameAdd" name="name" class="input-text" maxlength="7"></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label id="departVc" data-vc={{departVc}} >帮会VC：</label><input type="text" title="vc" id="vcAdd" name="vc" class="input-text"></div>
+        <div class="item"><label id="departGold" data-gold={{departGold}} >帮会金币：</label><input type="text" title="gold" id="goldAdd" name="gold" class="input-text"></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>部门组织架构：</label><input type="text" id="org" name="org" class="input-text" maxlength="16" style="width: 37rem"></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">帮会简介：</label><textarea title="desc" id="descAdd" class="desc input-text"></textarea></div>
+      </div>
+    </div>
+  </div>
+  {{else if editPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>帮会名称：</label><input type="text" title="name" id="name" name="name" class="input-text" maxlength="7" value={{factionObj.name}} ></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>帮主：</label><span>{{(factionObj.chief&&factionObj.chief.name)?factionObj.chief.name:'无'}}</span></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>部门组织架构：</label><input type="text" id="orgEdit" name="orgEdit" class="input-text" maxlength="16" style="width: 37rem" value={{factionObj.org_info}} ></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>帮会人数：</label><span>{{factionObj.member_count}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>帮会VC：</label><span>{{factionObj.vc}}</span></div>
+        <div class="item"><label>帮会金币：</label><span>{{factionObj.gold}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>帮会总VC：</label><span>{{factionObj.vc_total}}</span></div>
+        <div class="item"><label>帮会总金币：</label><span>{{factionObj.gold_total}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>堂总数：</label><span>{{factionObj.sections?factionObj.sections.length:0}}</span></div>
+      </div>
+      {{if factionObj.sections&&factionObj.sections.length>0}}
+      {{each factionObj.sections value index}}
+      <div class="form-item col-2">
+        <div class="item"><label>堂名称：</label><span>{{value.name}}</span></div>
+        <div class="item"><label>长老：</label><span>{{(value.master&&value.master.name)?value.master.name:'无'}}</span></div>
+      </div>
+      {{/each}}
+      {{/if}}
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">帮会简介：</label><textarea title="desc" id="desc" class="desc input-text">{{factionObj.desc}}</textarea></div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</script>
+<!--底部-->
+<script id="footer" type="text/html">
+  {{if listPage&&canCreateFaction}}
+  <button class="btnStyle" id="add">新建帮会</button>
+  {{else if detailPage}}
+  {{if !faction}}
+  <button class="btnStyle" id="backList">返回</button>
+  {{/if}}
+  <button class="btnStyle" id="edit">修改</button>
+  {{if !faction}}
+  <button class="btnStyle" id="deleteFaction">解散帮会</button>
+  {{/if}}
+  {{else if editPage}}
+  <button class="btnStyle" id="cancelEdit">取消</button>
+  <button class="btnStyle" id="confirmEdit">确定</button>
+  {{else if addPage}}
+  <div class="footerError" id="footerError"></div>
+  <button class="btnStyle" id="cancelAdd">取消</button>
+  <button class="btnStyle" id="confirmAdd">确定</button>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../vendors/tableSort.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/manager.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/index.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/faction.js"></script>
+</html>

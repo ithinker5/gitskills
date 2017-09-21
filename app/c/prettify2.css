@@ -1,0 +1,354 @@
+@charset "utf-8";
+body,
+html,
+div,
+p,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+html {
+  overflow-y: hidden !important;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: white;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-weight: lighter;
+}
+body p {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-size: 0.60335205rem;
+}
+body p a {
+  color: #10102D;
+  font-size: 0.6895452rem;
+}
+p {
+  margin-bottom: 0 !important;
+}
+h1 {
+  color: #E05E00;
+  font-style: italic;
+}
+a {
+  color: #10102D;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+/* general */
+.clear {
+  clear: both;
+}
+.leader {
+  color: plum;
+}
+.boxTop {
+  width: 100%;
+  height: 100%;
+}
+.blackBox {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+.box2 {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.box li {
+  line-height: 40px;
+  font-size: 32px;
+}
+.goBack {
+  width: 4.74062326rem;
+  height: 5.17158901rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  /*.px2rem(left, 25);
+  .px2rem(top, 28);*/
+  display: inline-block;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.goBack:hover {
+  cursor: pointer;
+  background: url(../i/goBack2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.goBack:active {
+  cursor: pointer;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 85%;
+  width: 4.74062326rem;
+  height: 5.17158901rem;
+}
+.borderBox {
+  width: 50.59537919rem;
+  height: 27.40942177rem;
+  padding-top: 5.17158901rem;
+  padding-bottom: 1.723863rem;
+  padding-left: 2.84437396rem;
+  padding-right: 2.84437396rem;
+  font-size: 0.8619315rem;
+  text-align: center;
+  background: url('../i/task.png') no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+.dis_n {
+  display: none;
+}
+/*  人员架构  */
+/* Basic styling */
+/* Draw the lines */
+#org {
+  display: none;
+}
+.jOrgChart .line {
+  height: 45px;
+  width: 1px;
+}
+.jOrgChart .down {
+  background-color: #b9b7af;
+  margin: 0 auto;
+}
+.jOrgChart .top {
+  border-top: 1px solid #b9b7af;
+}
+/*.jOrgChart .left {
+  border-right:0.5px solid #747474;
+}
+
+.jOrgChart .right {
+  border-left:0.5px solid #747474;
+}*/
+.jOrgChart .left,
+.jOrgChart .right {
+  position: relative;
+}
+.jOrgChart .left:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.jOrgChart .right:before {
+  content: '';
+  position: absolute;
+  left: -0.5px !important;
+  width: 200%;
+  height: 100%;
+  border-left: 1px solid #b9b7af;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.jOrgChart .line2 {
+  width: 0.02154829rem;
+  border-left: 1px solid #b9b7af;
+}
+.jOrgChart table tbody tr {
+  height: 1.29289725rem;
+}
+.node a {
+  font-size: 1.3790904rem;
+}
+/* node cell */
+.jOrgChart td {
+  text-align: -webkit-center;
+  vertical-align: top;
+  padding: 0;
+}
+.orgChart {
+  width: 100%;
+  height: 100%;
+  margin-top: 3.44772601rem;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+.jOrgChart table {
+  width: 8.61931502rem;
+  margin: auto;
+}
+.drag-active {
+  border-style: dotted !important;
+}
+.drop-hover {
+  border-style: solid !important;
+  border-color: #E05E00 !important;
+}
+.alliance {
+  width: 10.5%;
+  height: 18%;
+  background: url('../i/alliance.png') no-repeat right bottom;
+  background-size: contain;
+  position: fixed;
+  right: 2%;
+  top: 0;
+  z-index: 10;
+}
+/*.node{
+  position: relative;
+  z-index:0;
+}*/
+.jOrgChart .node .firstGrade {
+  color: #fff7dd;
+  cursor: pointer !important;
+  font-size: 1.723863rem;
+  display: inline-block;
+  height: 4.95610614rem;
+  width: 16.9800506rem;
+  line-height: 4.56823696rem;
+  z-index: 10;
+  text-align: center;
+  background: url('../i/firstGrade.png') no-repeat left top;
+  background-size: contain;
+  z-index: 2;
+}
+.jOrgChart .node .thirdGrade {
+  color: #ffffff;
+  cursor: pointer !important;
+  font-size: 1.2067041rem;
+  display: inline-block;
+  height: 8.61931502rem;
+  line-height: 1.46528355rem;
+  width: 2.49960136rem;
+  word-wrap: break-word;
+  letter-spacing: 0.8619315rem;
+  padding-left: 0.53870719rem;
+  text-align: center;
+  background: url('../i/thirdGrade.png') no-repeat left top;
+  background-size: contain;
+  padding-top: 1.5514767rem;
+  z-index: 2;
+}
+.jOrgChart .node .secondGrade {
+  color: #fff7dd;
+  /*text-shadow: 0 0 10px rgba(218,138,44,1);*/
+  cursor: pointer !important;
+  font-size: 1.3790904rem;
+  display: inline-block;
+  width: 11.03272323rem;
+  height: 11.0758198rem;
+  line-height: 11.0758198rem;
+  text-align: center;
+  background: url('../i/secondGrade.png') no-repeat left top;
+  background-size: contain;
+  z-index: 2;
+}
+/*气泡弹窗*/
+.bubbleBox {
+  text-align: justify;
+  /*.px2rem(top, 180);*/
+  left: -66%;
+  width: 22.06544646rem;
+  color: #fff8a4;
+  background: url(../i/bubbleBox.png) no-repeat center;
+  background-size: 100% 100%;
+  padding: 10px 10px 20px 10px;
+  z-index: 9999 !important;
+  letter-spacing: normal !important;
+}
+.bubbleBox .bubbleTitle {
+  width: 100%;
+  height: 2.41340821rem;
+  text-align: center;
+  line-height: 2.41340821rem;
+  font-size: 1.3790904rem;
+}
+.bubbleBox .bubbleTitle .span2 {
+  color: #ffffff;
+  margin-left: 1.29289725rem;
+}
+.bubbleBox p {
+  width: 100%;
+  line-height: 1.63766985rem;
+  font-size: 1.0343178rem;
+}
+.bubbleBox p span {
+  color: #ffffff;
+}
+.super {
+  position: relative;
+}
+.bubbleBox {
+  position: absolute;
+}
+/*chrome 定义滚动条样式，现页面上未用到*/
+::-webkit-scrollbar {
+  display: block;
+  width: 0.6895452rem;
+  border-radius: 0.5171589rem;
+  background-color: #5e616e;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5171589rem;
+  background-color: #5e616e;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  height: 0.3447726rem;
+  border-radius: 0.1723863rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  /*线性渐变*/
+  background: -webkit-linear-gradient(#d9c98c, #d4a567);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#d9c98c, #d4a567);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#d9c98c, #d4a567);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#d9c98c, #d4a567);
+  /* 标准的语法 */
+}

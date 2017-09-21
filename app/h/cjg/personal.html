@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <title>藏金阁</title>
+  <style>
+    th,td{
+      font-size: 1.60349373rem!important;
+    }
+  </style>
+</head>
+<body>
+<div class="box cjgBox userSelect" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">藏金阁</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()" class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer">
+    <div class="boxList panel-body" id="boxList">
+      <div class="tab-content">
+        <div class="tab-pane fade active in clear" id="tab1">
+          <ul class="nav-btns" id="navContainer">
+            <li id='departFaction'>联盟帮会</li>
+            <li id='personal' class='active'>个&nbsp;&nbsp;人</li>
+            <li id='task'>任&nbsp;&nbsp;务</li>
+          </ul>
+          <div class="contentWithTab">
+            <div class="tabs">
+              <div class="tab-content">
+                <ul class="nav-tabs clear" role="tablist">
+                  <li id="default" class="active">
+                    <a href="javascript:void(0)" role="tab" data-toggle="tab"><i class="fa fa-user-circle pr-5">审核额度</i></a>
+                  </li>
+                  <li id="memberNum">
+                    <a href="javascript:void(0)" role="tab" data-toggle="tab"><i class="fa fa-user-circle pr-5">成员数值</i></a>
+                  </li>
+                </ul>
+                <div class="contentTable" id="contentWithTable">
+                  <div class="contentBg ">
+                    <div><p class="divCenter">盟主</p></div>
+                    <p><b><em>审核额度：</em><input contenteditable="true" class="changeValue2 inputNoBorder base_limit base_limit1" value="" data-name="faction_vc" data-desc="需盟主审核临界值" type="text" readonly="readonly" /></b><b><input class="btn-manager btn-small btnRight" value="修改" type="button" /></b></p>
+                    <div><p class="divCenter">帮主</p></div>
+                    <p><b><em>审核额度：</em><input contenteditable="true" class="changeValue2 inputNoBorder base_limit base_limit2" value="" data-name="section_vc" data-desc="需帮主审核临界值" data-id="" type="text" readonly="readonly" /></b><b><input class="btn-manager btn-small btnRight" value="修改" type="button" /></b></p>
+                    <div><p class="divCenter">长老</p></div>
+                    <p><b><em>审核额度：</em><input contenteditable="true" class="changeValue2 inputNoBorder base_limit base_limit3" value="" data-name="personal_vc" data-desc="需长老审核临界值" data-id="" type="text" readonly="readonly" /></b><b><input class="btn-manager btn-small btnRight" value="修改" type="button" /></b></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footerError" id="footerError">输入值必须是大于等于0的整数！</div>
+    </footer>
+  </div>
+</div>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/cjg.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/cjg/personal.js"></script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="../c/reset.css"/>
+    <link rel="stylesheet" href="../c/task.css"/>
+    <link rel="stylesheet" href="../c/common.css">
+    <script type="text/javascript" src="../vendors/culScreen.js"></script>
+    <title>挑战任务详情</title>
+</head>
+<body>
+<div class="changeBoxTask userSelect">
+    <div class="boxTask">
+        <header>
+            <p class="taskTitle">任务详情</p>
+            <div class="btnBack"></div>
+        </header>
+        <div class="taskcontentBox">
+            <div class="form-item">
+                <label>任务名称：</label>
+                <span id="title" class="taskDetailColor title"></span>
+            </div>
+            <div class="form-item task-item1 taskDetailTarget">
+                <label>任务目标：</label>
+                <div class="taskTarget">
+                    <pre id="desc" class="text-pre"></pre>
+                </div>
+            </div>
+            <div class="form-item taskDetailItem">
+                <div>
+                    <p><label>任务类型：</label><span id="type"></span></p>
+                  <p><label>发布人：</label><span id="publishPerson"></span></p>
+
+                </div>
+                <div>
+                  <p><label>发布日期：</label><span id="publishDate"></span></p>
+                    <!--<p><label>经验奖励：</label><span id="exp"></span></p>-->
+                    <p><label>要求完成日期：</label><span id="finishDate"></span></p>
+                </div>
+                <div>
+                  <p><label>任务状态：</label><span id="status"></span></p>
+                </div>
+                <!--<div>
+                    <p><label>悬&nbsp;赏&nbsp;V&nbsp;C：</label><span id="vc"></span></p>
+                    <p><label>验收人：</label><span>盟主</span></p>
+                </div>
+                <div>
+                    <p><label>悬赏金币：</label><span id="gold"></span></p>
+                    <p><label>押金：</label><span id="mortgage"></span></p>
+                </div>-->
+            </div>
+
+            <!--附件-->
+            <div class="form-item taskItem" id="fileContainer">
+                <div class="taskDetailFile clearFix">
+                    <label class="taskDetailFileTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;附件： </label>
+                    <span id="nofile" style="float: left;font-size: 1.41484741rem;">无</span>
+                    <div class="fileList" id="fileList"></div>
+                </div>
+            </div>
+          <div class="form-item taskFactions clearFix" id="leaderRequire">
+            <label for="factions" class="text">指定帮会：</label>
+            <div id="factions"></div>
+          </div>
+        <!--历史记录-->
+        <div class="form-item taskItem2" id="historyList" style="padding-top: 1rem;padding-bottom: 1rem;border-bottom: 1px solid rgba(64,64,64,0.64);">
+            <h3 style="margin: 0 0 1% 4%;">历史记录</h3>
+            <div class="historyList">
+                <div class="historyItem"></div>
+            </div>
+        </div>
+        </div>
+        <div class="footer" id="footer">
+            <input id="close" class="btnStyle subBtn2" type="button" value="关闭任务"/>
+            <input id="edit" class="btnStyle subBtn2" type="button" value="编辑任务"/>
+        </div>
+    </div>
+
+</div>
+<div class="feehideBox"></div>
+<script src="../vendors/jquery-3.2.0.min.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/task.js"></script>
+<script src="../dist/ctrl/strategyTaskDetail.js"></script>
+</body>
+</html>

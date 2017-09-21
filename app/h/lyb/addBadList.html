@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/record.css">
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <title>添加黑名单</title>
+</head>
+<body>
+<div class="Record userSelect ywcNewTask">
+  <header>
+    <div class="btnBack"></div>
+    <span class="title">添加黑名单</span>
+  </header>
+  <div class="boxlmInfo">
+    <p><i>姓名：</i><span class="addName"></span><button class="addLeader input-text"></button></p>
+    <p><i>禁止接任务时间：</i><input type="date" id="deadlineStart" name="deadline" class="input-text deadline">到<input type="date" id="deadlineEnd" name="deadline" class="input-text deadline"></p>
+    <div><i class="lmIntro">说明：</i><textarea class="allianceIntro input-text" maxlength="20"></textarea></div>
+  </div>
+  <footer class="footer footBot">
+    <div class="footerError" id="footerError"></div>
+    <input id="submit" class="btnStyle btnStyle5Word" type="button" value="添加黑名单"/>
+  </footer>
+</div>
+<div class="feehideBox"></div>
+<script src="../../vendors/jquery.min.js"></script>
+<script src="../../dist/ctrl/common.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/lyb.js"></script>
+<script src="../../dist/ctrl/lyb/addBadList.js"></script>
+</body>
+</html>

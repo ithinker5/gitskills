@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>联盟管理</title>
+</head>
+<body class="userSelect">
+<div class="box" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">联盟管理</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()"
+       class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer"></div>
+</div>
+<!--整体结构-->
+<script id="container" type="text/html">
+  <div class="boxList panel-body" id="boxList">
+    <div class="tab-content">
+      <div class="tab-pane fade active in clear" id="tab1">
+        <ul class="nav-btns" id="navContainer">
+          <li id='department' class='active'>联盟管理</li>
+          <li id='faction'>帮会管理</li>
+          <li id='tang'>堂管理</li>
+          <li id='user'>成员管理</li>
+          <li id='exp'>经验管理</li>
+          <li id='power'>能力属性管理</li>
+        </ul>
+        <div class="contentWithTable" id="contentContainer">
+          {{include 'content'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="boxBottom2" id="footerContainer">
+    {{include 'footer'}}
+  </div>
+</script>
+<!--内容区域-->
+<script id="content" type="text/html">
+  {{if detailPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label id="departName" data-id={{departObj._id}} >联盟名称：</label><span>{{departObj.name}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>盟主：</label><span>{{(departObj.master&&departObj.master.name)?departObj.master.name:'无'}}</span></div>
+        <div class="item"><label>护法：</label><span>{{departObj.managers.length>0?departObj.managers[0].name:'无'}}</span></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>部门组织架构：</label><span>{{departObj.org_info?departObj.org_info:'无'}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>帮会数：</label><span>{{departObj.factions_count}}</span></div>
+        <div class="item"><label>联盟人数：</label><span>{{departObj.member_count}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>联盟VC：</label><span>{{departObj.vc}}</span></div>
+        <div class="item"><label>联盟金币：</label><span>{{departObj.gold}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>联盟总VC：</label><span>{{departObj.vc_total}}</span></div>
+        <div class="item"><label>联盟总金币：</label><span>{{departObj.gold_total}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">联盟简介：</label><span class="desc">{{departObj.desc}}</span></div>
+      </div>
+    </div>
+  </div>
+  {{else if editPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>联盟名称：</label><input type="text" id="name" name="name" class="input-text" maxlength="7" value={{departObj.name}} ></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>盟主：</label><span>{{departObj.master.name}}</span></div>
+        <div class="item"><label>护法：</label><span>{{departObj.managers.length>0?departObj.managers[0].name:'无'}}</span></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>部门组织架构：</label><input type="text" id="org" name="org" class="input-text" maxlength="16"  style="width: 37rem" value={{departObj.org_info}} ></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>帮会数：</label><span>{{departObj.factions_count}}</span></div>
+        <div class="item"><label>联盟人数：</label><span>{{departObj.member_count}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>联盟VC：</label><span>{{departObj.vc}}</span></div>
+        <div class="item"><label>联盟金币：</label><span>{{departObj.gold}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>联盟总VC：</label><span>{{departObj.vc_total}}</span></div>
+        <div class="item"><label>联盟总金币：</label><span>{{departObj.gold_total}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">联盟简介：</label><textarea title="desc" id="desc" class="desc input-text">{{departObj.desc}}</textarea></div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</script>
+<!--底部-->
+<script id="footer" type="text/html">
+  {{if detailPage}}
+  <button class="btnStyle" id="edit">修改</button>
+  {{else if editPage}}
+  <button class="btnStyle" id="cancelEdit">取消</button>
+  <button class="btnStyle" id="confirmEdit">确定</button>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/manager.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/index.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/department.js"></script>
+</html>

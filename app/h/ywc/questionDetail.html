@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/task.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>问题详情</title>
+  <style>
+    .form-item{
+      border: none!important;
+    }
+  </style>
+</head>
+<body>
+<div  id="question" class="changeBoxTask tempTaskDetail changeBoxTask2 userSelect"></div>
+<div class="feehideBox"></div>
+<script id="container" type="text/html">
+    <div class="boxTask">
+      <header>
+        <p class="taskTitle">问题详情</p>
+        <div class="btnBack"></div>
+      </header>
+      <div class="taskcontentBox">
+        <div class="form-item">
+          <label>标题：</label>
+          <span id="title" data-id={{obj._id}} class="taskDetailColor title">{{obj.title}}</span>
+        </div>
+        <div class="form-item task-item1 taskDetailTarget">
+          <label>说明：</label>
+          <div class="taskTarget">{{obj.question}}</div>
+        </div>
+        <div class="form-item taskDetailItem taskDetailItem2">
+          <div>
+            <p style="width: 17rem"><label>提问人：</label><span>{{obj.author.name}}</span></p>
+            <p style="width: 16rem;"><label>奖励经验：</label><span id="exp"></span></p>
+            <p style="width: 23rem;text-align: right"><label>提问日期：</label><span>{{obj.created_at|dateChange}}</span></p>
+          </div>
+          <!--<div>-->
+            <!--<p><label>奖励经验：</label><span>100</span></p>-->
+          <!--</div>-->
+        </div>
+        {{if hasAnswer}}
+        {{each obj.answers value}}
+        <div class="form-item taskDetailItem taskDetailItem2" style="border-bottom: none">
+          <div>
+            <p style="width: 17rem"><label>回答人：</label><span>{{value.author.name}}</span></p>
+            <p style="width: 23rem"><label>回答时间：</label><span>{{value.created_at|dateChange}}</span></p>
+          </div>
+        </div>
+        <div class="form-item task-item1 taskDetailTarget" style="border-top: none">
+          <label>答案：</label>
+          <div class="taskTarget">{{value.answer}}</div>
+        </div>
+        {{/each}}
+        {{/if}}
+        <div id="toAnswer" class="form-item task-item1 dis_n" style="border: none">
+          <label>答案：</label>
+          <textarea id="answer" class="taskTarget input-text"></textarea>
+        </div>
+      </div>
+      <div class="footer" id="footer">
+        {{if canClose}}
+        <input id="close" class="btnStyle subBtn" type="button" value="关闭问题"/>
+        {{/if}}
+        {{if canAnswer}}
+        <input id="edit" class="btnStyle subBtn" type="button" value="回&nbsp;&nbsp;答"/>
+        {{/if}}
+      </div>
+    </div>
+</script>
+
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../dist/s/mid.js"></script>
+<script type="text/javascript" src="../../dist/s/ywc.js"></script>
+<script src="../../dist/ctrl/ywc/questionDetail.js"></script>
+<script src="../../dist/ctrl/common.js"></script>
+</body>
+</html>

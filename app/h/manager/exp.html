@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>联盟管理</title>
+</head>
+<body class="userSelect">
+<div class="box" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">联盟管理</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()"
+       class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer"></div>
+</div>
+<!--整体结构-->
+<script id="container" type="text/html">
+  <div class="boxList panel-body" id="boxList">
+    <div class="tab-content">
+      <div class="tab-pane fade active in clear" id="tab1">
+        <ul class="nav-btns" id="navContainer">
+          <li id='department'>联盟管理</li>
+          <li id='faction'>帮会管理</li>
+          <li id='tang'>堂管理</li>
+          <li id='user'>成员管理</li>
+          <li id='exp' class='active'>经验管理</li>
+          <li id='power'>能力属性管理</li>
+        </ul>
+        <div class="contentWithTab">
+          <div class="tabs">
+            <div class="tab-content">
+              <ul class="nav-tabs clear" role="tablist">
+                <li  id="level" class={{levelPage?'active':''}} >
+                  <a href='javascript:void(0);' role="tab" data-toggle="tab">
+                    <i class="fa fa-user-circle pr-5">等&nbsp;&nbsp;级</i>
+                  </a>
+                </li>
+                <li  id="task" class={{taskPage?'active':''}} >
+                  <a href='javascript:void(0);' role="tab" data-toggle="tab">
+                    <i class="fa fa-user-circle pr-5">任&nbsp;&nbsp;务</i>
+                  </a>
+                </li>
+                <li  id="newPersonTask" class={{newPersonTaskPage?'active':''}} >
+                  <a href='javascript:void(0);' role="tab" data-toggle="tab">
+                    <i class="fa fa-user-circle pr-5">新手任务</i>
+                  </a>
+                </li>
+              </ul>
+              <div class="contentTable"  id="contentContainer">
+                {{include 'content'}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="boxBottom2" id="footerContainer">
+    {{include 'footer'}}
+  </div>
+</script>
+<!--内容区域-->
+<script id="content" type="text/html">
+  {{if levelPage}}
+  <div class="form">
+    <table  class="compact-table">
+      <thead>
+      <tr>
+        <th>等级</th>
+        <th>经验</th>
+        <th>等级</th>
+        <th>经验</th>
+        <th>等级</th>
+        <th>经验</th>
+        <th>等级</th>
+        <th>经验</th>
+        <th>等级</th>
+        <th>经验</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{each list value index}}
+      <tr>
+        <td>{{value[0].level}}</td>
+        <td>{{value[0].exp}}</td>
+        <td>{{value[1].level}}</td>
+        <td>{{value[1].exp}}</td>
+        <td>{{value[2].level}}</td>
+        <td>{{value[2].exp}}</td>
+        <td>{{value[3].level}}</td>
+        <td>{{value[3].exp}}</td>
+        <td>{{value[4].level}}</td>
+        <td>{{value[4].exp}}</td>
+      </tr>
+      {{/each}}
+      </tbody>
+      <tfoot>
+       <tr>
+         <td colspan="10">
+           <span>系数：<span id="number">{{ratio}}</span></span>
+           <span>计算公式 = 系数*(等级*等级+5*等级)+58</span>
+         </td>
+       </tr>
+      </tfoot>
+    </table>
+  </div>
+  {{else if taskPage}}
+  <table class="table-origin" id="taskTable">
+    <thead>
+    <tr>
+      <th>序号</th>
+      <th style="width:13rem;">任务类型</th>
+      <th>级别</th>
+      <th>经验值</th>
+      <th style="width: 12rem"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{each list value index}}
+    <tr role="row">
+      <td>{{index+1}}</td>
+      <td style="width:13rem;">{{value.subtypeToChina}}</td>
+      {{if value.level==0}}
+      <td>无</td>
+      {{else if value.level==1}}
+      <td>
+        <span style="display: none">1</span>
+        <img src='../../i/magatama.png' />
+      </td>
+      {{else if value.level==2}}
+      <td>
+        <span style="display: none">2</span>
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+      </td>
+      {{else if value.level==3}}
+      <td>
+        <span style="display: none">3</span>
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+      </td>
+      {{else if value.level==4}}
+      <td>
+        <span style="display: none">4</span>
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+      </td>
+      {{else if value.level==5}}
+      <td>
+        <span style="display: none">5</span>
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+        <img src='../../i/magatama.png' />
+      </td>
+      {{/if}}
+      <td class="exp">{{value.exp}}</td>
+      <td style="width: 12rem">
+        <button class="btn-manager btn-small newPersonTaskManager" data-id={{value._id}} >修改</button>
+      </td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  {{else if newPersonTaskPage}}
+  <table class="table-origin" id="newPersonTaskTable">
+    <thead>
+    <tr>
+      <th style="width: 4rem">序号</th>
+      <th width="7rem">任务名称</th>
+      <th style="width: 34rem">任务目标</th>
+      <th>经验值</th>
+      <th style="width: 12rem"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{each list value index}}
+    <tr role="row">
+      <td style="width: 4rem">{{index+1}}</td>
+      <td width="7rem">{{value.title}}</td>
+      <td style="width: 34rem">{{value.content}}</td>
+      <td class="exp">{{value.exp}}</td>
+      <td style="width: 12rem">
+        <button class="btn-manager btn-small newPersonTaskManager" data-id={{value._id}} >修改</button>
+      </td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
+</script>
+<!--底部-->
+<script id="footer" type="text/html">
+  {{if levelPage&&!edit}}
+  <button class="btnStyle" id="editLevel">修改</button>
+  {{else if edit}}
+  <div class="footerError" id="footerError">请输入1-30的整数！</div>
+  <button class="btnStyle" id="cancelLevel">取消</button>
+  <button class="btnStyle" id="confirmLevel">确定</button>
+  {{else if taskPage}}
+  <div class="footerError">任务经验值必须是大于等于0的整数！</div>
+  {{else if newPersonTaskPage}}
+  <div class="footerError">请输入0-1000的整数！</div>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../vendors/tableSort.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/manager.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/index.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/exp.js"></script>
+</html>

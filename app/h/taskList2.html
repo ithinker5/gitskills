@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/task.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>任务列表</title>
+</head>
+<body>
+<div class="box taskList userSelect" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span>帮会任务列表</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()" class="Back"></a>
+  </div>
+  <div class="filterFold">
+    <div class="foldLeft dis_n">
+      <b><img data-colums="1" class="pitch activeImg" src="../i/pitch.png" /><i>任务名称</i></b>
+      <b><img data-colums="3" class="pitch activeImg" src="../i/pitch.png" /><i>VC</i></b>
+      <b><img data-colums="4" class="pitch activeImg" src="../i/pitch.png" /><i>金币</i></b>
+      <b><img data-colums="5" class="pitch activeImg" src="../i/pitch.png" /><i>经验值</i></b>
+      <b><img data-colums="6" class="pitch activeImg" src="../i/pitch.png" /><i>任务类型</i></b>
+      <b><img data-colums="8" class="pitch activeImg" src="../i/pitch.png" /><i>任务状态</i></b>
+      <b><img data-colums="9" class="pitch activeImg" src="../i/pitch.png" /><i>发布人</i></b>
+      <b><img data-colums="10" class="pitch activeImg" src="../i/pitch.png" /><i>领队</i></b>
+    </div>
+    <div class="clear"></div>
+    <div class="filterIconDown filterIcon"></div>
+  </div>
+  <div class="change2 changeFilter">
+    <div class="boxList panel-body" id="boxList">
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="tab1">
+          <table id="accountTable1" class="table2 table-striped"></table>
+        </div>
+      </div>
+    </div>
+    <div class="boxBottom3" id="addTask">
+      <button class="btnStyle fbtask">发布任务</button>
+    </div>
+  </div>
+</div>
+</body>
+<!--<script type="text/javascript" src="../j/culScreen.js"></script>-->
+<script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../vendors/react.js"></script>
+<script type="text/javascript" src="../vendors/react-dom.js"></script>
+<script type="text/javascript" src="../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../vendors/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../j/ctrl/getData.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/task.js"></script>
+<script src="../dist/ctrl/taskList2.js"></script>
+</html>

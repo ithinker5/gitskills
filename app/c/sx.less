@@ -1,0 +1,204 @@
+@baseFontSize: 21.2037;
+@whiteFontColor: rgba(255, 255, 255, 1); /*白色字体*/
+@yellowFontColor: rgba(255, 248, 164, 1); /*黄色字体*/
+@tabBorderColor: rgb(164, 164, 164);
+@fontFamiliar: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.clearFix{
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.leftContainer{
+  width: 15%;
+  float: left;
+  height:100%;
+  outline: 2px solid #565c69;
+  .users{
+    height: 100%;
+    overflow: auto;
+    .item{
+      height:3rem;
+      cursor: pointer;
+      &:hover{
+        background: rgb(78,85,99);
+      }
+      &.active{
+        background: rgb(41,44,54);
+      }
+      .name{
+        float: left;
+        color:white;
+        margin-left: 1rem;
+        line-height: 3rem;
+        font-size: 1.8rem;
+      }
+      .bedge{
+        color: rgb(255,248,164);
+        margin-top: 0.75rem;
+        float: right;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: rgb(41,44,54);
+        text-align: center;
+        font-size: 0.8rem;
+        vertical-align: middle;
+        line-height:1.5rem;
+        margin-right: 0.7rem;
+        }
+    }
+  }
+}
+.rightContainer{
+  width: 85%;
+  height:100%;
+  float: left;
+}
+.name{
+  padding-left: 3%;
+  line-height:3rem;
+  height:7%;
+  color: @yellowFontColor;
+}
+.history{
+  height:60%;
+  width: 94%;
+  background: #565c69;
+  margin: 0 auto;
+  padding:0 1%;
+  overflow-y: scroll;
+  color: rgb(35,35,35);
+  overflow-x: hidden !important;
+  .item{
+    margin-top: 15px;
+    .time{
+      text-align: center;
+      font-size: 1.5rem;
+      .text{
+        background: rgba(62,67,80,0.2);
+        display: inline-block;
+        width: 8rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        color: white;
+      }
+    }
+    .info{
+      margin: 15px 0;
+      .icon{
+        height:3rem;
+        width: 3rem;
+        img{
+          background-size: cover;
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text{
+        max-width: 67%;
+        background-color: #4f5360;
+        border-radius: 5px;
+        line-height:1.5rem;
+        padding: 0.5rem;
+        position: relative;
+        margin-top: 0.1rem;
+       pre{
+         font-family: "微软雅黑", Microsoft YaHei !important;
+         margin: 0;
+         word-wrap: break-word;
+         white-space: pre-wrap;
+         font-size: 1.4rem;
+       }
+        &:after,
+        &:before{
+          display: block;
+          content: '';
+        }
+        &:after{
+          position: absolute;
+          top:0;
+          left: 0;
+          width:0;
+          height:0;
+          border:7px solid transparent;
+        }
+      }
+      &.left{
+        .icon,.text{
+          float: left;
+        }
+        .icon{
+          margin-right: 5px;
+        }
+        .text{
+          background: rgb(203,219,226);
+          margin-left: 1rem;
+          &:after{
+            top:0.7rem;
+            left: -14px;
+            border-right-color: rgb(203,219,226);
+          }
+        }
+      }
+      &.right{
+        .icon,.text{
+          float: right;
+        }
+        .icon{
+          margin-left: 5px;
+        }
+        .text{
+          background: rgb(229,214,192);
+          margin-right: 1rem;
+          &:after{
+            top:0.7rem;
+            left: 100%;
+            border-left-color: rgb(229,214,192);
+          }
+        }
+      }
+    }
+  }
+}
+/*chrome 定义滚动条样式，现页面上未用到*/
+.history::-webkit-scrollbar {
+  display: block;
+  .px2rem(width, 16);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+.history::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+.history::-webkit-scrollbar-thumb {
+  .px2rem(height, 8);
+  .px2rem(border-radius, 4);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  /*线性渐变*/
+  background: -webkit-linear-gradient(#d9c98c, #d4a567); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#d9c98c, #d4a567); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#d9c98c, #d4a567); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#d9c98c, #d4a567); /* 标准的语法 */
+}
+.message{
+  margin: 15px 2% 5px;
+  height:21%;
+  width: 94%;
+  background: #979ea9;
+  padding:1%;
+  font-size: 1.4rem;
+  resize: none;
+  font-family: "微软雅黑", Microsoft YaHei !important;
+}

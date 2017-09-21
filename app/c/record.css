@@ -1,0 +1,165 @@
+@charset "utf-8";
+/*输入框可编辑，按钮划过色值*/
+/*输入框不可编辑*/
+/*上传附件按钮*/
+/*黄色字体*/
+/*白色字体*/
+/*表格头部及按钮所在尾部颜色，表单头部及尾部颜色*/
+/*表格中间，表单中间内容，选择框底色*/
+/*下划线*/
+/*表格顶部标题*/
+/*表单内部表格头部*/
+/*表单内部表格中间*/
+/*编辑队伍处背景色*/
+/*----------------------------------------------档案---------------------------------------------------------------*/
+.Record {
+  width: 100%;
+  height: 100%;
+}
+.Record header {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #565c69;
+}
+.Record footer {
+  width: 100%;
+  height: 3%;
+  background: #565c69;
+}
+.Record .boxlmInfo {
+  width: 100%;
+  height: 84%;
+  background: #3e4350;
+  font-size: 1.79214005rem;
+  overflow-y: scroll;
+}
+.Record .boxlmInfo p {
+  width: 100%;
+  height: 5.18777383rem;
+  line-height: 5.18777383rem;
+  border-bottom: 2px solid #4e525b;
+  display: inline-block;
+  position: relative;
+}
+.Record .boxlmInfo p span {
+  color: #fff8a4;
+}
+.Record .boxlmInfo p i,
+.Record .boxlmInfo div i {
+  display: inline-block;
+  width: 14.14847409rem;
+  text-align: right;
+}
+.Record .boxlmInfo p .allianceName {
+  font-size: 2.07510953rem;
+}
+.Record .boxlmInfo p .boss {
+  font-weight: 100;
+  position: absolute;
+  left: 40%;
+}
+.Record .boxlmInfo p .vcTotal {
+  font-weight: 100;
+  position: absolute;
+  left: 40%;
+}
+.Record .boxlmInfo p .vcNum {
+  font-weight: 100;
+  float: right;
+  margin-right: 8%;
+  /*position: absolute;*/
+  /*left: 40%;*/
+}
+.Record .boxlmInfo p i,
+.Record .boxlmInfo div i {
+  color: #ffffff;
+  font-style: normal;
+}
+.Record .boxlmInfo p b em {
+  display: inline-block;
+  width: 11.31877927rem;
+  text-align: right;
+  font-style: normal;
+  color: #ffffff;
+}
+.Record .boxlmInfo div {
+  margin-top: 1.41484741rem;
+}
+.Record .boxlmInfo div i.lmIntro {
+  vertical-align: top;
+}
+.Record .boxlmInfo div textarea {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312;
+  display: inline-block;
+  width: 74%;
+  height: 19.80786372rem;
+  background: #565c69;
+  color: #ffffff;
+  font-size: 1.60349373rem;
+  border: 0;
+  padding: 1% 1%;
+  resize: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  margin-bottom: 1.41484741rem;
+}
+.ywcNewTask footer {
+  width: 100%;
+  height: 12%;
+  background: #565c69;
+}
+.ywcNewTask .boxlmInfo {
+  height: 80%;
+}
+.ywcNewTask .boxlmInfo p i,
+.ywcNewTask .boxlmInfo div i {
+  width: 16.14847409rem;
+}
+.ywcNewTask .boxlmInfo p span {
+  margin: 0 0.5rem 0 0;
+}
+.ywcNewTask .boxlmInfo div textarea {
+  height: 14rem;
+}
+.ywcNewTask .addLeader {
+  width: 1.79214005rem;
+  height: 1.74497847rem;
+  display: inline-block;
+  background: url(../i/addPerson.png) no-repeat center;
+  background-size: 100% 100%;
+  vertical-align: text-bottom;
+  border: 0;
+  cursor: pointer;
+}
+.ywcNewTask .addLeader:active {
+  width: 1.79214005rem;
+  height: 1.74497847rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.ywcNewTask .deadline {
+  width: 13.44105038rem;
+  height: 1.88646321rem;
+  line-height: 1.88646321rem;
+  color: #ffffff;
+  padding-left: 0.7074237rem;
+  font-size: 1.22620109rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: "";
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  border-radius: 0.4716158rem;
+  background-color: rgba(89, 89, 89, 0);
+}
+.ywcNewTask .deadline:nth-of-type(1) {
+  margin-right: 4.8rem;
+}
+.ywcNewTask .deadline:nth-of-type(2) {
+  margin-left: 4.8rem;
+}

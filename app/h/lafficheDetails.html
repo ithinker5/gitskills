@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/laffiche.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>公告详情</title>
+</head>
+<body>
+<div class="changeBox lafficheAdd lafficheDetails userSelect">
+  <header>
+    <p class="title">公告详情</p>
+    <div class="btnBack"></div>
+  </header>
+  <div class="contentBox">
+    <div class="form-item form-item0">
+      <label>公告名称：</label>
+      <input type="text" style="width: 74.5%;" id="name" class="inputNoBorder" placeholder="请输入公告名称" disabled="true" 　readOnly="true"/>
+    </div>
+    <div class="form-item form-item1">
+      <div class="form-item form-item2">
+        <label>发&nbsp;布&nbsp;人：</label>
+        <input class="publishName" type="text" class="inputNoBorder" placeholder="无" disabled="true" 　readOnly="true"/>
+      </div>
+      <div class="form-item form-item2">
+        <label>发布时间：</label>
+        <input class="publishDate" type="text" class="inputNoBorder" disabled="true" 　readOnly="true"/>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="form-item form-item3">
+      <label>公告内容：</label>
+      <textarea class="textDetail" id="content" class="inputNoBorder" disabled="true" 　readOnly="true"></textarea>
+    </div>
+    <div class="form-item form-item4" id="file_c">
+      <label>附件：</label>
+      <span class="fileText"></span>
+      <div id="fileContainer" style="display: none"></div>
+      <!--<input type="file" id="file" name="filename" disabled="true"　readOnly="true" style="display: none">-->
+    </div>
+  </div>
+  <footer>
+    <div class="buttons">
+      <input id="submit" class="btnStyle subBtn" type="button" value="编&nbsp;&nbsp;辑"/>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../dist/ctrl/getData.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../dist/s/mid.js"></script>
+<script type="text/javascript" src="../dist/s/laffiche.js"></script>
+<script src="../dist/ctrl/lafficheDetails.js"></script>
+</body>
+</html>

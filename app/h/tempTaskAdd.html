@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/task.css"/>
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>发布临时任务</title>
+</head>
+<body>
+<div class="changeBoxTask tempTaskEdit userSelect">
+  <div class="boxTask">
+    <header>
+      <p class="taskTitle">发布任务</p>
+      <div class="btnBack"></div>
+    </header>
+    <div class="taskcontentBox">
+      <div class="form-item">
+        <div class="select_box" id="lTaskTypeContainer" style="margin-left: 4%;">
+          <span class="unfold"></span>
+          <input id="taskType" value="联盟临时任务" name="taskType" class="taskType selest" type="text" data-value="1"
+                 readonly="readonly" style="width: 9rem">
+          <ul class="select_ul" style="width:9.8rem">
+            <li value="1" style="width: 95.9%">联盟临时任务</li>
+            <li value="0" style="width:95.9%">联盟战略任务</li>
+          </ul>
+        </div>
+        <div class="select_box" id="bTaskTypeContainer" style="margin-left: 4%;">
+          <span class="unfold"></span>
+          <input id="bTaskType" value="帮会挑战任务" name="taskType" class="taskType selest" type="text" data-value="2"
+                 readonly="readonly" style="width: 9rem">
+          <ul class="select_ul" style="width:9.8rem">
+            <li value="2" style="width: 95.9%">帮会挑战任务</li>
+            <li value="3" style="width:95.9%">帮会基础任务</li>
+            <li value="4" style="width:95.9%">帮会临时任务</li>
+          </ul>
+        </div>
+        <div class="select_box" id="PTaskTypeContainer" style="margin-left: 4%;">
+          <div id='taskTypeText'>个人任务</div>
+        </div>
+        <div class="select_box" id="STaskTypeContainer" style="margin-left: 4%;">
+          <div id='trialTask'>试炼任务</div>
+        </div>
+        <!--<div class="select_box" id="PTaskTypeContainer" style="margin-left: 4%;">
+          <input id="PTaskType" value="个人任务" name="taskType" class="taskType selest inputNoBorder" type="text" readonly="readonly">
+        </div>-->
+      </div>
+      <div class="form-item">
+        <label>任务名称：</label>
+        <input type="text" id="title" name="title" class="taskName input-text" maxlength="25" placeholder="请输入任务名称">
+      </div>
+      <div class="form-item task-item1">
+        <label>任务目标：</label>
+        <textarea id="desc" class="taskTarget input-text"></textarea>
+      </div>
+      <div style="position: relative">
+        <div class="form-item form_colon taskGrade">
+          <label>任务等级：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input id="taskLevel" data-value="1" data-num="1" name="taskLevel" class="taskLevel selest" type="text" value="1级"
+                   readonly="readonly">
+            <ul class="select_ul">
+              <li value="1">1级</li>
+              <li value="2">2级</li>
+              <li value="3">3级</li>
+              <li value="4">4级</li>
+              <li value="5">5级</li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-item task-item2 form_colon">
+          <label>奖励经验：</label> <span id="exp"></span>
+        </div>
+        <div class="form-item task-item2 form_colon taskGrade2">
+          <label>悬&nbsp;赏&nbsp;VC：</label>
+          <input type="text" id="base_vc" name="base_vc" class="input-text isErrorGroup">
+          <span class="errorText">VC必须是大于等于0的整数！</span>
+        </div>
+        <div class="form-item task-item2 form_colon taskGrade2">
+          <label>悬赏金币：</label>
+          <input type="text" id="gold" name="gold" class="input-text isErrorGroup">
+          <span class="errorText">金币必须是大于等于0的整数！</span>
+        </div>
+        <div class="form-item task-item2 form_colon taskGrade2">
+          <label class="cashStyle">押&nbsp;金：</label>
+          <input type="text" id="mortgage" name="mortgage" class="input-text isErrorGroup">
+          <span class="errorText">押金必须是大于等于0的整数！</span>
+        </div>
+        <div class="form-item form_colon">
+          <label>指定领队：</label>
+          <input type="radio" id="noLeader" class="chioce" name="applicant_id" value="">
+          <label for="noLeader" class="radioImg"></label><span style="vertical-align: middle">无</span>
+          <input type="radio" id="applicant_id" name="applicant_id" style="display: none">
+          <label for="applicant_id" id="applicant" class="radioImg" style="display: none;"></label>
+          &nbsp;&nbsp;&nbsp;<span class="addLeader" id="addLeader"></span>
+        </div>
+        <div class="form-item task-item2 task-item4">
+          <label class="rightLabel">要求完成日期：</label>
+          <input type="date" id="deadline" name="deadline" class="input-text">
+          <!--<label class="adddata" for="deadline"></label>-->
+        </div>
+        <div class="form-item task-item5" id="file_c"><!--style="position: relative;"-->
+          <label class="rightLabel">文件：</label>
+          <div id="fileContainer" style="display: inline-block;">
+            <div class="item">
+              <label for="file" class="fileText">选择文件</label><!--<span class="hintT">未选择任何文件</span>-->
+            </div>
+          </div>
+          <input type="file" id="file" name="filename" style="display: none">
+        </div>
+      </div>
+      <div class="form-item task-item2 task-item3 form_colon taskGrade2" id="leaderRequire">
+        <h2>领队要求</h2>
+        <label class="label2">等级要求：</label>
+        <input type="text" id="leader_level" name="leader_level" value="">
+        <div class="form-item task-item4" style="top:3.028384rem;">
+          <label class="rightLabel">最低岗位级别：</label>
+          <input id="leader_grade" class="input-text" data-value="1D" name="leader_level" type="text" value="1D">
+        </div>
+      </div>
+    </div>
+    <div class="footer" style="position: relative;">
+      <div class="footerError" id="footerError">等级要求必须是大于等于0的整数！</div>
+      <input id="submit" class="btnStyle subBtn2" type="button" value="发&nbsp;&nbsp;布"/>
+    </div>
+  </div>
+
+</div>
+<div class="feehideBox"></div>
+<script src="../vendors/jquery.min.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script src="../vendors/ajaxfileupload.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/task.js"></script>
+<script src="../dist/ctrl/tempTaskAdd.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+</body>
+</html>

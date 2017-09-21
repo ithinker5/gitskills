@@ -1,0 +1,582 @@
+@charset "utf-8";
+@baseFontSize: 23.2037;
+@tabBorderColor: rgb(164, 164, 164);
+@whiteFontColor:rgba(255,255,255,1);
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+body, html, div, p, span, a, h1, h2, h3, h4, h5, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-y: hidden !important;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0) !important;
+  color: white;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-weight: lighter;
+}
+
+body p {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  .px2rem(font-size, 14);
+}
+
+body p a {
+  color: #10102D;
+  .px2rem(font-size, 16);
+}
+
+h1 {
+  color: #E05E00;
+  font-style: italic;
+}
+
+a {
+  color: #10102D;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* general */
+.clear {
+  clear: both;
+}
+
+.leader {
+  color: plum;
+}
+
+.boxTop {
+  width: 100%;
+  height: 100%;
+}
+
+.blackBox {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  //background: url('../i/bg1.png') no-repeat;
+  //background-size: 100% 100%;
+  margin: auto;
+}
+
+.box1 {
+  //background: url('../i/bg1.png') no-repeat;
+  //background-size: 100% 100%;
+}
+
+.box li {
+  line-height: 40px;
+  font-size: 32px;
+}
+
+.goBack {
+  .px2rem(width, 110);
+  .px2rem(height, 120);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  /*.px2rem(left, 25);
+  .px2rem(top, 28);*/
+  display: inline-block;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 100% 100%;
+  &:hover {
+    cursor: pointer;
+    background: url(../i/goBack2.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  &:active {
+    cursor: pointer;
+    background: url(../i/goBack.png) no-repeat center;
+    background-size: 85%;
+    .px2rem(width, 110);
+    .px2rem(height, 120);
+  }
+}
+
+.goBack2 {
+  .px2rem(width, 82);
+  .px2rem(height, 92);
+  position: absolute;
+  .px2rem(left, 30);
+  .px2rem(top, 32);
+  background: url(../i/goBack2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
+.borderBox {
+  .px2rem(width, 1174);
+  .px2rem(height, 636);
+  .px2rem(padding-top, 120);
+  .px2rem(padding-bottom, 40);
+  .px2rem(padding-left, 66);
+  .px2rem(padding-right, 66);
+  .px2rem(font-size, 20);
+  text-align: center;
+  background: url('../i/task.png') no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+
+.dis_n {
+  display: none !important;
+}
+
+/*  人员架构  */
+/* Basic styling */
+/* Draw the lines */
+#org {
+  display: none;
+}
+
+.jOrgChart .line {
+  height: 3.530567rem;
+  width: 1px;
+}
+
+.jOrgChart .down {
+  background-color: rgba(185,183,175,1);
+  margin: 0 auto;
+}
+
+.jOrgChart .top {
+  border-top: 1px solid rgba(185,183,175,1);
+}
+
+/*.jOrgChart .left {
+  border-right:0.5px solid #747474;
+}
+
+.jOrgChart .right {
+  border-left:0.5px solid #747474;
+}*/
+.jOrgChart .left, .jOrgChart .right {
+  position: relative;
+}
+
+/*.jOrgChart .left:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  border-right: 1px solid #747474;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+.jOrgChart .right:before {
+  content: '';
+  position: absolute;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid rgba(185,183,175,1);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.jOrgChart .line2 {
+  //.px2rem(height,120);
+  .px2rem(width, 0.5);
+  border-left: 1px solid rgba(185,183,175,1);
+}
+
+/*.jOrgChart table tbody tr{
+  .px2rem(height,30);
+}*/
+.node a {
+  .px2rem(font-size, 32);
+}
+
+/* node cell */
+.jOrgChart td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+}
+
+.orgChart {
+  width: 100%;
+  height: 100%;
+  //display: flex;
+  .px2rem(margin-top,120);
+  //align-items: center;
+  //justify-content: center;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+.jOrgChart .node2 {
+  cursor: pointer !important;
+  .px2rem(font-size, 32);
+  display: inline-block;
+  .px2rem(width, 278);
+  .px2rem(height, 139);
+  z-index: 10;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.jOrgChart .node .firstNode {
+  cursor: pointer !important;
+  .px2rem(font-size, 32);
+  display: inline-block;
+  .px2rem(width, 333.6);
+  .px2rem(height, 166.8);
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.jOrgChart .node .secondNode {
+  cursor: pointer !important;
+  .px2rem(font-size, 32);
+  display: inline-block;
+  .px2rem(width, 278);
+  .px2rem(height, 139);
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.jOrgChart .node .thirdNode {
+  cursor: pointer !important;
+  .px2rem(font-size, 32);
+  display: inline-block;
+  width:10.084678rem;
+  .px2rem(height, 111.2);
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.jOrgChart table {
+  .px2rem(width, 290);
+  position: relative !important;
+  margin: auto;
+}
+
+.markright {
+  .px2rem(height, 45);
+}
+
+.jOrgChart .firstNode .head, .jOrgChart .secondNode .head, .jOrgChart .thirdNode .head, .jOrgChart .node2 .head {
+  display: inline-block;
+  .px2rem(width, 116);
+  .px2rem(height, 127);
+  position: absolute;
+  .px2rem(left, 5);
+  .px2rem(bottom, 5);
+}
+
+.jOrgChart .firstNode .head {
+  .px2rem(width, 138);
+  .px2rem(height, 152);
+  .px2rem(left, 7);
+  .px2rem(bottom, 6);
+}
+
+.jOrgChart .thirdNode .head {
+  width: 4.121788rem;
+  .px2rem(height, 102);
+  .px2rem(left, 5);
+  .px2rem(bottom, 4);
+}
+
+.jOrgChart .firstNode .grade, .jOrgChart .secondNode .grade, .jOrgChart .thirdNode .grade, .jOrgChart .node2 .grade {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  display: inline-block;
+  .px2rem(width, 108);
+  .px2rem(height, 24);
+  .px2rem(line-height, 24);
+  position: absolute;
+  .px2rem(left, 5);
+  .px2rem(bottom, 5);
+  background: rgba(19, 19, 21, 0.75);
+  color: rgba(255, 255, 228, 1);
+  .px2rem(font-size, 20);
+  z-index: 99;
+  text-align: left;
+  .px2rem(padding-left, 8);
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.jOrgChart .firstNode .grade {
+  .px2rem(width, 132);
+  .px2rem(height, 28);
+  .px2rem(line-height, 30);
+  .px2rem(left, 7);
+  .px2rem(bottom, 6);
+  .px2rem(font-size, 22);
+}
+
+.jOrgChart .thirdNode .grade {
+  width: 3.820112rem;
+  .px2rem(height, 22);
+  .px2rem(left, 4);
+  .px2rem(bottom, 4);
+  .px2rem(font-size, 18);
+}
+
+.jOrgChart .firstNode .intro, .jOrgChart .secondNode .intro, .jOrgChart .thirdNode .intro, .jOrgChart .node2 .intro {
+  .px2rem(width, 148);
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  text-align: left;
+  position: absolute;
+  .px2rem(left, 124);
+  .px2rem(top, 48);
+  line-height: inherit;
+  .px2rem(height, 82);
+  color: @whiteFontColor;
+  overflow: hidden;
+  .px2rem(font-size, 22);
+  overflow: hidden;
+  .px2rem(padding-right, 6) !important;
+}
+
+.jOrgChart .firstNode .intro {
+  .px2rem(width, 189);
+  .px2rem(height, 82);
+  .px2rem(line-height, 30);
+  .px2rem(left, 148);
+  .px2rem(top, 50);
+  .px2rem(font-size, 22);
+}
+
+.jOrgChart .thirdNode .intro {
+  width: 4.99920271rem;
+  height: 2.833919rem;
+  left: 4.509658rem;
+  top: 1.68076643rem;
+  font-size: 0.77573835rem;
+}
+
+.jOrgChart .firstNode .title, .jOrgChart .secondNode .title, .jOrgChart .thirdNode .title, .jOrgChart .node2 .title {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  color: rgba(255, 247, 221, 1);
+  text-shadow: 0 0 10px rgba(218, 138, 44, 1);
+  position: absolute;
+  .px2rem(top, 13);
+  .px2rem(left, 122);
+  .px2rem(font-size, 24);
+}
+
+.jOrgChart .firstNode .title {
+  .px2rem(top, 15);
+  .px2rem(left, 148);
+  .px2rem(font-size, 26);
+}
+
+.jOrgChart .thirdNode .title {
+  .px2rem(top, 10);
+  .px2rem(left, 98);
+  .px2rem(font-size, 22);
+}
+
+.jOrgChart .firstNode .title .name, .jOrgChart .secondNode .title .name, .jOrgChart .thirdNode .title .name, .jOrgChart .node2 .title .name {
+  .px2rem(font-size, 20);
+  color: rgba(255, 247, 221, 10);
+  .px2rem(margin-left, 8);
+  text-shadow: 0 0 0 rgba(255, 247, 221, 0);
+}
+
+.jOrgChart .firstNode .title .name {
+  .px2rem(font-size, 22);
+}
+
+.jOrgChart .thirdNode .title .name {
+  .px2rem(font-size, 18);
+}
+
+.jOrgChart .firstNode .add, .jOrgChart .secondNode .add, .jOrgChart .thirdNode .add, .jOrgChart .node2 .add {
+  .px2rem(width, 20);
+  .px2rem(height, 20);
+  display: inline-block;
+  position: absolute;
+  .px2rem(bottom, -11);
+  .px2rem(left, 129);
+  z-index: 99;
+  cursor: pointer !important;
+}
+
+.jOrgChart .firstNode .add {
+  .px2rem(bottom, -11);
+  .px2rem(left, 158);
+}
+
+.jOrgChart .node:nth-of-type(2) {
+  position: absolute;
+  .px2rem(top, -5);
+  .px2rem(left, 94);
+}
+
+.jOrgChart .node .head img, .jOrgChart .node2 .head img {
+  width: 100%;
+  height: 100%;
+}
+
+/*.node-cells:nth-of-type(1) .node{border: 4px solid #7DC7DA;}*/
+/* jQuery drag 'n drop */
+
+.drag-active {
+  border-style: dotted !important;
+}
+
+.drop-hover {
+  border-style: solid !important;
+  border-color: #E05E00 !important;
+}
+
+.textBox {
+  min-width: 300px !important;
+  background: #62C462;
+  position: absolute;
+  top: 0;
+  .px2rem(left, 200);
+  .px2rem(line-height, 40);
+  .px2rem(padding-top, 12);
+  .px2rem(padding-left, 12);
+  .px2rem(padding-bottom, 12);
+  .px2rem(padding-right, 12);
+}
+
+.alliance {
+  width: 10.5%;
+  height: 18%;
+  background: url('../i/alliance.png') no-repeat right bottom;
+  background-size: contain;
+  position: fixed;
+  right: 2%;
+  top: 0;
+  z-index: 10;
+}
+
+
+/*气泡弹窗*/
+.bubbleBox {
+  text-align: justify;
+  left:-40%;
+  .px2rem(width, 512);
+  word-wrap:break-word;
+  color: rgba(255, 248, 164, 1);
+  background: url(../i/bubbleBox.png) no-repeat center;
+  background-size: 100% 100%;
+  padding: 10px 10px 20px 10px;
+  z-index: 9999 !important;
+  letter-spacing: normal !important;
+}
+.bottom80{
+  bottom: 80%;
+}
+
+.bubbleBox .bubbleTitle {
+  width: 100%;
+  .px2rem(height, 56);
+  text-align: center;
+  .px2rem(line-height, 56);
+  .px2rem(font-size, 32);
+  background: url("../i/nameLine.png") no-repeat ;
+  -ms-background-position-y:bottom;
+  background-position-y: bottom;
+  background-position-x:center;
+  -moz-background-position-x:center;
+  -ms-background-position-x:center;
+}
+.bubbleBox .yqPerson{
+  color: @whiteFontColor;
+  width: 100%;
+  .px2rem(margin-top,15);
+  .px2rem(margin-left,15);
+  word-wrap:break-word;
+}
+.bubbleBox .yqPerson span{
+  display: inline-block;
+  .px2rem(font-size,30);
+  .px2rem(margin-bottom,8);
+}
+.super {
+  position: relative;
+}
+
+.bubbleBox {
+  position: absolute;
+}
+
+/*chrome 定义滚动条样式，现页面上未用到*/
+::-webkit-scrollbar {
+  display: block;
+  .px2rem(width, 16);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  .px2rem(height, 8);
+  .px2rem(border-radius, 4);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  /*线性渐变*/
+  background: -webkit-linear-gradient(#d9c98c, #d4a567); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#d9c98c, #d4a567); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#d9c98c, #d4a567); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#d9c98c, #d4a567); /* 标准的语法 */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/teaRoom.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>我的队伍</title>
+</head>
+<body>
+<div class="boxCreateTearm userSelect" id="box">
+  <div class="boxTask">
+    <header>
+      <p class="taskTitle">队伍详情</p>
+      <div class="btnBack"></div>
+    </header>
+    <div class="createContent">
+      <div class="teamInfo">
+        <div><b>队伍名称：</b><input type="text" name="text" placeholder="请输入队伍名称" class="nameBtn inputNoBorder" readonly="readonly"/><i><b>队伍人数：</b><span class="teamNum">0</span></i></div>
+        <div><b>领队：</b><span class="teamLeader"></span><i><b>评分：</b><span class="gradeNum"></span></i></div>
+      </div>
+      <div class="noInfo">
+        <div><b>获取总VC：</b><span class="getVC"></span><i><b>获取总金币：</b><span class="getGold"></span></i></div>
+        <div><b>奖励总VC：</b><span class="awardVC"></span><i><b>奖励总金币：</b><span class="awardGold"></span></i></div>
+        <div><b>处罚总VC：</b><span class="punishVC"></span><i><b>处罚总金币：</b><span class="punishGold"></span></i></div>
+      </div>
+      <div class="memberInfo">
+        <p>队员：</p>
+        <table id="accountTable1" class="table table-striped noHover" style="width: 100%"></table>
+        <!--<button class="recruit">招&nbsp;&nbsp;募</button>-->
+      </div>
+      <div class="taskInfo">
+        <p>任务：</p>
+        <table id="accountTable2" class="table table-striped" style="width: 100%"></table>
+      </div>
+    </div>
+    <div class="footer">
+      <input id="submit" class="btnStyle subBtn2" type="button" value="编辑队伍" />
+    </div>
+  </div>
+
+</div>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../vendors/dataTables.bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="../j/ctrl/getData.js"></script>-->
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/teaRooms.js"></script>
+<script src="../dist/ctrl/createTearm.js"></script>
+</html>

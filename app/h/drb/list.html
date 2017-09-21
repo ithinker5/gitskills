@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <title>达人榜</title>
+  <link rel="stylesheet" href="../../c/common.css">
+  <!--<link rel="stylesheet" href="../../c/xy.css">-->
+  <script src="../../vendors/art-template.js"></script>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+</head>
+<body>
+<div class="box laffiche userSelect">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span>达人榜</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()" class="Back"></a>
+  </div>
+  <div class="change2">
+    <div class="boxList panel-body" id="boxList">
+      <div class="tabs">
+        <div class="tab-content">
+          <ul class="nav-tabs clear" role="tablist" id="tabList"></ul>
+          <div class="tab-pane">
+            <div class="space-line"></div>
+            <table class="table-origin" id="tableContainer"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+</div>
+<script id="properties" type="text/html">
+  {{each propertyList value index}}
+  <li data-name={{value.name}} data-type={{index}} class={{index==='metric1'?'active':''}} >
+    <a href='javascript:void(0);' role="tab" data-toggle="tab">
+      <i class="fa fa-user-circle pr-5">{{value.name}}</i>
+    </a>
+  </li>
+  {{/each}}
+</script>
+<script id="dataContainer" type="text/html">
+  <thead>
+  <tr>
+    <th>排名</th>
+    <th style="width:8rem;">姓名</th>
+    <th>等级</th>
+    <th>从业时长</th>
+    <th>岗位</th>
+    <th>级别</th>
+    <th>帮派职务</th>
+    <th>{{activeType}}分数</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{if hasData}}
+  {{each list value index}}
+  <tr>
+    <td>{{index+1}}</td>
+    <td style="width:8rem;">{{value.user.name}}</td>
+    <td>Lv{{value.user.level}}</td>
+    <td>{{value.user.year_of_service.toFixed(1)}}年</td>
+    <td>{{value.user.title}}</td>
+    <td>{{value.user.grade}}</td>
+    <td>{{value.user.role_id|roleToName}}</td>
+    <td>{{value.points}}</td>
+  </tr>
+  {{/each}}
+  {{else}}
+  <tr>
+    <td colspan="8">暂无数据</td>
+  </tr>
+  {{/if}}
+  </tbody>
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../vendors/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../../dist/s/mid.js"></script>
+<script type="text/javascript" src="../../dist/s/drb.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/drb/list.js"></script>
+</html>

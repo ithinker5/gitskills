@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>联盟管理</title>
+</head>
+<body class="userSelect">
+<div class="box" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">联盟管理</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()"
+       class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer"></div>
+</div>
+<!--整体结构-->
+<script id="container" type="text/html">
+  <div class="boxList panel-body" id="boxList">
+    <div class="tab-content">
+      <div class="tab-pane fade active in clear" id="tab1">
+        <ul class="nav-btns" id="navContainer">
+          <li id='department'>联盟管理</li>
+          <li id='faction'>帮会管理</li>
+          <li id='tang'>堂管理</li>
+          <li id='user'>成员管理</li>
+          <li id='exp'>经验管理</li>
+          <li id='power' class='active'>能力属性管理</li>
+        </ul>
+        <div class="contentWithTable" id="contentContainer">
+          {{include 'content'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="boxBottom2" id="footerContainer">
+    {{if listPage}}
+    <button class="btnStyle" id="edit">修改</button>
+    {{else if editPage}}
+    <button class="btnStyle" id="cancelEdit">取消</button>
+    <button class="btnStyle" id="confirmEdit">确定</button>
+    {{/if}}
+  </div>
+</script>
+<!--内容区域-->
+<script id="content" type="text/html">
+  {{if listPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item power">
+        <div class="item"><label>属性1：</label><span>{{list.metric1.name}}</span></div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性2：</label><span>{{list.metric2.name}}</span></div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性3：</label><span>{{list.metric3.name}}</span></div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性4：</label><span>{{list.metric4.name}}</span></div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性5：</label><span>{{list.metric5.name}}</span></div>
+      </div>
+    </div>
+  </div>
+  {{else if editPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item power">
+        <div class="item"><label>属性1：</label>
+          名称 <input type="text" id="metric1" title="name" name="name" class="input-text" maxlength="4" value={{list.metric1.name}} >
+        </div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性2：</label>
+          名称 <input type="text" id="metric2" title="name" name="name" class="input-text" maxlength="4" value={{list.metric2.name}} >
+        </div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性3：</label>
+          名称 <input type="text" id="metric3" title="name" name="name" class="input-text" maxlength="4" value={{list.metric3.name}} >
+        </div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性4：</label>
+          名称 <input type="text" id="metric4" title="name" name="name" class="input-text" maxlength="4" value={{list.metric4.name}} >
+        </div>
+      </div>
+      <div class="form-item power">
+        <div class="item"><label>属性5：</label>
+          名称 <input type="text" id="metric5" title="name" name="name" class="input-text" maxlength="4" value={{list.metric5.name}} >
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/manager.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/index.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/power.js"></script>
+</html>

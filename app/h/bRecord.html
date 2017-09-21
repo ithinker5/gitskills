@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; Charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/record.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>帮会档案</title>
+</head>
+<body>
+<div class="Record userSelect">
+  <header>
+    <div class="btnBack" onclick="window.parent.playClickEffect();window.parent.closeWebPop();"></div>
+    <span class="title">帮会档案</span>
+  </header>
+  <div class="boxlmInfo">
+    <p><i>帮会名称：</i><span class="allianceName"></span></p>
+    <p><i>帮会人数：</i><span class="allianceNum"></span><b class="boss"><em>帮&nbsp;&nbsp;主：</em><span class="allianceBoss"></span></b></p>
+    <p>
+      <i>帮会VC：</i><span class="allianceVc"></span>
+      <b class="vcTotal"><em>帮会总VC：</em><span class="allianceVc_total"></span></b>
+      <b class="vcNum"><em>帮会金币：</em><span class="allianceMoney"></span></b>
+    </p>
+    <p><i>部门组织架构：</i><span class="allianceOrg"></span></p>
+    <div><i class="lmIntro">帮会简介：</i><textarea class="allianceIntro" readonly="readonly" style="outline: none"></textarea></div>
+  </div>
+  <footer class="footBot"></footer>
+</div>
+</body>
+<script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/faction.js"></script>
+<script src="../dist/ctrl/bRecord.js"></script>
+</html>

@@ -1,0 +1,398 @@
+@charset "utf-8";
+@baseFontSize: 23.2037;
+@tabBorderColor: rgb(164, 164, 164);
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+body, html, div, p, span, a, h1, h2, h3, h4, h5, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-y: hidden !important;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0) !important;
+  color: white;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-weight: lighter;
+}
+
+body p {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  .px2rem(font-size, 14);
+}
+
+body p a {
+  color: #10102D;
+  .px2rem(font-size, 16);
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+h1 {
+  color: #E05E00;
+  font-style: italic;
+}
+
+a {
+  color: #10102D;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* general */
+.clear {
+  clear: both;
+}
+
+.leader {
+  color: plum;
+}
+
+.boxTop {
+  width: 100%;
+  height: 100%;
+}
+
+.blackBox {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+ // background: url('../i/bg.jpg') no-repeat;
+  //background-size: 100% 100%;
+  margin: auto;
+}
+
+.box1 {
+  //background: url('../i/bg1.png') no-repeat;
+  //background-size: 100% 100%;
+}
+
+.box li {
+  line-height: 40px;
+  font-size: 32px;
+}
+
+.goBack {
+  .px2rem(width, 110);
+  .px2rem(height, 120);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  /*.px2rem(left, 25);
+  .px2rem(top, 28);*/
+  display: inline-block;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 100% 100%;
+  &:hover {
+    cursor: pointer;
+    background: url(../i/goBack2.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  &:active {
+    cursor: pointer;
+    background: url(../i/goBack.png) no-repeat center;
+    background-size: 85%;
+    .px2rem(width, 110);
+    .px2rem(height, 120);
+  }
+}
+
+.borderBox {
+  .px2rem(width, 1174);
+  .px2rem(height, 636);
+  .px2rem(padding-top, 120);
+  .px2rem(padding-bottom, 40);
+  .px2rem(padding-left, 66);
+  .px2rem(padding-right, 66);
+  .px2rem(font-size, 20);
+  text-align: center;
+  background: url('../i/task.png') no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+
+.dis_n {
+  display: none;
+}
+
+/*  人员架构  */
+/* Basic styling */
+/* Draw the lines */
+#org {
+  display: none;
+}
+
+.jOrgChart .line {
+  height: 45px;
+  width: 1px;
+}
+
+.jOrgChart .down {
+  background-color: rgba(185,183,175,1);
+  margin: 0 auto;
+}
+
+.jOrgChart .top {
+  border-top: 1px solid rgba(185,183,175,1);
+}
+
+/*.jOrgChart .left {
+  border-right:0.5px solid #747474;
+}
+
+.jOrgChart .right {
+  border-left:0.5px solid #747474;
+}*/
+.jOrgChart .left, .jOrgChart .right {
+  position: relative;
+}
+
+.jOrgChart .left:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  //left: -1px !important;
+  //border-right: 1px solid rgba(185,183,175,1);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.jOrgChart .right:before {
+  content: '';
+  position: absolute;
+  left: -0.5px !important;
+  width: 200%;
+  height: 100%;
+  border-left: 1px solid rgba(185,183,175,1);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.jOrgChart .line2 {
+  .px2rem(width, 0.5);
+  border-left: 1px solid rgba(185,183,175,1);
+}
+
+.jOrgChart table tbody tr {
+  .px2rem(height, 30);
+}
+
+.node a {
+  .px2rem(font-size, 32);
+}
+
+/* node cell */
+.jOrgChart td {
+  text-align: -webkit-center;
+  vertical-align: top;
+  padding: 0;
+}
+
+.orgChart {
+  width: 100%;
+  height: 100%;
+  //display: flex;
+  .px2rem(margin-top,80);
+  //align-items: center;
+  //justify-content: center;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+
+.jOrgChart table {
+  .px2rem(width, 200);
+  margin: auto;
+}
+
+.drag-active {
+  border-style: dotted !important;
+}
+
+.drop-hover {
+  border-style: solid !important;
+  border-color: #E05E00 !important;
+}
+
+.alliance {
+  width: 10.5%;
+  height: 18%;
+  background: url('../i/alliance.png') no-repeat right bottom;
+  background-size: contain;
+  position: fixed;
+  right: 2%;
+  top: 0;
+  z-index: 10;
+}
+
+/*.node{
+  position: relative;
+  z-index:0;
+}*/
+.jOrgChart .node .firstGrade {
+  color: rgba(255, 247, 221, 1);
+  cursor: pointer !important;
+  .px2rem(font-size, 40);
+  display: inline-block;
+  text-align: center;
+  .px2rem(height, 115);
+  .px2rem(width, 394);
+  .px2rem(line-height, 106);
+  z-index: 10;
+  text-align: center;
+  background: url('../i/firstGrade.png') no-repeat left top;
+  background-size: contain;
+  z-index: 2;
+}
+
+.jOrgChart .node .thirdGrade {
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer !important;
+  .px2rem(font-size, 28);
+  display: inline-block;
+  text-align: center;
+  .px2rem(height, 200);
+  .px2rem(line-height, 34);
+  .px2rem(width, 58);
+  word-wrap: break-word;
+  .px2rem(letter-spacing, 20);
+  .px2rem(padding-left, 12.5);
+  text-align: center;
+  background: url('../i/thirdGrade.png') no-repeat left top;
+  background-size: contain;
+  .px2rem(padding-top, 36);
+  z-index: 2;
+}
+
+.jOrgChart .node .secondGrade {
+  color: rgba(255, 247, 221, 1);
+  /*text-shadow: 0 0 10px rgba(218,138,44,1);*/
+  cursor: pointer !important;
+  .px2rem(font-size, 32);
+  display: inline-block;
+  .px2rem(width, 256);
+  text-align: center;
+  .px2rem(height, 257);
+  .px2rem(line-height, 257);
+  text-align: center;
+  background: url('../i/secondGrade.png') no-repeat left top;
+  background-size: contain;
+  z-index: 2;
+}
+
+/*气泡弹窗*/
+.bubbleBox {
+  text-align: justify;
+  /*.px2rem(top, 180);*/
+  left:-66%;
+  .px2rem(width, 512);
+  color: rgba(255, 248, 164, 1);
+  background: url(../i/bubbleBox.png) no-repeat center;
+  background-size: 100% 100%;
+  padding: 10px 10px 20px 10px;
+  z-index: 9999 !important;
+  letter-spacing: normal !important;
+}
+
+.bubbleBox .bubbleTitle {
+  width: 100%;
+  .px2rem(height, 56);
+  text-align: center;
+  .px2rem(line-height, 56);
+  .px2rem(font-size, 32);
+}
+
+.bubbleBox .bubbleTitle .span2 {
+  color: rgba(255, 255, 255, 1);
+  .px2rem(margin-left, 30);
+}
+
+.bubbleBox p {
+  width: 100%;
+  .px2rem(line-height, 38);
+  .px2rem(font-size, 24);
+}
+
+.bubbleBox p span {
+  color: rgba(255, 255, 255, 1);
+}
+
+.super {
+  position: relative;
+}
+
+.bubbleBox {
+  position: absolute;
+}
+/*chrome 定义滚动条样式，现页面上未用到*/
+::-webkit-scrollbar {
+  display: block;
+  .px2rem(width, 16);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  .px2rem(border-radius, 12);
+  background-color: rgba(94,97,110,1);
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  .px2rem(height, 8);
+  .px2rem(border-radius, 4);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  /*线性渐变*/
+  background: -webkit-linear-gradient(#d9c98c, #d4a567); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#d9c98c, #d4a567); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#d9c98c, #d4a567); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#d9c98c, #d4a567); /* 标准的语法 */
+}

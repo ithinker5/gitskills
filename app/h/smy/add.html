@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/laffiche.css">
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <title>发布会议纪要</title>
+</head>
+<body>
+<div class="changeBox lafficheAdd userSelect">
+  <header>
+    <p class="title">发布</p>
+    <div class="btnBack"></div>
+  </header>
+  <div class="contentBox">
+    <div class="form-item form-item0">
+      <label>会议名称：</label>
+      <input type="text" class="textAdd input-text" id="name" maxlength="25" placeholder="请输入会议名称">
+    </div>
+    <div class="form-item form-item3">
+      <label>会议内容：</label>
+      <textarea id="content" class="fileTextAdd input-text"></textarea>
+    </div>
+    <div class="form-item form-item4" id="file_c" style="position: relative;">
+      <label>上传附件：</label>
+      <div id="fileContainer" style="display: inline-block">
+        <div class="item">
+          <label for="file" class="fileText">选择文件</label>
+        </div>
+      </div>
+      <input type="file" id="file" name="filename" style="display: none">
+    </div>
+  </div>
+  <footer>
+    <div class="buttons">
+      <input id="submit" class="btnStyle subBtn" type="button" value="提&nbsp;&nbsp;交"/>
+    </div>
+  </footer>
+</div>
+<div class="feehideBox"></div>
+<script type="text/javascript" src="../../vendors/jquery.min.js"></script>
+<script type="text/javascript" src="../../vendors/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../dist/s/mid.js"></script>
+<script type="text/javascript" src="../../dist/s/smy.js"></script>
+<script src="../../dist/ctrl/smy/add.js"></script>
+<script src="../../dist/ctrl/common.js"></script>
+</body>
+</html>

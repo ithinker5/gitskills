@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/sx.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <script src="../vendors/art-template.js"></script>
+  <title>发布私信</title>
+</head>
+<body class="userSelect">
+<div class="changeBox changeBoxMessage">
+  <header>
+    <p class="title">私信管理</p>
+    <div class="btnBack"></div>
+  </header>
+  <div class="contentBox" id="boxContainer"></div>
+  <footer>
+    <div class="buttons" style="width: 97%;justify-content: flex-end">
+      <input id="submit" class="btnStyle" type="button" value="发送"/>
+    </div>
+  </footer>
+  <script id="container" type="text/html">
+    {{if manager}}
+    <div class="leftContainer">
+      <div class="users">
+        {{if userList.length<1}}
+        <div class="item clearFix">
+          <div class="name">暂无数据</div>
+        </div>
+        {{/if}}
+        {{each userList value index}}
+        {{if value.sender._id==currentUser}}
+        <div class="item clearFix active" data-id={{value.sender._id}} data-name={{value.sender.name}} >
+          {{else}}
+          <div class="item clearFix" data-id={{value.sender._id}} data-name={{value.sender.name}} >
+          {{/if}}
+          <div class="name">{{(value.sender&&value.sender.name)?value.sender.name:'未命名'}}</div>
+            {{if !((value.sender._id==currentUser)||(value.count<1))}}
+          <div class="bedge">{{value.count>10?'10+':value.count}}</div>
+            {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="rightContainer">
+      <div class="name">{{currentName}}</div>
+      <div class="history">
+        {{if !dataObj.hasHistory }}
+        <div class="item">
+          <div class="time" style="color: white">
+            暂无数据
+          </div>
+        </div>
+        {{else}}
+        {{each dataObj.privateMsgList item index}}
+        <div class="item">
+          <div class="time">
+            <div class="text">{{index}}</div>
+          </div>
+          {{each item value index}}
+          {{if user_id==value.sender._id}}
+          <div class="info right clearFix">
+            {{else}}
+            <div class="info left clearFix">
+              {{/if}}
+              <div class="icon">
+                {{if !value.sender.avatar||(value.sender.avatar==1)}}
+                <img src="../i/head1.png">
+                {{else if value.sender.avatar==2}}
+                <img src="../i/head2.png">
+                {{else if value.sender.avatar==3}}
+                <img src="../i/head3.png">
+                {{else if value.sender.avatar==4}}
+                <img src="../i/head4.png">
+                {{else if value.sender.avatar==5}}
+                <img src="../i/head5.png">
+                {{else if value.sender.avatar==6}}
+                <img src="../i/head6.png">
+                {{else if value.sender.avatar==7}}
+                <img src="../i/head7.png">
+                {{else if value.sender.avatar==8}}
+                <img src="../i/head8.png">
+                {{else}}
+                <img src={{value.sender.avatar|changeChart}} >
+                {{/if}}
+              </div>
+              <div class="text">
+                <pre>{{@value.content}}</pre>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          {{/each}}
+          {{/if}}
+        </div>
+        {{if userList.length<1}}
+        <textarea class="message input-text" readonly style="outline: none"></textarea>
+        {{else}}
+        <textarea class="message input-text" id="mangerSend"></textarea>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="name">{{dataObj.receiver.name}}</div>
+    <div class="history">
+      {{if !dataObj.hasHistory}}
+      <div class="item">
+        <div class="time" style="color: white">
+          暂无数据
+        </div>
+      </div>
+      {{else}}
+      {{each dataObj.privateMsgList item index}}
+      <div class="item">
+        <div class="time">
+          <div class="text">{{index}}</div>
+        </div>
+        {{each item value index}}
+        {{if user_id==value.sender._id}}
+        <div class="info right clearFix">
+          {{else}}
+          <div class="info left clearFix">
+          {{/if}}
+            <div class="icon">
+              {{if !value.sender.avatar||(value.sender.avatar==1)}}
+              <img src="../i/head1.png">
+              {{else if value.sender.avatar==2}}
+              <img src="../i/head2.png">
+              {{else if value.sender.avatar==3}}
+              <img src="../i/head3.png">
+              {{else if value.sender.avatar==4}}
+              <img src="../i/head4.png">
+              {{else if value.sender.avatar==5}}
+              <img src="../i/head5.png">
+              {{else if value.sender.avatar==6}}
+              <img src="../i/head6.png">
+              {{else if value.sender.avatar==7}}
+              <img src="../i/head7.png">
+              {{else if value.sender.avatar==8}}
+              <img src="../i/head8.png">
+              {{else}}
+              <img src={{value.sender.avatar|changeChart}} >
+              {{/if}}
+            </div>
+          <div class="text"><pre>{{@value.content}}</pre></div>
+        </div>
+        {{/each}}
+      </div>
+        {{/each}}
+      {{/if}}
+    </div>
+    </div>
+    </div>
+    <textarea class="message input-text" id="send"></textarea>
+    {{/if}}
+  </script>
+  <div class="feehideBox"></div>
+  <script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+  <script src="../dist/s/mid.js"></script>
+  <script src="../dist/s/message.js"></script>
+  <script type="text/javascript" src="../dist/ctrl/common.js"></script>
+  <script type="text/javascript" src="../dist/ctrl/message.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/reset.css"/>
+  <link rel="stylesheet" href="../c/task.css"/>
+  <link rel="stylesheet" href="../c/common.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>编辑战略任务</title>
+</head>
+<body>
+<div class="changeBoxTask userSelect">
+  <div class="boxTask">
+    <header>
+      <p class="taskTitle">编辑任务</p>
+      <div class="btnBack"></div>
+    </header>
+    <div class="taskcontentBox">
+      <div class="form-item">
+        <label style="width:9.8rem ;">联盟战略任务</label>
+      </div>
+      <div class="form-item">
+        <label>任务名称：</label>
+        <input type="text" id="title" name="title" class="taskName"  maxlength="25" placeholder="请输入任务名称">
+      </div>
+      <div class="form-item task-item1">
+        <label>任务目标：</label>
+        <textarea id="desc" class="taskTarget"></textarea>
+      </div>
+      <div class="form-item taskAddDetail clearFix">
+        <div class="leftContent">
+          <div class="taskAddItem">
+            <label>任务等级：</label>
+            <div class="select_box">
+              <span class="unfold"></span>
+              <input id="taskLevel" data-value="1" name="taskLevel" class="taskLevel selest" type="text"
+                     value="1级" readonly="readonly">
+              <ul class="select_ul">
+                <li value="1">1级</li>
+                <li value="2">2级</li>
+                <li value="3">3级</li>
+                <li value="4">4级</li>
+                <li value="5">5级</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rightContent">
+          <div class="taskAddItem">
+            <label>要求完成日期：</label>
+            <div class="deadline">
+              <input type="date" id="deadline" name="deadline">
+              <!--<span class="adddata" for="deadline"></span>-->
+            </div>
+          </div>
+          <div class="taskAddItem clearFix" id="file_c">
+            <label>文件：</label>
+            <div id="fileContainer">
+              <div class="item">
+                <label for="file" class="fileText">选择文件</label>
+              </div>
+            </div>
+            <input type="file" id="file" name="filename" style="display: none">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-item taskFactions clearFix" id="leaderRequire">
+        <label for="factions" class="text">指定帮会：</label>
+        <div id="factions"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footerError" id="footerError">要求完成日期必须大于当前日期！</div>
+      <input id="submit" class="btnStyle subBtn2" type="button" value="重新发布"/>
+    </div>
+  </div>
+
+</div>
+<div class="feehideBox"></div>
+<script src="../vendors/jquery.min.js"></script>
+<script src="../vendors/ajaxfileupload.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/task.js"></script>
+<script src="../dist/ctrl/strategyTaskEdit.js"></script>
+</body>
+</html>

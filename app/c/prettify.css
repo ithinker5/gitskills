@@ -1,0 +1,540 @@
+@charset "utf-8";
+body,
+html,
+div,
+p,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+html {
+  overflow-y: hidden !important;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: white;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-weight: lighter;
+}
+body p {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-size: 0.60335205rem;
+}
+body p a {
+  color: #10102D;
+  font-size: 0.6895452rem;
+}
+h1 {
+  color: #E05E00;
+  font-style: italic;
+}
+a {
+  color: #10102D;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+/* general */
+.clear {
+  clear: both;
+}
+.leader {
+  color: plum;
+}
+.boxTop {
+  width: 100%;
+  height: 100%;
+}
+.blackBox {
+  display: block;
+  width: 100%;
+  height: 10%;
+}
+.box2 {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.box li {
+  line-height: 40px;
+  font-size: 32px;
+}
+.goBack {
+  width: 4.74062326rem;
+  height: 5.17158901rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  /*.px2rem(left, 25);
+  .px2rem(top, 28);*/
+  display: inline-block;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.goBack:hover {
+  cursor: pointer;
+  background: url(../i/goBack2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.goBack:active {
+  cursor: pointer;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 85%;
+  width: 4.74062326rem;
+  height: 5.17158901rem;
+}
+.goBack2 {
+  width: 3.53391916rem;
+  height: 3.96488491rem;
+  position: absolute;
+  left: 1.29289725rem;
+  top: 1.3790904rem;
+  background: url(../i/goBack2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.borderBox {
+  width: 50.59537919rem;
+  height: 27.40942177rem;
+  padding-top: 5.17158901rem;
+  padding-bottom: 1.723863rem;
+  padding-left: 2.84437396rem;
+  padding-right: 2.84437396rem;
+  font-size: 0.8619315rem;
+  text-align: center;
+  background: url('../i/task.png') no-repeat;
+  background-size: 100%;
+  margin: auto;
+}
+.dis_n {
+  display: none !important;
+}
+/*  人员架构  */
+/* Basic styling */
+/* Draw the lines */
+#org {
+  display: none;
+}
+.jOrgChart .line {
+  height: 3.530567rem;
+  width: 1px;
+}
+.jOrgChart .down {
+  background-color: #b9b7af;
+  margin: 0 auto;
+}
+.jOrgChart .top {
+  border-top: 1px solid #b9b7af;
+}
+/*.jOrgChart .left {
+  border-right:0.5px solid #747474;
+}
+
+.jOrgChart .right {
+  border-left:0.5px solid #747474;
+}*/
+.jOrgChart .left,
+.jOrgChart .right {
+  position: relative;
+}
+/*.jOrgChart .left:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  border-right: 1px solid #747474;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+.jOrgChart .right:before {
+  content: '';
+  position: absolute;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #b9b7af;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.jOrgChart .line2 {
+  width: 0.02154829rem;
+  border-left: 1px solid #b9b7af;
+}
+/*.jOrgChart table tbody tr{
+  .px2rem(height,30);
+}*/
+.node a {
+  font-size: 1.3790904rem;
+}
+/* node cell */
+.jOrgChart td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+}
+.orgChart {
+  width: 100%;
+  height: 100%;
+  margin-top: 5.17158901rem;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+.jOrgChart .node2 {
+  cursor: pointer !important;
+  font-size: 1.3790904rem;
+  display: inline-block;
+  width: 11.98084788rem;
+  height: 5.99042394rem;
+  z-index: 10;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+.jOrgChart .node .firstNode {
+  cursor: pointer !important;
+  font-size: 1.3790904rem;
+  display: inline-block;
+  width: 14.37701746rem;
+  height: 7.18850873rem;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+.jOrgChart .node .secondNode {
+  cursor: pointer !important;
+  font-size: 1.3790904rem;
+  display: inline-block;
+  width: 11.98084788rem;
+  height: 5.99042394rem;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+.jOrgChart .node .thirdNode {
+  cursor: pointer !important;
+  font-size: 1.3790904rem;
+  display: inline-block;
+  width: 10.084678rem;
+  height: 4.79233915rem;
+  z-index: 1;
+  text-align: center;
+  position: relative;
+  background: url('../i/perBox.png') no-repeat left top;
+  background-size: 100% 100%;
+}
+.jOrgChart table {
+  width: 12.49800678rem;
+  position: relative !important;
+  margin: auto;
+}
+.markright {
+  height: 1.93934588rem;
+}
+.jOrgChart .firstNode .head,
+.jOrgChart .secondNode .head,
+.jOrgChart .thirdNode .head,
+.jOrgChart .node2 .head {
+  display: inline-block;
+  width: 4.99920271rem;
+  height: 5.47326504rem;
+  position: absolute;
+  left: 0.21548288rem;
+  bottom: 0.21548288rem;
+}
+.jOrgChart .firstNode .head {
+  width: 5.94732737rem;
+  height: 6.55067942rem;
+  left: 0.30167603rem;
+  bottom: 0.25857945rem;
+}
+.jOrgChart .thirdNode .head {
+  width: 4.121788rem;
+  height: 4.39585066rem;
+  left: 0.21548288rem;
+  bottom: 0.1723863rem;
+}
+.jOrgChart .firstNode .grade,
+.jOrgChart .secondNode .grade,
+.jOrgChart .thirdNode .grade,
+.jOrgChart .node2 .grade {
+  display: inline-block;
+  width: 4.65443011rem;
+  height: 1.0343178rem;
+  line-height: 1.0343178rem;
+  position: absolute;
+  left: 0.21548288rem;
+  bottom: 0.21548288rem;
+  background: rgba(19, 19, 21, 0.75);
+  color: #ffffe4;
+  font-size: 0.8619315rem;
+  z-index: 99;
+  text-align: left;
+  padding-left: 0.3447726rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.jOrgChart .firstNode .grade {
+  width: 5.68874792rem;
+  height: 1.2067041rem;
+  line-height: 1.29289725rem;
+  left: 0.30167603rem;
+  bottom: 0.25857945rem;
+  font-size: 0.94812465rem;
+}
+.jOrgChart .thirdNode .grade {
+  width: 3.820112rem;
+  height: 0.94812465rem;
+  left: 0.1723863rem;
+  bottom: 0.1723863rem;
+  font-size: 0.77573835rem;
+}
+.jOrgChart .firstNode .intro,
+.jOrgChart .secondNode .intro,
+.jOrgChart .thirdNode .intro,
+.jOrgChart .node2 .intro {
+  width: 6.37829312rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  text-align: left;
+  position: absolute;
+  left: 5.34397531rem;
+  top: 2.06863561rem;
+  line-height: inherit;
+  height: 3.53391916rem;
+  color: #ffffff;
+  font-size: 0.94812465rem;
+  overflow: hidden;
+  padding-right: 0.25857945rem !important;
+}
+.jOrgChart .firstNode .intro {
+  width: 8.1452527rem;
+  height: 3.53391916rem;
+  line-height: 1.29289725rem;
+  left: 6.37829312rem;
+  top: 2.15482876rem;
+  font-size: 0.94812465rem;
+}
+.jOrgChart .thirdNode .intro {
+  width: 4.99920271rem;
+  height: 2.833919rem;
+  left: 4.509658rem;
+  top: 1.68076643rem;
+  font-size: 0.77573835rem;
+}
+.jOrgChart .firstNode .title,
+.jOrgChart .secondNode .title,
+.jOrgChart .thirdNode .title,
+.jOrgChart .node2 .title {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  color: #fff7dd;
+  text-shadow: 0 0 10px #da8a2c;
+  position: absolute;
+  top: 0.56025548rem;
+  left: 5.25778216rem;
+  font-size: 1.0343178rem;
+}
+.jOrgChart .firstNode .title {
+  top: 0.64644863rem;
+  left: 6.37829312rem;
+  font-size: 1.12051095rem;
+}
+.jOrgChart .thirdNode .title {
+  top: 0.43096575rem;
+  left: 4.22346436rem;
+  font-size: 0.94812465rem;
+}
+.jOrgChart .firstNode .title .name,
+.jOrgChart .secondNode .title .name,
+.jOrgChart .thirdNode .title .name,
+.jOrgChart .node2 .title .name {
+  font-size: 0.8619315rem;
+  color: #fff7dd;
+  margin-left: 0.3447726rem;
+  text-shadow: 0 0 0 rgba(255, 247, 221, 0);
+}
+.jOrgChart .firstNode .title .name {
+  font-size: 0.94812465rem;
+}
+.jOrgChart .thirdNode .title .name {
+  font-size: 0.77573835rem;
+}
+.jOrgChart .firstNode .add,
+.jOrgChart .secondNode .add,
+.jOrgChart .thirdNode .add,
+.jOrgChart .node2 .add {
+  width: 0.8619315rem;
+  height: 0.8619315rem;
+  display: inline-block;
+  position: absolute;
+  bottom: -0.47406233rem;
+  left: 5.55945819rem;
+  z-index: 99;
+  cursor: pointer !important;
+}
+.jOrgChart .firstNode .add {
+  bottom: -0.47406233rem;
+  left: 6.80925887rem;
+}
+.jOrgChart .node:nth-of-type(2) {
+  position: absolute;
+  top: -0.21548288rem;
+  left: 4.05107806rem;
+}
+.jOrgChart .node .head img,
+.jOrgChart .node2 .head img {
+  width: 100%;
+  height: 100%;
+}
+/*.node-cells:nth-of-type(1) .node{border: 4px solid #7DC7DA;}*/
+/* jQuery drag 'n drop */
+.drag-active {
+  border-style: dotted !important;
+}
+.drop-hover {
+  border-style: solid !important;
+  border-color: #E05E00 !important;
+}
+.textBox {
+  min-width: 300px !important;
+  background: #62C462;
+  position: absolute;
+  top: 0;
+  left: 8.61931502rem;
+  line-height: 1.723863rem;
+  padding-top: 0.5171589rem;
+  padding-left: 0.5171589rem;
+  padding-bottom: 0.5171589rem;
+  padding-right: 0.5171589rem;
+}
+.alliance {
+  width: 10.5%;
+  height: 18%;
+  background: url('../i/alliance.png') no-repeat right bottom;
+  background-size: contain;
+  position: fixed;
+  right: 2%;
+  top: 0;
+  z-index: 10;
+}
+/*气泡弹窗*/
+.bubbleBox {
+  text-align: justify;
+  left: -40%;
+  width: 22.06544646rem;
+  word-wrap: break-word;
+  color: #fff8a4;
+  background: url(../i/bubbleBox.png) no-repeat center;
+  background-size: 100% 100%;
+  padding: 10px 10px 20px 10px;
+  z-index: 9999 !important;
+  letter-spacing: normal !important;
+}
+.bottom80 {
+  bottom: 80%;
+}
+.bubbleBox .bubbleTitle {
+  width: 100%;
+  height: 2.41340821rem;
+  text-align: center;
+  line-height: 2.41340821rem;
+  font-size: 1.3790904rem;
+  background: url("../i/nameLine.png") no-repeat;
+  -ms-background-position-y: bottom;
+  background-position-y: bottom;
+  background-position-x: center;
+  -moz-background-position-x: center;
+  -ms-background-position-x: center;
+}
+.bubbleBox .yqPerson {
+  color: #ffffff;
+  width: 100%;
+  margin-top: 0.64644863rem;
+  margin-left: 0.64644863rem;
+  word-wrap: break-word;
+}
+.bubbleBox .yqPerson span {
+  display: inline-block;
+  font-size: 1.29289725rem;
+  margin-bottom: 0.3447726rem;
+}
+.super {
+  position: relative;
+}
+.bubbleBox {
+  position: absolute;
+}
+/*chrome 定义滚动条样式，现页面上未用到*/
+::-webkit-scrollbar {
+  display: block;
+  width: 0.6895452rem;
+  border-radius: 0.5171589rem;
+  background-color: #5e616e;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5171589rem;
+  background-color: #5e616e;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-thumb {
+  height: 0.3447726rem;
+  border-radius: 0.1723863rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  /*线性渐变*/
+  background: -webkit-linear-gradient(#d9c98c, #d4a567);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#d9c98c, #d4a567);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#d9c98c, #d4a567);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#d9c98c, #d4a567);
+  /* 标准的语法 */
+}

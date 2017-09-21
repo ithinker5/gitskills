@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <!--<link rel="stylesheet" href="../c/bootstrap.min.css" />-->
+  <link rel="stylesheet" href="../c/reset.css"/>
+  <link rel="stylesheet" href="../c/common.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>任务列表</title>
+  <style>
+
+    .boxListInfo .dataTables_scrollBody{height: 22.5rem;}
+    .tab-pane {background: rgba(59, 59, 59, 0.64);}
+    .boxListInfo{height:100%; !important;}
+    .boxListTitle{height:9.2% !important;}
+    .tab-content{height:90.8% !important;}
+  </style>
+</head>
+<body>
+<div class="box" id="box">
+  <div class="blackBox"></div>
+  <div class="tabTitle">
+    <img class="tabImg" src="../i/boxTop2.png"/>
+    <div class="tabText"></div>
+    <a href="javascript:void(0);" class="Back"></a>
+  </div>
+  <div class="changeInfo">
+    <div class="boxBorder">
+      <div class="boxInfo fl">
+        <p>帮会名称：<span class="factionName"></span></p>
+        <p class="fl bhInfo">帮&nbsp;&nbsp;主：<span class="factionBoss"></span></p>
+        <p class="fl">帮会人数：<span class="factionNum"></span></p>
+        <div class="clear"></div>
+        <p class="fl numInfo">VC总数：<span class="factionVc"></span></p>
+        <p class="fl">金币：<span class="factionMoney"></span></p>
+        <div class="clear"></div>
+        <div><span class="fl">部门组织架构：</span>
+          <div class="clear"></div>
+          <p class="factionOrg"></p></div>
+        <p>帮会简介：<span class="factionIntro"></span></p>
+      </div>
+      <div class="boxListInfo panel-body fl" id="boxList">
+        <div class="boxListTitle">成员列表</div>
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="tab1">
+            <table id="accountTable1" class="table table-striped"></table>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="boxBottom">
+      <button class="btn bhtask">帮会任务</button>
+      <button class="btn fbtask">发布任务</button>
+    </div>
+    <!--<div class="boxBottom"></div>-->
+  </div>
+  <div class="faction">
+    <div class="factionAffiche">
+      <a class="factionImg weChat"></a>
+      <span>帮会公告</span>
+    </div>
+    <div class="bhOrgan">
+      <a class="factionImg weChat"></a>
+      <span>帮会架构</span>
+    </div>
+    <div class="bhFramework">
+      <a class="factionImg weChat"></a>
+      <span>人员架构</span>
+    </div>
+  </div>
+  <!--<div class="factionAffiche">帮会公告</div>-->
+</div>
+</body>
+<script type="text/javascript" src="../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../vendors/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../vendors/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="../j/ctrl/getData.js"></script>
+<script src="../dist/s/mid.js"></script>
+<script src="../dist/s/faction.js"></script>
+<script src="../dist/ctrl/bDetail.js"></script>
+</html>

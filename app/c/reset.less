@@ -1,0 +1,2234 @@
+@charset "utf-8";
+@baseFontSize: 21.2037;
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+body, html, div, p, span, a, h1, h2, h3, h4, h5, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  font-weight: lighter;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body p {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+body input {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+body p a {
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  color: #10102D;
+  .px2rem(font-size, 16);
+}
+
+h1 {
+  color: #E05E00;
+  font-style: italic;
+}
+
+a {
+  color: #393c3d;
+  text-decoration: none;
+}
+
+i {
+  font-style: normal !important;
+}
+
+li {
+  list-style: none;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* general */
+.clear {
+  clear: both;
+}
+
+.dis_n {
+  display: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.leader {
+  color: plum;
+}
+
+/*
+.boxTop {
+  width: 100%;
+  height: 100%;
+}
+*/
+
+.blackBox {
+  display: block;
+  width: 100%;
+  height: 12%;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  //background: url('../i/bg1.png') no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  text-align: -webkit-center;
+  position: relative;
+  margin: auto;
+}
+
+.boxTop{
+  width:100%;
+  height:5.2%;
+  background: rgba(0,0,0,0);
+  position: relative;
+}
+.tabTitle {
+  width: 100%;
+  .px2rem(height, 30);
+  //height:25%;
+  text-align: center;
+  background: url("../i/boxTop.png") no-repeat center;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.tabText {
+  .px2rem(width, 463);
+  height:100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  .px2rem(font-size, 32);
+  color: rgba(70, 76, 88, 1);
+  left: 50%;
+  .px2rem(margin-left, -231);
+  //.px2rem(margin-top, -50);
+  font-weight: 900;
+  z-index: 999;
+}
+.tabText span{
+  margin-top: 2%;
+  display: inline-block;
+}
+.boxTop .tabImg {
+  .px2rem(width, 463);
+  height: 100%;
+  //.px2rem(height, 60);
+  position: absolute;
+  //top: 50%;
+  //left: 50%;
+  .px2rem(margin-left, -231);
+  bottom: 0;
+  z-index: 99;
+}
+
+table.dataTable thead .sorting_asc:after {
+  content: "";
+}
+
+.box li {
+  line-height: 40px;
+  .px2rem(font-size, 32);
+}
+
+.Back {
+  .px2rem(width, 43);
+  .px2rem(height, 43);
+  position: absolute;
+  .px2rem(right, 50);
+  bottom: -12%;
+  display: inline-block;
+  background: url(../i/back.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 99;
+  &:hover {
+    cursor: pointer;
+    background: url(../i/back2.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  &:active {
+    cursor: pointer;
+    background: url(../i/back.png) no-repeat center;
+    .px2rem(width, 43);
+    .px2rem(height, 43);
+    background-size: 85%;
+  }
+}
+
+.goBack {
+  .px2rem(width, 95);
+  .px2rem(height, 81);
+  position: absolute;
+  .px2rem(left, 30);
+  .px2rem(top, 30);
+  display: inline-block;
+  background: url(../i/goBack.png) no-repeat center;
+  background-size: 100% 100%;
+  &:hover {
+    cursor: pointer;
+    background: url(../i/goBack2.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  &:active {
+    cursor: pointer;
+    background: url(../i/goBack.png) no-repeat center;
+    .px2rem(width, 95);
+    .px2rem(height, 81);
+    background-size: 85%;
+  }
+}
+/*表格列表颜色*/
+.dataTables_scrollHead{
+  background: rgba(86,92,105,1);
+}
+.dataTables_scrollBody{
+  background: rgba(62,67,80,1);
+}
+#lmMember_wrapper,#lmMember_wrapper .row:nth-of-type(2),#lmMember_wrapper .row .col-sm-12,#lmMember_wrapper .row .col-sm-12 .dataTables_scroll{
+  height:100%;
+}
+#accountTable1_wrapper,#accountTable1_wrapper .row:nth-of-type(2),#accountTable1_wrapper .row .col-sm-12,#accountTable1_wrapper .row .col-sm-12 .dataTables_scroll{
+  height:100%;
+}
+.memberInfo .dataTables_scrollHead{
+  background: rgba(79,83,96,1);
+  //height:10% !important;
+}
+.memberInfo .dataTables_scrollBody{
+  background: rgba(46,50,60,1);
+  //height:90% !important;
+}
+.boxBottom2,.boxBottom,boxBottom3{
+  background: rgba(86,92,105,1);
+}
+/*--------------------------------------------------表格--------------------------------------------------------*/
+.change {
+  //.px2rem(width,1800);
+  .px2rem(height, 680);
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  position: relative;
+}
+
+.changeInfo {/*bDetail*/
+  .px2rem(height, 680);
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  position: relative;
+  background: rgba(98, 98, 99, 0.5);
+  .px2rem(padding-top, 60);
+  .px2rem(padding-bottom, 140);
+}
+
+.boxListInfo .dataTables_scrollBody {/*bDetail*/
+  //.px2rem(height, 480);
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  overflow: auto;
+}
+
+.dataTables_scrollBody {
+  //.px2rem(height, 720);
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  overflow: auto;
+}
+
+.tab-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+.dataTables_scrollBody::-webkit-scrollbar {
+  .px2rem(width, 8);
+  height: 100%;
+  .px2rem(border-radius, 8);
+  background-color: #f5f5f5;
+}
+
+/*定义滚动条的轨道，内阴影及圆角*/
+.dataTables_scrollBody::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  .px2rem(border-radius, 8);
+  background-color: #f5f5f5;
+}
+
+/*定义滑块，内阴影及圆角*/
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+  /*width: 10px;*/
+  .px2rem(height, 8);
+  .px2rem(border-radius, 8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgba(54, 54, 54, .5);
+}
+
+.tabList {/*taskListR*/
+  .px2rem(margin-left, 20);
+  .px2rem(padding-top, 15);
+  .px2rem(padding-bottom, 15);
+  /*position:fixed;*/
+}
+
+.tabList .tlist span {
+  color: #888;
+  .px2rem(font-size, 28);
+  position: absolute;
+  top: 0;
+  .px2rem(right, -8);
+}
+
+.tabList li {
+  .px2rem(width, 160);
+  .px2rem(height, 30);
+  .px2rem(line-height, 30);
+  .px2rem(font-size, 28);
+  text-align: center;
+  float: left;
+  cursor: pointer;
+  color: #7f7f7f;
+  font-weight: 900;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.topbar div > ul, .nav {/*表格头部切换样式，bootstrap dataTables覆盖默认*/
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+  position: relative;
+  left: 0;
+}
+
+.topbar div > ul > li, .nav > li {
+  display: block;
+  float: left;
+}
+
+.topbar div > ul .active > a, .nav .active > a {
+  color: rgba(255, 247, 221, 10);
+  text-shadow: 0 0 10px rgba(218, 138, 44, 1);
+  font-weight: 900;
+  .px2rem(padding-bottom, 10);
+  background: rgba(73, 73, 73, 1);
+}
+
+.topbar div > ul a, .nav a {
+  display: inline-block;
+  color: rgba(57, 60, 61, 1);
+  .px2rem(width, 180);
+  .px2rem(height, 56);
+  .px2rem(line-height, 70);
+  text-align: center;
+  font-weight: 900;
+  border-right: 2px solid rgba(145, 145, 145, 0.45) !important;
+  border-bottom: 2px solid rgba(78,82,91,1);
+  .px2rem(padding-bottom, 10);
+  background: rgba(98, 98, 98, 0.5);
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+  display: block;
+  float: none;
+}
+
+.table tbody tr {
+  .px2rem(heigth, 66) !important;
+  .px2rem(line-height, 66);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid rgba(78, 82, 91, 1) !important;
+  border-top: 2px solid rgba(78, 82, 91, 1) !important;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.dataTables_scrollHeadInner {
+  box-sizing: content-box !important;
+  width: 100% !important;
+  padding-right: 17px !important;
+}
+
+.tab-content > .active, .pill-content > .active {
+  display: block;
+}
+
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+  padding-right: 0;
+}
+
+.dataTables_scrollHeadInner table {
+  width: 100% !important;
+  border-collapse: collapse;
+}
+
+table.dataTable {
+  margin-top: 0 !important;
+  border-collapse: collapse !important;
+}
+
+.table thead {
+  color: rgba(255, 239, 185, 1);
+  .px2rem(height, 78);
+  .px2rem(font-size, 30);
+  .px2rem(line-height, 78);
+  font-weight: 100;
+  /*.px2rem(height,88);
+  .px2rem(font-size,38);
+  .px2rem(line-height,88);*/
+  //background: rgba(165, 165, 165, 0.5);
+}
+
+.table tbody {
+  color: rgba(203, 219, 226, 1);
+  .px2rem(height, 38);
+  .px2rem(line-height, 38);
+}
+/*boxListInfo bDetail*/
+.boxListInfo .dataTables_scrollBody::-webkit-scrollbar {
+  .px2rem(height, 480);
+  width: 0;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar {
+  .px2rem(height, 720);
+  width: 0;
+}
+
+.table tbody tr td {
+  .px2rem(height, 48);
+  .px2rem(line-height, 48);
+  .px2rem(font-size, 28);
+  //.px2rem(font-size,32);
+}
+
+.table tbody tr td img {
+  .px2rem(width, 18);
+  .px2rem(height, 26);
+  vertical-align: middle;
+  .px2rem(margin-bottom, 3);
+}
+
+/*.table tbody tr td:nth-of-type(1){
+  .px2rem(font-size,22);
+}*/
+/*.table tbody tr td:nth-of-type(2){
+  .px2rem(max-width,248);
+  .px2rem(font-size,22);
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  .px2rem(margin-right,-80);
+}*/
+
+.table tbody tr td .btndetail {
+  border: none;
+  outline: none;
+  color: rgba(247, 242, 227, 1);
+  cursor: pointer;
+  font-weight: 900;
+  .px2rem(width, 90);
+  .px2rem(height, 38);
+  .px2rem(font-size, 24);
+  text-align: center;
+  .px2rem(line-height, 23);
+  background: url('../i/btn.png') no-repeat left center;
+  background-size: 100%;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  /*.px2rem(margin-left,90);*/
+}
+.table tbody tr td .btndetail:active{
+  .px2rem(width, 90);
+  .px2rem(height, 38);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.boxList {
+  width: 100%;
+  height:89%;
+}
+
+.boxListInfo {
+  width: 60.3%;
+  text-align: center;
+}
+
+.boxListTitle {
+  width: 100%;
+  .px2rem(height, 60);
+  .px2rem(line-height, 60);
+  background: rgba(19, 19, 19, 0.65);
+  color: rgba(153, 153, 153, 1);
+  .px2rem(font-size, 34);
+}
+
+/*-------------------------------------------------帮会信息详情-------------------------------------------------------*/
+.boxBorder {
+  width: 94%;
+  height: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  margin: 0 2.5%;
+  padding: 0.6%;
+}
+
+.boxInfo {
+  height: 100%;
+  width: 36%;
+  background: url("../i/boxBg.png") no-repeat center;
+  background-size: 100% 100%;
+  text-align: left;
+  margin-right: 0.5%;
+  padding: 0 1% 0 2%;
+  .px2rem(font-size, 26);
+  .px2rem(lline-height, 40);
+}
+.boxInfo p:nth-of-type(1){
+  .px2rem(margin-top,30);
+}
+.boxInfo p {
+  margin-bottom: 4%;
+}
+
+.boxInfo p span {
+  color: rgba(255, 239, 185, 1);
+}
+
+.boxInfo p {
+  color: rgba(203, 219, 226, 1);
+}
+
+.boxInfo p span.factionIntro {
+  color: rgba(203, 219, 226, 1);
+}
+
+.boxInfo div {
+  width: 100%;
+  color: rgba(203, 219, 226, 1);
+  text-align: center;
+}
+
+.boxInfo div p {
+  color: rgba(255, 239, 185, 1);
+  margin: 6% 0;
+}
+
+.bhInfo {
+  .px2rem(margin-right, 130);
+}
+
+.numInfo {
+  .px2rem(margin-right, 66);
+}
+
+.boxBottom .bhtask, .boxBottom .fbtask, .boxBottom3 .bhtask, .boxBottom3 .fbtask {
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  //height:80%;
+  /*.px2rem(line-height, 74);
+  margin-top:5%;*/
+  //.px2rem(margin-top, 30);
+  .px2rem(font-size, 32);
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.boxBottom3 .fbtask {
+  .px2rem(margin-right, 80);
+}
+.boxBottom .bhtask:active, .boxBottom .fbtask:active, .boxBottom3 .bhtask:active, .boxBottom3 .fbtask:active {
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  background-size: 80% 80%;
+}
+.boxBottom .bhtask {
+  .px2rem(margin-right, 70);
+}
+
+.task {
+  width: 8.2%;
+  height: 18%;
+  background: url('../i/task.png') no-repeat right bottom;
+  background-size: 100% 100%;
+  position: fixed;
+  right: 1%;
+  top: 0;
+  z-index: 10;
+}
+
+.alliance {
+  width: 8.8%;
+  height: 18%;
+  background: url('../i/alliance.png') no-repeat right bottom;
+  background-size: 100% 100%;
+  position: fixed;
+  right: 2%;
+  top: 0;
+  z-index: 10;
+}
+
+.change .boxBottom {
+  display: block;
+  position: absolute;
+  .px2rem(height, 30);
+  width: 100%;
+  //background: rgba(19, 19, 19, 0.45);
+}
+
+/*------------------------------------------------成员信息-------------------------------------*/
+.tab-pane {
+  height: 100%;
+  background: rgba(62,67,80,1);
+}
+
+.hint {
+  color: #393c3d;
+  position: absolute;
+  .px2rem(right, 64);
+  .px2rem(top, -80);
+  .px2rem(font-size, 32);
+}
+
+.odd:hover {
+  background: url("../i/selectHover.png") center;
+  background-size: 100% 100%;
+}
+
+.even:hover {
+  background: url("../i/selectHover.png") center;
+  background-size: 100% 100%;
+}
+
+/*------------------------------------------------公告消息-------------------------------------*/
+/*.factionAffiche {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  .px2rem(font-size, 44);
+  color: #000;
+  cursor: pointer;
+}*/
+
+/*.tab-pane-info .table2 tbody tr td:nth-of-type(2){
+  .px2rem(width,210);
+}*/
+.change2 {
+  width:98.5%;
+  height: 94.8%;
+  .px2rem(font-size, 20);
+  text-align: center;
+  margin: auto;
+  position: relative;
+}
+
+.boxLaffiche .change2 {
+  width: 98.5%;
+  height: 94.8%;
+  .px2rem(font-size, 20);
+  text-align: center;
+  margin: auto;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  position: relative;
+}
+.table2 tbody tr {
+  cursor: pointer;
+  .px2rem(heigth, 80) !important;
+  .px2rem(line-height, 80);
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid rgba(78, 82, 91, 1) !important;
+  border-top: 2px solid rgba(78, 82, 91, 1) !important;
+}
+
+table2.dataTable thead > tr > th.sorting_asc, table2.dataTable thead > tr > th.sorting_desc, table2.dataTable thead > tr > th.sorting, table2.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+  padding-right: 0;
+}
+
+.dataTables_scrollHeadInner table2 {
+  width: 100% !important;
+  border-collapse: collapse;
+}
+
+table2.dataTable {
+  margin-top: 0 !important;
+  border-collapse: collapse !important;
+  //.px2rem(height,600);
+}
+
+.table2 thead {
+  .px2rem(margin-top, -20);
+  color: rgba(255, 239, 185, 1);
+  .px2rem(height, 100);
+  .px2rem(font-size, 36);
+  .px2rem(line-height, 100);
+  //background: rgba(189, 189, 189, 0.3);
+}
+
+.table2 tbody {
+  color: rgba(203, 219, 226, 1);
+  .px2rem(height, 38);
+  .px2rem(line-height, 38);
+}
+
+.boxListInfo .dataTables_scrollBody::-webkit-scrollbar {
+  .px2rem(height, 480);
+  width: 0;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar {
+  .px2rem(height, 720);
+  width: 0;
+}
+
+.table2 tbody tr td {
+  .px2rem(font-size, 36);
+}
+
+.table2 tbody tr td img {
+  .px2rem(width, 25);
+  .px2rem(height, 36);
+  vertical-align: middle;
+  .px2rem(margin-bottom, 3);
+}
+
+
+.table2 tbody tr td .btndetail {
+  border: none;
+  outline: none;
+  color: rgba(247, 242, 227, 1);
+  cursor: pointer;
+  font-weight: 900;
+  .px2rem(width, 160);
+  .px2rem(height, 48);
+  .px2rem(font-size, 32);
+  text-align: center;
+  .px2rem(line-height, 20);
+  background: url('../i/btn.png') no-repeat left center;
+  background-size: 100%;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.table2 tbody tr td .btndetail:active{
+  .px2rem(width, 160);
+  .px2rem(height, 48);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.gBoxList {
+  width: 100%;
+  height: 94%;
+}
+
+.gBoxList2 {
+  width: 100%;
+  height: 86.5%;
+}
+
+.change2 .boxBottom {
+  display: block;
+  height: 6%;
+  width: 100%;
+  //background: rgba(19, 19, 19, 0.45);
+}
+
+.change2 .boxBottom2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11%;
+  width: 100%;
+  //background: rgba(19, 19, 19, 0.45);
+}
+
+/*------------------------------------------------按钮样式-------------------------------------*/
+.btn {
+  color: rgba(255, 247, 221, 1);
+  //text-shadow: 0 0 10px rgba(218,138,44,1);
+  outline: none;
+  .px2rem(width, 177);
+  //height:80%;
+  .px2rem(height, 74);
+  text-align: center;
+  /*.px2rem(line-height, 74);*/
+  //.px2rem(margin-top, 30);
+  //margin-top:1.5%;
+  border: 0;
+  .px2rem(font-size, 32);
+  background: url(../i/btn1.png) no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.btn:hover {
+  color: rgba(0, 0, 0, 1);
+  background: url(../i/btn2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.btn:active{
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  background-size: 80% 80%;
+}
+/*.btn2{
+  color:rgba(0,0,0,1);
+  outline: none;
+  .px2rem(width,261);
+  .px2rem(height,103.5);
+  text-align: center;
+  .px2rem(line-height,69);
+  .px2rem(margin-top,20);
+  border:0;
+  .px2rem(font-size,56);
+  background: url(../i/btn2.png) no-repeat center;
+  background-size:100% 100%;
+  cursor: pointer;
+  font-family: '华文楷体',STKaiti, '楷体', serif,'楷体_GB2312',KaiTi_GB2312 !important;
+}*/
+.deleteBtn {
+  .px2rem(margin-right, 150);
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.releaseBtn {
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  .px2rem(width, 177);
+}
+.releaseBtn:active{
+  .px2rem(width, 177);
+  .px2rem(height,74);
+  background-size: 80% 80%;
+}
+/*------------------------------------------------公告详情-------------------------------------*/
+.tab-details {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(89, 89, 89, 0.5);
+  border: 1px solid #000000;
+}
+
+.btnBack{
+  .px2rem(width, 55);
+  .px2rem(height, 55);
+  background: url(../i/backBtn.png) no-repeat center;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0.5%;
+  top: 0.5%;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.btnBack:hover {
+  .px2rem(width, 55);
+  .px2rem(height, 55);
+  background: url(../i/backBtn2.png) no-repeat center;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0.5%;
+  top: 0.5%;
+  z-index: 99;
+  cursor: pointer;
+}
+.btnBack:active{
+  .px2rem(width, 55);
+  .px2rem(height, 55);
+  background: url(../i/backBtn.png) no-repeat center;
+  background-size: 80% 80%;
+}
+/*.btnBack2 {
+  .px2rem(width, 69);
+  .px2rem(height, 69);
+  background: url(../i/backBtn2.png) no-repeat center;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 1%;
+  top: 1.4%;
+  z-index: 99;
+  cursor: pointer;
+}*/
+
+.table thead tr th img, .table2 thead tr th img {
+  vertical-align: middle;
+}
+
+.table tbody tr td img, .table2 tbody tr td img {
+  vertical-align: middle;
+}
+
+.table2 tbody tr td img.pitch {
+  .px2rem(width, 46);
+  .px2rem(height, 46);
+  margin-left: -2rem;
+  /*.px2rem(margin-right, 88);*/
+}
+.table2 thead tr th img.allPitch {
+  .px2rem(width, 46);
+  .px2rem(height, 46);
+  /*.px2rem(margin-right, 88);*/
+}
+.pitchId {
+  display: inline-block;
+  width: 3.538865rem;
+  //margin-left: -2rem;
+  vertical-align: middle;
+}
+/*.pitchId2{
+  display: inline-block;
+  width: 3.738865rem;
+}*/
+/*------------------------------------------------发布公告-------------------------------------*/
+.changeBox {
+  width: 100%;
+  height: 100%;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  text-align: center;
+  margin: auto;
+  //background-color: rgba(49, 49, 49, 0.55);
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  height: 8%;
+  .px2rem(line-height, 100);
+  text-align: center;
+  background: rgba(86,92,105,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  height: 12%;
+  .px2rem(line-height, 92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(86,92,105,1);
+}
+footer .buttons{
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  .px2rem(font-size, 42);
+  color: rgba(255, 239, 185, 1);
+  text-shadow: 0 0 0 rgba(218, 138, 44, 0);
+}
+
+.contentBox {
+  .px2rem(font-size, 36);
+  width: 100%;
+  height: 80%;
+  background: rgba(62, 67, 80, 1);
+  text-align: left;
+  overflow: auto;
+}
+
+.form-item input, .form-item div {
+  background-color: rgba(89, 89, 89, 0);
+}
+.changeBox .form-item label{
+  text-align: right;
+  .px2rem(width,200);
+  display: inline-block;
+  vertical-align: top
+}
+.form-item input, .form-item div {
+  .px2rem(font-size, 34);
+  color: rgba(255, 239, 185, 1);
+  //outline: none;
+  border: 0;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.form-item input ::-webkit-input-placeholder, .form-item div ::-webkit-input-placeholder {
+  color: rgba(255, 239, 185, 1);
+}
+
+.form-item1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-item1, .form-item0 {
+  .px2rem(height, 110);
+  .px2rem(line-height, 110);
+  border-bottom: 2px solid rgba(92, 92, 92, 0.64);
+  padding-left: 8%;
+}
+
+.form-item0 input.textAdd {
+  .px2rem(height, 60);
+  color: rgba(35, 35, 35, 1) !important;
+  width: 75%;
+  //.px2rem(width,1310);
+  border: 1px solid rgba(93, 88, 89, 1);
+  background: rgba(151, 158, 169, 1);
+}
+
+.form-item4 {
+  .px2rem(height, 80);
+  .px2rem(line-height, 80);
+  padding-left: 8%;
+  position: relative;
+  .item {
+    .px2rem(margin-bottom, 5);
+    .fileText {
+      cursor: pointer;
+      display: inline-block;
+      .px2rem(width, 200);
+      .px2rem(height, 72);
+      .px2rem(line-height, 72);
+      text-align: center;
+      border: 2px solid rgba(140, 140, 140, 1);
+      background: rgba(103, 107, 119, 1);
+      color: rgba(222, 222, 222, 1);
+    }
+    .fileText:active{
+           .px2rem(width, 200);
+           .px2rem(height, 72);
+           -webkit-transform: scale(0.8);
+           transform: scale(0.8);
+         }
+    .hintT {
+      color: rgba(126, 126, 126, 1);
+    }
+    .filename {
+      .px2rem(border-radius, 10);
+      .px2rem(padding-left, 12);
+      .px2rem(padding-right, 20);
+      .px2rem(font-size, 40);
+      .px2rem(line-height, 45);
+      .px2rem(width, 350);
+      .px2rem(height, 45);
+      vertical-align: middle;
+      color: white;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.form-item3 {
+  padding-left: 8%;
+  .px2rem(height, 400);
+  .px2rem(line-height, 120);
+}
+
+.form-item3 label {
+  vertical-align: top;
+}
+
+.form-item2 label {
+  color: #ffffff;
+}
+
+.form-item3 textarea, .form-item3 div {
+  .px2rem(font-size, 34);
+  width: 75%;
+  //.px2rem(width,1300);
+  .px2rem(height, 350);
+  resize: none;
+  .px2rem(margin-top, 20);
+  .px2rem(line-height, 60);
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.subBtn {
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.textDetail {
+  width: 75%;
+  /*.px2rem(width,1300) !important;*/
+  background: rgba(86, 92, 105, 1);
+  color: #efefef;
+  .px2rem(line-height, 80);
+  border: 0;
+  outline: none;
+  .px2rem(padding-top, 12);
+  .px2rem(padding-top, 12);
+}
+
+.textDetail2 {
+  background: rgba(151, 158, 169, 1);
+  color: rgba(19, 19, 19, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+.form-item3 .fileTextAdd {
+  color: rgba(35, 35, 35, 1) !important;
+  border: 1px solid rgba(93, 88, 89, 1);
+  background: rgba(151, 158, 169, 1);
+}
+
+.fileText2 {
+  .px2rem(width, 222);
+  .px2rem(height, 68);
+  text-align: center;
+  display: inline-block;
+  .px2rem(line-height, 68);
+  border: 2px solid rgba(140, 140, 140, 1);
+  background: rgba(103, 107, 119, 1);
+  color: rgba(222, 222, 222, 1);
+  .px2rem(font-size, 44)
+}
+
+.item .download {
+  .px2rem(width, 65);
+  .px2rem(height, 63);
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../i/down2.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.item .download:active{
+  .px2rem(width, 65);
+  .px2rem(height, 63);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.item .download:hover {
+  background: url(../i/down1.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
+.item .delete {
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  background: url(../i/delete.png) no-repeat center;
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.delete:active{
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+#fileContainer {
+  .px2rem(margin-bottom, 20);
+}
+
+/*-------------------------------------------------发布任务-----------------------------------------------------*/
+.change2 .boxBottom3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height:11%;
+  width: 100%;
+  background: rgba(86,92,105,1);
+}
+
+.changeBoxTask,.boxCreateTearm {
+  width: 100%;
+  height: 100%;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  vertical-align: middle;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+
+.boxTask {
+  width:100%;
+  height:100%;
+  /*.px2rem(width, 1465);
+  .px2rem(height, 800);*/
+  margin: auto;
+  //background-color: rgba(19, 19, 19, 0.5);
+  position: relative;
+}
+.changeBoxTask header,.boxCreateTearm header{
+  width:100%;
+  height:8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //.px2rem(line-height, 95);
+  .px2rem(font-size, 42);
+  color: rgba(255, 239, 185, 1);
+  background: rgba(86,92,105,1);
+}
+.changeBoxTask .footer,.boxCreateTearm .footer{
+  width:100%;
+  height:10.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(86,92,105,1);
+
+}
+.changeBoxTask .footer .subBtn2,.boxCreateTearm .footer .subBtn2{
+  .px2rem(width,177);
+  .px2rem(height,74);
+  .px2rem(line-height,74);
+  .px2rem(font-size,32);
+  /*.px2rem(margin-top,18);*/
+}
+.changeBoxTask .footer .subBtn2:active,.boxCreateTearm .footer .subBtn2:active{
+  .px2rem(width, 177);
+  .px2rem(height,74);
+  background-size: 80% 80%;
+}
+.changeBoxTask .taskcontentBox,.boxCreateTearm .createContent {
+  width: 100%;
+  height:81.7%;
+  //.px2rem(height, 77%);
+  background: rgba(62, 67, 80, 1);
+  overflow-y: scroll;
+  text-align: left;
+  color: rgba(203, 219, 226, 1);
+  //.px2rem(padding-top, 8);
+  .px2rem(font-size, 34);
+  //.px2rem(padding-bottom, 40);
+  overflow-x: hidden;
+}
+
+.changeBoxTask .footer .subBtn2 {
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  .px2rem(line-height, 74);
+  .px2rem(font-size, 32);
+  /*.px2rem(padding-bottom, 40);*/
+}
+.changeBoxTask .footer .subBtn2:active{
+  .px2rem(width, 177);
+  .px2rem(height,74);
+  background-size: 80% 80%;
+}
+
+.changeBoxTask .form-item {
+  .px2rem(margin-top, 20);
+  position: relative;
+}
+
+.changeBoxTask .form-item label, .changeBoxTask .form-item h2 {
+  margin-left: 4%;
+}
+/*------------------------待批准任务------------------------------*/
+.changeBoxTask .memberInfo label{
+  display: inline-block;
+  margin: 1.2% 0 1.2% 4%;
+}
+.changeBoxTask .memberInfo h3{
+  margin: 1% 0 0 4%;
+}
+.changeBoxTask .memberInfo .dataTables_wrapper{
+  width:91.5%;
+  margin:0 auto;
+  position: relative;
+}
+.changeBoxTask .memberInfo .dataTables_wrapper{
+  margin-bottom:2%;
+}
+.changeBoxTask .memberInfo .dataTables_wrapper{
+  margin-bottom:7%;
+}
+.changeBoxTask .memberInfo input{
+  display: inline-block;
+}
+.changeBoxTask .memberInfo span.addLeader{
+  vertical-align: middle;
+}
+.changeBoxTask .memberInfo .dataTables_wrapper .dataTables_scrollBody{
+  height: inherit;
+}
+.changeBoxTask .memberInfo .EditTeam{
+  .px2rem(width,160);
+  .px2rem(height,52);
+  .px2rem(line-height,45);
+  border:2px solid rgba(159,159,159,0.8);
+  background: rgba(0,0,0,0);
+  color: rgba(203,219,226,1);
+  .px2rem(border-radius,8);
+  text-align: center;
+  position: absolute;
+  right:4%;
+  .px2rem(bottom,-75);
+  outline: none;
+  cursor: pointer;
+  .px2rem(font-size,28);
+  font-family: '华文楷体',STKaiti, '楷体', serif,'楷体_GB2312',KaiTi_GB2312 !important;
+}
+.changeBoxTask .memberInfo .EditTeam:active{
+  .px2rem(width,160);
+  .px2rem(height,52);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.changeBoxTask .memberInfo .dataTables_wrapper table thead{
+  .px2rem(font-size,28);
+  .px2rem(line-height,44);
+  //background: rgba(127,127,127,0.4);
+  font-weight: 100;
+  padding:1% 0;
+  color: rgba(255,247,221,1);
+}
+.changeBoxTask .memberInfo .dataTables_wrapper table tbody{
+  .px2rem(font-size,20);
+  //background: rgba(39,39,39,0.4);
+}
+.changeBoxTask .memberInfo .dataTables_wrapper table tbody td{
+  text-align: center;
+}
+.changeBoxTask .memberInfo .dataTables_wrapper table thead th{
+  text-align: center;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.changeBoxTask .form-item h2 {
+  .px2rem(font-size, 38);
+}
+
+.changeBoxTask .form-item.task-item1 {
+  .px2rem(padding-top, 10);
+  width: 100%;
+  .px2rem(height, 200);
+  border-top: 2px solid rgba(78, 82, 91, 1);
+  border-bottom: 2px solid rgba(78, 82, 91, 1);
+}
+
+.changeBoxTask .form-item.task-item1 label {
+  vertical-align: top;
+}
+
+.changeBoxTask .form-item.task-item1 .taskTarget {
+  width:77.8%;
+  .px2rem(height, 180);
+  .px2rem(font-size, 30);
+  resize: none;
+  border: 0;
+  word-wrap: break-word;
+  //outline: none;
+  background-color: rgba(151, 158, 169,1);
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.changeBoxTask .form-item select {
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-overflow: "";
+  padding: 0 1%;
+  //background: rgba(0,0,0,0);
+  background: url(../i/unfold.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  text-align: left;
+  color: rgba(185, 185, 185, 1);
+  .px2rem(border-radius, 10);
+  text-align: left;
+  .px2rem(font-size, 28);
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  cursor: pointer;
+}
+
+/*.changeBoxTask .form-item input.selest{
+  border:1px solid rgba(198,198,198,0.5);
+  outline:none;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  text-overflow: "";
+  padding:0 1%;
+  background: rgba(0,0,0,0);
+  text-align: left;
+  color: rgba(185,185,185,1);
+  .px2rem(border-radius,10);
+  text-align: left;
+  .px2rem(font-size,28);
+  font-family: '华文楷体',STKaiti, '楷体', serif,'楷体_GB2312',KaiTi_GB2312 !important;
+  cursor: pointer;
+}*/
+.changeBoxTask .form-item .unfold {
+  .px2rem(width, 26);
+  .px2rem(height, 15);
+  display: inline-block;
+  position: absolute;
+  right:3.6%;
+  top:38.5%;
+  background: url(../i/unfold.png) no-repeat scroll right center rgba(0,0,0,0);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.radio_box ul {
+  .px2rem(font-size, 26);
+  color: #cbdbe2;
+}
+
+.radio_box ul li {
+  .px2rem(width, 30);
+  .px2rem(height, 30);
+  display: inline-block;
+  vertical-align: baseline;
+  background: url(../i/singleChioce.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  vertical-align: text-top;
+  cursor: pointer;
+}
+
+.radio_box ul li.selected {
+  background: url(../i/singleChioce2.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+}
+
+.changeBoxTask .form-item select::-ms-expand {
+  display: none;
+}
+
+.changeBoxTask .form-item select.taskType {
+  .px2rem(width, 300);
+  .px2rem(height, 48);
+  .px2rem(line-height, 48);
+  margin-left: 4%;
+}
+
+.changeBoxTask .form-item input.taskName {
+  .px2rem(height, 60);
+  color: rgba(35, 35, 35, 1) !important;
+  width:78%;
+  border: 1px solid rgba(93, 88, 89, 1);
+  background: rgba(151, 158, 169, 1);
+  .px2rem(font-size, 30);
+}
+
+.changeBoxTask .form-item input.taskName ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+.changeBoxTask .form-item .taskLevel {
+  .px2rem(width, 300);
+  .px2rem(height, 40);
+  .px2rem(line-height, 0);
+  margin-left: 0 !important;
+}
+
+.changeBoxTask .form-item .addLeader,.changeBoxTask .memberInfo .addLeader {
+  .px2rem(width, 38);
+  .px2rem(height, 37);
+  display: inline-block;
+  background: url(../i/addPerson.png) no-repeat center;
+  background-size: 100% 100%;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+.changeBoxTask .form_colon label{
+  display: inline-block;
+  width:8.2rem ;
+  text-align: right;
+}
+.taskcontentBox .form-item label{
+  display: inline-block;
+  width:8.2rem ;
+  text-align: right;
+  vertical-align: top;
+}
+.changeBoxTask .form_colon label.label2{
+  display: inline-block;
+  .px2rem(width,250);
+  text-align: right;
+}
+.changeBoxTask .form-item .adddata {
+  .px2rem(width, 24);
+  .px2rem(height, 26);
+  display: inline-block;
+  background: url(../i/calender.png) no-repeat center;
+  background-size: 100% 100%;
+  vertical-align: sub;
+  margin-left: 0;
+  cursor: pointer;
+}
+
+.changeBoxTask .form-item.task-item2 input, .changeBoxTask .form-item .select_box input {
+  .px2rem(width, 285);
+  .px2rem(height, 40);
+  .px2rem(line-height, 40);
+  color: rgba(203, 219, 226, 1);
+  .px2rem(padding-left, 15);
+  .px2rem(font-size, 26);
+  -webkit-appearance: none; /*Removes default chrome and safari style*/
+  -moz-appearance: none;
+  text-overflow: "";
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  .px2rem(border-radius, 10);
+}
+
+.changeBoxTask .form-item.task-item3 {
+  .px2rem(padding, 16);
+  width: 100%;
+  border-top: 2px solid rgba(78, 82, 91, 1);
+}
+
+/*.changeBoxTask .form-item.task-item3 label:nth-of-type(1) {
+  .px2rem(margin-top, 16);
+}*/
+
+.changeBoxTask .form-item.task-item3 select {
+  .px2rem(width, 300);
+  .px2rem(height, 40);
+  .px2rem(line-height, 40);
+  margin-left: 0;
+}
+
+.changeBoxTask .form-item.task-item4 {
+  width: 100%;
+  position: absolute;
+  left: 45%;
+  .px2rem(top, -10);
+}
+
+.changeBoxTask .form-item.task-item5 {
+  width: 100%;
+  position: absolute;
+  left: 45%;
+  .px2rem(top, 46);
+}
+.changeBoxTask .form-item.task-item4 label.rightLabel,.changeBoxTask .form-item.task-item5 label.rightLabel{
+  .px2rem(width,250);
+  display: inline-block;
+  text-align:right ;
+}
+.changeBoxTask .task-item2 h2 {
+  .px2rem(margin-bottom, 20);
+}
+
+.task-item5 {
+  .px2rem(height, 40);
+  .px2rem(line-height, 40);
+  position: relative;
+  .item {
+    .px2rem(width, 400);
+    .px2rem(margin-bottom, 15);
+    .fileText {
+      cursor: pointer;
+      display: inline-block;
+      .px2rem(width, 150);
+      .px2rem(height, 42);
+      .px2rem(font-size, 26) !important;
+      .px2rem(line-height, 42);
+      text-align: center;
+      border: 2px solid rgba(140, 140, 140, 1);
+      background: rgba(103, 107, 119, 1);
+      color: rgba(222, 222, 222, 1);
+      margin-left: 0%;
+    }
+    .fileText:active{
+       .px2rem(width, 150);
+       .px2rem(height, 42);
+       -webkit-transform: scale(0.8);
+       transform: scale(0.8);
+     }
+    .item2 {
+      .px2rem(margin-bottom, 15);
+    }
+    .hintT {
+      color: rgba(126, 126, 126, 1);
+      .px2rem(font-size, 26) !important;
+    }
+    .filename {
+      .px2rem(border-radius, 10);
+      .px2rem(padding-left, 12);
+      .px2rem(padding-right, 20);
+      .px2rem(font-size, 26);
+      .px2rem(line-height, 30);
+      .px2rem(width, 260);
+      .px2rem(height, 30);
+      //.px2rem(margin-left, 32);
+      vertical-align: middle;
+      color: #cbdbe2;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.select_box {
+  position: relative;
+  display: inline-block
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0
+}
+
+.select_box ul {
+  .px2rem(width, 300);
+  .px2rem(font-size, 26);
+  color: #cbdbe2;
+  position: absolute;
+  left: 0;
+  .px2rem(top, 56);
+  border: 1px solid rgba(98, 98, 98, 0.8);
+  overflow: hidden;
+  display: none;
+  //background: rgba(92, 92, 92, 1);
+  z-index: 99999;
+}
+
+.select_box ul li {
+  display: block;
+  .px2rem(height, 45);
+  overflow: hidden;
+  .px2rem(line-height, 45);
+  padding-left: 5px;
+  width: 97.1%;
+  cursor: pointer;
+  border: 1px solid rgba(158, 158, 158, 0.8);
+  background: rgba(62,67,80,1);
+}
+.select_ul li:hover{
+  background: rgba(151,158,169,1);
+}
+/*.hover {
+  background: rgba(207, 208, 208, 0.7);
+}*/
+.select_box {position:relative;display: inline-block}
+ul,li {list-style-type:none; padding:0; margin:0}
+.select_box ul {.px2rem(width,300);.px2rem(font-size,26);color: #cbdbe2; position:absolute; left:0;.px2rem(top,42); border:1px solid rgba(98,98,98,0.8);  overflow: hidden;display:none; background:rgba(92,92,92,1); z-index:99999;}
+.select_box ul li {display:block;.px2rem(height,45);overflow:hidden;.px2rem(line-height,45);padding-left:5px;width:97.1%;cursor:pointer;
+  border:1px solid rgba(158,158,158,0.8);}
+.hover {background:rgba(207, 208, 208, 0.7);}
+
+/*-----------------------------领队列表---------------------------------*/
+.changeBoxTask .table tbody tr td img {
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  vertical-align: sub;
+  .px2rem(margin-right, 8);
+}
+.serialWidth{
+  display: inline-block;
+  vertical-align: middle;
+  .px2rem(width,50);
+}
+.table2 tbody tr td span.pitch2 {
+  display: inline-block;
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  vertical-align: middle;
+  .px2rem(margin-right, 8);
+  background: url(../i/singleChioce.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+}
+.table tbody tr td span.pitch2 {
+  display: inline-block;
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  vertical-align: sub;
+  .px2rem(margin-right, 8);
+  background: url(../i/singleChioce.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+}
+.activeImg2 {
+  display: inline-block;
+  .px2rem(width, 27);
+  .px2rem(height, 27);
+  vertical-align: sub;
+  .px2rem(margin-right, 8);
+  background: url(../i/singleChioce2.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+}
+
+/*-----------------------------------------联盟档案-----------------------------------------------------*/
+.lmBoxRecord{
+  width:100%;
+  height:100%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.lmBoxRecord header{
+  width:100%;
+  //height:10%;
+  .px2rem(height,100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(86, 92, 105, 1);
+ // .px2rem(line-height,102);
+}
+.lmBoxRecord header .title{
+  .px2rem(font-size,52);
+}
+/*.lmBoxRecord header .btnBack:hover{
+  top:0.2%;
+  right:0.4%;
+}*/
+.lmBoxRecord footer{
+  width:100%;
+  height:3%;
+  background: rgba(86, 92, 105, 1);
+}
+.lmBoxRecord .boxlmInfo{
+  width:100%;
+  height:84%;
+  background: rgba(62,67,80,1);
+  .px2rem(font-size,38);
+  overflow-y: scroll;
+}
+.lmBoxRecord .boxlmInfo p{
+  width:100%;
+  .px2rem(height,110);
+  .px2rem(line-height,110);
+  border-bottom:2px solid rgba(78,82,91,1);
+  display: inline-block;
+  position: relative;
+}
+.lmBoxRecord .boxlmInfo p span{
+  color:rgba(255,239,185,1);
+}
+.lmBoxRecord .boxlmInfo p i,.lmBoxRecord .boxlmInfo div i{
+  display: inline-block;
+  .px2rem(width,300);
+  text-align: right;
+}
+.lmBoxRecord .boxlmInfo p .allianceName{
+  .px2rem(font-size,44);
+}
+.lmBoxRecord .boxlmInfo p .boss{
+  //margin-left:22.5%;
+  font-weight: 100;
+  position: absolute;
+  left:40%;
+}
+.lmBoxRecord .boxlmInfo p .vcNum{
+  //margin-left:17%;
+  font-weight: 100;
+  position: absolute;
+  left:40%;
+}
+.lmBoxRecord .boxlmInfo p i,.lmBoxRecord .boxlmInfo div{
+  color: #e5e5e5;
+  font-style:normal;
+  //margin-left:4%;
+}
+.lmBoxRecord .boxlmInfo p b em{
+  display: inline-block;
+  .px2rem(width,240);
+  text-align: right;
+  font-style: normal;
+}
+.lmBoxRecord .boxlmInfo div{
+  .px2rem(margin-top,30);
+}
+.lmBoxRecord .boxlmInfo div i.lmIntro{
+  vertical-align: top;
+}
+.lmBoxRecord .boxlmInfo div textarea{
+  font-family: '华文楷体',STKaiti, '楷体', serif,'楷体_GB2312',KaiTi_GB2312 !important;
+  display: inline-block;
+  width:74%;
+  .px2rem(height,420);
+  background: rgba(86,92,105,1);
+  color: rgba(229,229,229,1);
+  .px2rem(font-size,34);
+  border: 0;
+  outline: none;
+  padding:1% 1%;
+  resize: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  .px2rem(margin-bottom,30);
+}
+
+
+/*------------------------------------------------茶楼相关--------------------------------------------------------*/
+.bbsBox{
+  position: absolute;
+  right:5%;
+  top:3%;
+  cursor: pointer;
+}
+.faction{
+  position: absolute;
+  right:1%;
+  top:3%;
+  cursor: pointer;
+}
+.faction div{
+  display: inline-block;
+  .px2rem(margin-right,40);
+}
+.faction .weChat{
+  .px2rem(width,50);
+  .px2rem(height,43);
+  display: block;
+  background:url(../i/bbs.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.faction span{
+  display: block;
+  color: #000;
+}
+.bbsBox .weChat{
+  .px2rem(width,50);
+  .px2rem(height,43);
+  display: block;
+  background:url(../i/bbs.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.bbsBox span{
+  display: block;
+  color: #000;
+}
+.change2 .boxBottom3{
+  position: relative;
+}
+/*.change2 .boxBottom3 .btn{
+  .px2rem(width,177);
+  .px2rem(height,74);
+  .px2rem(line-height,74);
+  .px2rem(font-size,26);
+  .px2rem(margin-top,14);
+}
+.change2 .boxBottom3  .btn:active{
+  .px2rem(width, 177);
+  .px2rem(height,74);
+  background-size: 80% 80%;
+}*/
+/*.change2 .boxBottom3  .btn:nth-of-type(1){
+  .px2rem(margin-right,300);
+}*/
+.change2 .boxBottom3  .createBox{
+  width:100%;
+  .px2rem(height,76);
+  background: rgba(55,58,69,1);
+  text-align: right;
+  position: absolute;
+  left:0;
+  top:-61%;
+  z-index:99;
+}
+.change2 .boxBottom3  .createBox span{
+  display: inline-block;
+  .px2rem(width,150);
+  .px2rem(height,50);
+  color: rgba(203,219,226,1);
+  border: 2px solid rgba(164,164,164,0.64);
+  .px2rem(border-radius,10);
+  text-align: center;
+  .px2rem(margin-right,60);
+  .px2rem(line-height,50);
+  .px2rem(font-size,24);
+  cursor: pointer;
+  .px2rem(margin-top,12);
+}
+.change2 .boxBottom3  .createBox span:hover{
+  background: rgba(151,158,169,1);
+  color: rgba(39,39,39,1);
+}
+.change2 .boxBottom3  .createBox span:active{
+  .px2rem(width,150);
+  .px2rem(height,50);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+/*---------------------------创建队伍------------------------------*/
+.boxCreateTearm header .taskTitle{
+  .px2rem(font-size,32);
+}
+.boxCreateTearm .createContent .teamInfo,.boxCreateTearm .createContent .noInfo,.boxCreateTearm .createContent .memberInfo{
+  border-bottom:2px solid rgba(78,82,91,1);
+  padding:1% 0;
+}
+.boxCreateTearm .createContent .taskInfo{
+  padding:1% 0;
+}
+.boxCreateTearm .createContent .memberInfo{
+  position: relative;
+  padding-bottom:5%;
+}
+.boxCreateTearm .createContent div p{
+  margin-left:4%;
+}
+.boxCreateTearm .createContent .teamInfo .editImg{
+  display: inline-block;
+  vertical-align: text-top;
+  .px2rem(width,37);
+  .px2rem(width,31);
+}
+.boxCreateTearm .createContent .teamInfo div b,.boxCreateTearm .createContent .noInfo div b{
+  font-weight: 100;
+  font-style: normal;
+  display: inline-block;
+  .px2rem(width,228);
+  text-align: right;
+}
+.boxCreateTearm .createContent .teamInfo div,.boxCreateTearm .createContent .noInfo div,.boxCreateTearm .createContent div p{
+  .px2rem(height,52);
+  .px2rem(line-height,52);
+  position: relative;
+}
+.boxCreateTearm .createContent .teamInfo div span,.boxCreateTearm .createContent .noInfo div span{
+  color:rgba(255,239,185,1);
+}
+.boxCreateTearm .createContent .teamInfo div i{
+  font-style: normal;
+  position: absolute;
+  left:46%;
+  top:0;
+}
+.noneBorder{
+  border:0 !important;
+  outline: none !important;
+}
+.boxCreateTearm .createContent .teamInfo input,.boxTeam .feehideBox .m-Popup-con .nameBtn,.feehideBox .m-Popup-con .nameBtn{
+  border: 1px solid rgba(159,159,159,0.8);
+  outline: none;
+  width:21rem;
+  .px2rem(height,30);
+  .px2rem(line-height,30);
+  .px2rem(border-radius,8);
+  background: rgba(0,0,0,0);
+  .px2rem(font-size,28);
+  color: rgba(200,200,200,1);
+}
+.boxCreateTearm .createContent{
+  .px2rem(font-size,30);
+  padding: 1% 0;
+  height: 77.8%;
+}
+.boxTeam .feehideBox .m-Popup-con .nameBtn,.feehideBox .m-Popup-con .nameBtn{
+  .px2rem(margin-left,10);
+}
+.boxTeam .g-Popup,.boxCreateTearm .g-Popup,.g-Popup{
+  width:28rem;
+}
+.boxTeam .g-Popup .m-Popup-title,.boxCreateTearm .g-Popup .m-Popup-title,.g-Popup .m-Popup-title{
+  .px2rem(height,72);
+  .px2rem(line-height,72);
+  .px2rem(font-size,30);
+}
+.boxTeam .g-Popup .m-Popup-con,.boxCreateTearm .g-Popup .m-Popup-con,.g-Popup .m-Popup-con{
+  height:7.4rem;
+  line-height: 2.309171rem;
+  .px2rem(font-size,28);
+}
+
+.boxCreateTearm .g-Popup .m-Popup-con span,.g-Popup .m-Popup-con span{
+  display: inline-block;
+  margin-top: 2.4rem;
+  line-height: 2.309171rem;
+}
+.boxTeam .g-Popup .m-Popup-footer a,.boxCreateTearm .g-Popup .m-Popup-footer a,.g-Popup .m-Popup-footer a{
+  .px2rem(font-size,28);
+  margin-top:0;
+  .px2rem(width,177);
+}
+.boxTeam .g-Popup .m-Popup-footer a:active,.boxCreateTearm .g-Popup .m-Popup-footer a:active,.g-Popup .m-Popup-footer a:active{
+  .px2rem(width,177);
+  .px2rem(height,74);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.boxCreateTearm .createContent .noInfo div i{
+  font-style: normal;
+  position: absolute;
+  left:46%;
+  top:0;
+}
+#cancel{
+  margin-right:4%;
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper .deleteBtn{
+  .px2rem(width,68);
+  .px2rem(height,30);
+  .px2rem(line-height,15);
+  .px2rem(font-size,22);
+  text-align: center;
+  background:rgba(0,0,0,0);
+  border: 1px solid rgba(159,159,159,0.8);
+  outline: none;
+  color: rgba(203,219,226,1);
+  .px2rem(border-radius,8);
+  cursor: pointer;
+  vertical-align: text-bottom;
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper .deleteBtn:active{
+  .px2rem(width, 68);
+  .px2rem(height, 30);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper .deleteBtn:hover,.boxCreateTearm .createContent .memberInfo .recruit:hover,.changeBoxTask .memberInfo .EditTeam:hover{
+  background: rgba(151,158,169,1);
+  color: rgba(39,39,39,1);
+}
+.boxCreateTearm .createContent .memberInfo .recruit{
+  .px2rem(width,130);
+  .px2rem(height,52);
+  .px2rem(line-height,45);
+  border:2px solid rgba(159,159,159,0.8);
+  background: rgba(0,0,0,0);
+  color: rgba(203,219,226,1);
+  .px2rem(border-radius,10);
+  text-align: center;
+  position: absolute;
+  right:4%;
+  bottom: 3.5%;
+  outline: none;
+  cursor: pointer;
+  .px2rem(font-size,28);
+  font-family: '华文楷体',STKaiti, '楷体', serif,'楷体_GB2312',KaiTi_GB2312 !important;
+}
+.boxCreateTearm .createContent .memberInfo .recruit:active{
+  .px2rem(width, 130);
+  .px2rem(height, 52);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper,.boxCreateTearm .createContent div #accountTable2_wrapper{
+  width:91.5%;
+  margin:0 auto;
+  border:1px solid rgba(159,159,159,0.8);
+}
+/*.boxCreateTearm .createContent div #accountTable1_wrapper{
+  margin-bottom:5%;
+}*/
+.boxCreateTearm .createContent div #accountTable1_wrapper .dataTables_scrollBody,.boxCreateTearm .createContent div #accountTable2_wrapper .dataTables_scrollBody{
+  height: inherit;
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper table thead,.boxCreateTearm .createContent div #accountTable2_wrapper table thead{
+  .px2rem(font-size,28);
+  .px2rem(line-height,44);
+  //background: rgba(127,127,127,0.4);
+  font-weight: 100;
+  padding:1% 0;
+  color: rgba(255,247,221,1);
+}
+.boxCreateTearm .createContent div #accountTable1_wrapper table tbody,.boxCreateTearm .createContent div #accountTable2_wrapper table tbody{
+  .px2rem(font-size,20);
+  //background: rgba(39,39,39,0.4);
+}
+.boxCreateTearm .createContent div #accountTable2_wrapper table tbody td,.boxCreateTearm .createContent div #accountTable1_wrapper table tbody td{
+  text-align: center;
+}
+.boxCreateTearm .createContent div #accountTable2_wrapper table thead th,.boxCreateTearm .createContent div #accountTable1_wrapper table thead th{
+  text-align: center;
+}
+#accountTable1_wrapper table tr td span.pitch{
+  display: inline-block;
+  .px2rem(width,32);
+  .px2rem(height,32);
+  vertical-align: middle;
+  .px2rem(margin-right,8);
+  background: url(../i/pitch.png) no-repeat scroll right center rgba(0,0,0,0);
+  background-size: 100% 100%;
+  .px2rem(margin-right,30);
+}
+#accountTable1_wrapper table tr td span.activeImg3{
+  display: inline-block;
+  .px2rem(width,32);
+  .px2rem(height,32);
+  vertical-align: middle;
+  .px2rem(margin-right,8);
+  background: url(../i/pitch2.png) no-repeat scroll right center rgba(0,0,0,0);
+  background-size: 100% 100%;
+  .px2rem(margin-right,30);
+}
+
+
+
+/*-----------------------------------------------二次弹窗演示----------------------------------------------------------*/
+.g-Popup-div {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  opacity: 0.6;
+}
+
+.g-Popup {
+  width: 36rem;
+  height: 23rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+
+.m-Popup-title {
+  background-color: rgba(86, 92, 105, 1);
+  width: 100%;
+  .px2rem(height, 94);
+  .px2rem(line-height, 94);
+  .px2rem(font-size, 38);
+  color: rgba(255, 239, 185, 1);
+}
+
+.g-Popup .m-Popup-con {
+  background-color: rgba(62, 67, 80, 1);
+  height: 8.9rem;
+  line-height: 8.4rem;
+  text-align: center;
+  .px2rem(font-size, 36)
+}
+
+.g-Popup .m-Popup-footer {
+  background-color: rgba(62, 67, 80, 1);
+  width: 100%;
+  text-align: center;
+  font-size: 1.51200151rem;
+  color: #000;
+}
+
+.g-Popup .m-Popup-footer a:first-child {
+  .px2rem(margin-right, 80);
+}
+
+.g-Popup .m-Popup-footer a {
+  .px2rem(margin-top, 40);
+  .px2rem(margin-bottom, 40);
+  text-align: center;
+  display: inline-block;
+  border: 0 none;
+}
+
+.btn3 {
+  color: rgba(255, 247, 221, 1);
+  outline: none;
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  text-align: center;
+  .px2rem(line-height, 74);
+  //.px2rem(margin-top, 20);
+  border: 0;
+  .px2rem(font-size, 32);
+  background: url(../i/btn1.png) no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.btn3:active{
+  .px2rem(width, 177);
+  .px2rem(height,74);
+  background-size: 80% 80%;
+}
+.btn4 {
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+  .px2rem(width, 177);
+  .px2rem(height, 74);
+  text-align: center;
+  .px2rem(line-height, 74);
+  .px2rem(margin-top, 20);
+  border: 0;
+  .px2rem(font-size, 32);
+  background: url(../i/btn2.png) no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+
+.g-Popup .m-Popup-footer a.u-Popup-ok-btn {
+  width: 100% !important;
+}

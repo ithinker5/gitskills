@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <Meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css"/>
+  <link rel="stylesheet" href="../../c/manager.css"/>
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>联盟管理</title>
+</head>
+<body class="userSelect">
+<div class="box" id="box">
+  <div class="boxTop">
+    <img class="tabImg" src="../../i/boxTop2.png"/>
+    <div class="tabTitle"></div>
+    <div class="tabText"><span id="containerTitle">联盟管理</span></div>
+    <a href="javascript:void(0);" onClick="window.parent.playClickEffect();window.parent.closeWebPop()"
+       class="Back"></a>
+  </div>
+  <div class="change2" id="boxContainer"></div>
+</div>
+<!--整体结构-->
+<script id="container" type="text/html">
+  <div class="boxList panel-body" id="boxList">
+    <div class="tab-content">
+      <div class="tab-pane fade active in clear" id="tab1">
+        <ul class="nav-btns" id="navContainer">
+          {{include 'nav'}}
+        </ul>
+        <div class="contentWithTable" id="contentContainer">
+          {{include 'content'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="boxBottom2" id="footerContainer">
+    {{include 'footer'}}
+  </div>
+</script>
+<!--导航-->
+<script id="nav" type="text/html">
+  {{each nav value index}}
+  <li id={{value.domId}} class={{value.domId=='user'?'active':''}} >{{value.name}}</li>
+  {{/each}}
+</script>
+<!--内容区域-->
+<script id="content" type="text/html">
+  {{if listPage}}
+  <table class="table-origin" id="table">
+    <thead>
+    <tr>
+      <th style="width: 4rem">序号</th>
+      <th style="width: 7rem">工号</th>
+      <th>姓名</th>
+      <th>岗位级别</th>
+      <th>等级</th>
+      <th>岗位名称</th>
+      <th>所属帮会</th>
+      <th>职务</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{if list.length>0}}
+    {{each list value index}}
+    <tr role="row">
+      <td style="width: 4rem">{{index+1}}</td>
+      <td style="width: 7rem">{{value.worker_number}}</td>
+      <td>{{value.name}}</td>
+      <td>{{value.grade?value.grade:'无'}}</td>
+      <td>Lv{{value.level}}</td>
+      <td>{{value.title?value.title:'无'}}</td>
+      <td>{{(value.faction&&value.faction.name)?value.faction.name:'无'}}</td>
+      <td>{{value.role_id|changeToChina}}</td>
+      <td><button id="manager" class="btn-manager btn-small" data-id={{value._id}} >管理</button></td>
+    </tr>
+    {{/each}}
+    {{else}}
+    <tr role="row">
+      <td colspan="9">暂无数据</td>
+    </tr>
+    {{/if}}
+    </tbody>
+  </table>
+  {{else if detailPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>姓名：</label><span>{{userObj.name}}</span></div>
+        <div class="item"><label>工号：</label><span>{{userObj.worker_number}}</span></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>等级：</label><span>Lv{{userObj.level}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>入职时间：</label><span>{{userObj.entry_time|dateChange}}</span></div>
+        <div class="item"><label>从业时长：</label><span>{{userObj.year_of_service.toFixed(1)}}年</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>岗位名称：</label><span>{{userObj.title}}</span></div>
+        <div class="item"><label>岗位级别：</label><span>{{userObj.grade}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>基础VC：</label><span>{{userObj.base_vc}}</span></div>
+        <div class="item"><label>任务VC：</label><span>{{userObj.task_vc-userObj.base_vc}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>金币：</label><span>{{userObj.gold}}</span></div>
+        <div class="item"><label>抵押VC：</label><span>{{userObj.mortgage?userObj.mortgage:0}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>喇叭权限：</label><span>{{userObj.message_permission==1?'有':'无'}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item">
+          {{if userObj.profiles.length>0}}
+          <label style="float: left;">能力值：</label>
+          <div style="float: left;width: 70%">
+            <div class="form-item col-3" style="margin: 0">
+              <div class="item"><label>{{userObj.profiles[0].showName}}：</label><span>{{userObj.profiles[0].points}}</span></div>
+              <div class="item"><label>{{userObj.profiles[1].showName}}：</label><span>{{userObj.profiles[1].points}}</span></div>
+              <div class="item"><label>{{userObj.profiles[2].showName}}：</label><span>{{userObj.profiles[2].points}}</span></div>
+            </div>
+            <div class="form-item col-3">
+              <div class="item"><label>{{userObj.profiles[3].showName}}：</label><span>{{userObj.profiles[3].points}}</span></div>
+              <div class="item"><label>{{userObj.profiles[4].showName}}：</label><span>{{userObj.profiles[4].points}}</span></div>
+            </div>
+          </div>
+          {{else}}
+          <label>能力值：</label>
+          <span>无</span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>所在联盟：</label><span>{{userObj.department.name}}</span></div>
+        <div class="item"><label>联盟职务：</label><span>{{userObj.role_id===5?'盟主':(userObj.role_id===4?'护法':'无')}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>所在帮会：</label><span>{{(userObj.faction&&userObj.faction.name)?userObj.faction.name:'无'}}</span></div>
+        <div class="item"><label>帮会职务：</label><span>{{(userObj.faction&&userObj.faction.master_id&&userObj.faction.master_id==userObj._id)?'帮主':'无'}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>所在堂：</label><span>{{(userObj.section&&userObj.section.name)?userObj.section.name:'无'}}</span></div>
+        <div class="item"><label>堂职务：</label><span>{{(userObj.section&&userObj.section.master_id&&(userObj.section.master_id==userObj._id))?'长老':'无'}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">简介：</label><span class="desc">{{userObj.remark}}</span></div>
+      </div>
+    </div>
+  </div>
+  {{else if addPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>姓名：</label><input type="text"  id="name" name="name" class="input-text"></div>
+        <div class="item"><label>工号：</label><input type="text"  id="workerNumber" name="workerNumber" class="input-text"></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>等级：</label><span>Lv0</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>入职时间：</label><input type="date" id="beginDate" name="beginDate" class="deadline input-text"></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>岗位名称：</label><input type="text" id="title" name="grade" class="input-text" value='' maxlength="9"></div>
+        <div class="item"><label>岗位级别：</label><input type="text"  id="grade" name="grade" class="input-text" value='1D'></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label id="departVc" data-vc={{departVc}} >基础VC：</label><input type="text"  id="baseVc" name="baseVc" class="input-text"></div>
+        <div class="item"><label>任务VC：</label><span>0</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label id="departGold" data-gold={{departGold}} >金币：</label><input type="text" id="gold" name="gold" class="input-text"></div>
+        <div class="item"><label>抵押VC：</label><span>0</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>喇叭权限：</label>
+          <input id="hasTrumpetAuth" type="radio" name="trumpetAuth" value="1" checked="checked">
+          <label for="hasTrumpetAuth" class="radioImg"></label>
+          <span class="radioText">有</span>&nbsp;&nbsp;&nbsp;
+          <input id="noTrumpetAuth" type="radio" name="trumpetAuth" value="0">
+          <label for="noTrumpetAuth" class="radioImg"></label>
+          <span class="radioText">无</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item">
+          <label style="float: left;">能力值：</label>
+          <div style="float: left;width: 70%">
+            <div class="form-item col-3" style="margin: 0">
+              <div class="item"><label>{{profiles[0].showName}}：</label><input id="metric1" class="input-text" type="text" value={{profiles[0].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{profiles[1].showName}}：</label><input id="metric2" class="input-text" type="text" value={{profiles[1].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{profiles[2].showName}}：</label><input id="metric3" class="input-text" type="text" value={{profiles[2].points}} style="width: 5.44105rem"></div>
+            </div>
+            <div class="form-item col-3">
+              <div class="item"><label>{{profiles[3].showName}}：</label><input id="metric4" class="input-text" type="text" value={{profiles[3].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{profiles[4].showName}}：</label><input id="metric5" class="input-text" type="text" value={{profiles[4].points}} style="width: 5.44105rem"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在联盟：</label>
+          <span>{{structure.name}}</span>
+        </div>
+        <div class="item">
+          <label>联盟职务：</label>
+          {{if !faction_id}}
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value="0" value="无" id="belongDepartAdd" readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              <li value='1'>盟主</li>
+              <li value='2'>护法</li>
+            </ul>
+          </div>
+          {{else}}
+          <span id="belongDepartAddFaction">无</span>
+          {{/if}}
+        </div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在帮会：</label>
+          {{if !faction_id}}
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input  id="belongFactionAdd" type="text" data-value="0" value='无'  readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              {{if structure.children.length>0}}
+              {{each structure.children value list}}
+              <li value={{value._id}} >{{value.name}}</li>
+              {{/each}}
+              {{/if}}
+            </ul>
+          </div>
+          {{else}}
+          {{each structure.children value list}}
+           {{if value._id==faction_id}}
+          <span id="belongFactionAddFaction">{{value.name}}</span>
+          {{/if}}
+          {{/each}}
+          {{/if}}
+        </div>
+        <div class="item">
+          <label>帮会职务：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value="0" value='无'  id="belongFactionRoleAdd" readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              <li value='1'>帮主</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在堂：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value="0" value='无' id="belongSectionAdd" readonly>
+            <ul class="select_ul"  id="tangList">
+              <li value='0'>无</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item">
+          <label>堂职务：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value="0" value='无'  id="belongSectionRoleAdd" readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              <li value='1'>长老</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">简介：</label><textarea  id="desc" class="desc input-text"></textarea></div>
+      </div>
+    </div>
+  </div>
+  {{else if editPage}}
+  <div class="form">
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item"><label>姓名：</label><input type="text"  id="nameEdit" name="name" class="input-text" value={{userObj.name}} ></div>
+        <div class="item"><label>工号：</label><input type="text"  id="workerNumberEdit" name="workerNumber" class="input-text" value={{userObj.worker_number}} ></div>
+      </div>
+      <div class="form-item">
+        <div class="item"><label>等级：</label><span>{{userObj.level}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>入职时间：</label><input type="date"  id="beginDateEdit" name="beginDate" value={{userObj.entry_time|dateChange}} class="deadline input-text"></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>岗位名称：</label><input type="text" id="titleEdit" name="grade" class="input-text" maxlength="9" value={{userObj.title}}></div>
+        <div class="item"><label>岗位级别：</label><input type="text"  id="gradeEdit" name="grade" class="input-text" value={{userObj.grade}}></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>基础VC：</label><span>{{userObj.base_vc}}</span></div>
+        <div class="item"><label>任务VC：</label><span>{{userObj.task_vc-userObj.base_vc}}</span></div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item"><label>金币：</label><span>{{userObj.gold}}</span></div>
+        <div class="item"><label>抵押VC：</label><span>{{userObj.mortgage?userObj.mortgage:0}}</span></div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label>喇叭权限：</label>
+          {{if userObj.message_permission===1}}
+          <input id="hasTrumpetAuthEdit" type="radio"  name="trumpetAuthEdit" value="1" checked="checked">
+          {{else}}
+          <input id="hasTrumpetAuthEdit" type="radio" name="trumpetAuthEdit" value="1">
+          {{/if}}
+          <label for="hasTrumpetAuthEdit" class="radioImg"></label>
+          <span class="radioText">有</span>&nbsp;&nbsp;&nbsp;
+          {{if userObj.message_permission===0}}
+          <input id="noTrumpetAuthEdit" type="radio"  name="trumpetAuthEdit" value="0" checked="checked">
+          {{else}}
+          <input id="noTrumpetAuthEdit" type="radio"  name="trumpetAuthEdit" value="0">
+          {{/if}}
+          <label for="noTrumpetAuthEdit" class="radioImg"></label>
+          <span class="radioText">无</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item">
+          <label style="float: left;">能力值：</label>
+          <div style="float: left;width: 70%">
+            <div class="form-item col-3" style="margin: 0">
+              <div class="item"><label>{{userObj.profiles[0].showName}}：</label><input id="metric1Edit" class="input-text" type="text" value={{userObj.profiles[0].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{userObj.profiles[1].showName}}：</label><input id="metric2Edit" class="input-text" type="text" value={{userObj.profiles[1].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{userObj.profiles[2].showName}}：</label><input id="metric3Edit" class="input-text" type="text" value={{userObj.profiles[2].points}} style="width: 5.44105rem"></div>
+            </div>
+            <div class="form-item col-3">
+              <div class="item"><label>{{userObj.profiles[3].showName}}：</label><input id="metric4Edit" class="input-text" type="text" value={{userObj.profiles[3].points}} style="width: 5.44105rem"></div>
+              <div class="item"><label>{{userObj.profiles[4].showName}}：</label><input id="metric5Edit" class="input-text" type="text" value={{userObj.profiles[4].points}} style="width: 5.44105rem"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在联盟：</label>
+          <span>{{structure.name}}</span>
+        </div>
+      <div class="item">
+        <label>联盟职务：</label>
+        {{if !faction_id}}
+        <div class="select_box">
+          <span class="unfold"></span>
+          <input type="text" data-value={{userObj.role_id==5?'1':(userObj.role_id==4?'2':'0')}} value={{userObj.role_id===5?"盟主":(userObj.role_id===4?"护法":'无')}} id="belongDepartEdit" readonly>
+          {{if userObj.role_id==4}}
+          <ul class="select_ul">
+            <li value='2'>护法</li>
+          </ul>
+          {{else if userObj.role_id==5}}
+          <ul class="select_ul">
+            <li value='1'>盟主</li>
+          </ul>
+          {{else}}
+          <ul class="select_ul">
+            <li value='0'>无</li>
+            <li value='1'>盟主</li>
+            <li value='2'>护法</li>
+          </ul>
+          {{/if}}
+        </div>
+        {{else}}
+        <span id="belongDepartEditFaction">{{userObj.role_id===5?"盟主":(userObj.role_id===4?"护法":'无')}}</span>
+        {{/if}}
+      </div>
+    </div>
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在帮会：</label>
+          {{if !faction_id}}
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input  id="belongFactionEdit" type="text" data-value={{(userObj.faction&&userObj.faction._id)?userObj.faction._id:'0'}} value={{(userObj.faction&&userObj.faction.name)?userObj.faction.name:'无'}}  readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              {{if structure.children.length>0}}
+              {{each structure.children value list}}
+              <li value={{value._id}} >{{value.name}}</li>
+              {{/each}}
+              {{/if}}
+            </ul>
+          </div>
+          {{else}}
+          <span id="belongFactionEditFaction">{{(userObj.faction&&userObj.faction.name)?userObj.faction.name:'无'}}</span>
+          {{/if}}
+        </div>
+        <div class="item">
+          <label>帮会职务：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value={{(userObj.faction&&userObj.faction.master_id&&userObj.faction.master_id===userObj._id)?'1':'0'}}  value={{(userObj.faction&&userObj.faction.master_id&&userObj.faction.master_id===userObj._id)?'帮主':'无'}}  id="belongFactionRoleEdit" readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              <li value='1'>帮主</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-item col-2">
+        <div class="item">
+          <label>所在堂：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value={{(userObj.section&&userObj.section._id)?userObj.section._id:'0'}} value={{(userObj.section&&userObj.section.name)?userObj.section.name:'无'}} id="belongSectionEdit" readonly>
+            <ul class="select_ul" id="tangList">
+              <li value='0'>无</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item">
+          <label>堂职务：</label>
+          <div class="select_box">
+            <span class="unfold"></span>
+            <input type="text" data-value={{(userObj.section&&userObj.section.master_id&&userObj.section.master_id===userObj._id)?'1':'0'}} value={{(userObj.section&&userObj.section.master_id&&userObj.section.master_id===userObj._id)?'长老':'无'}}  id="belongSectionRoleEdit" readonly>
+            <ul class="select_ul">
+              <li value='0'>无</li>
+              <li value='1'>长老</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item-group">
+      <div class="form-item">
+        <div class="item"><label class="desc">简介：</label><textarea id="descEdit" class="desc input-text">{{userObj.remark}}</textarea></div>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</script>
+<!--底部-->
+<script id="footer" type="text/html">
+  {{if listPage&&!faction}}
+  <input type="file" id="file" name="filename" accept="application/vnd.ms-excel" style="display: none"/>
+  <label for="file" class="btnStyle">导入</label>
+  <button class="btnStyle" id="add" style="margin-left: 2rem">新建成员</button>
+  {{else if detailPage}}
+  <button class="btnStyle" id="backList">返回</button>
+  <button class="btnStyle" id="edit">修改</button>
+  <button class="btnStyle" id="resetPsw">重置密码</button>
+  <button class="btnStyle" id="deleteUser">删除成员</button>
+  {{else if editPage}}
+  <div class="footerError" id="footerError"></div>
+  <button class="btnStyle" id="cancelEdit">取消</button>
+  <button class="btnStyle" id="confirmEdit">确定</button>
+  {{else if addPage}}
+  <div class="footerError" id="footerError"></div>
+  <button class="btnStyle" id="cancelAdd">取消</button>
+  <button class="btnStyle" id="confirmAdd">确定</button>
+  {{/if}}
+</script>
+<div class="feehideBox"></div>
+</body>
+<script type="text/javascript" src="../../vendors/jquery.min.js"></script>
+<script type="text/javascript" src="../../vendors/tableSort.js"></script>
+<script type="text/javascript" src="../../vendors/ajaxfileupload.js"></script>
+<script src="../../dist/s/mid.js"></script>
+<script src="../../dist/s/manager.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/common.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/index.js"></script>
+<script type="text/javascript" src="../../dist/ctrl/manager/user.js"></script>
+</html>

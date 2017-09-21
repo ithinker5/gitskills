@@ -1,0 +1,173 @@
+@charset "utf-8";
+@baseFontSize: 21.2037;
+@errorColor: rgb(255, 96, 0);
+@editInputColor: rgba(151, 158, 169, 1); /*输入框可编辑，按钮划过色值*/
+@checkInputColor: rgba(86, 92, 105, 1); /*输入框不可编辑*/
+@uploadBtnColor: rgba(103, 107, 109, 1); /*上传附件按钮*/
+@yellowFontColor: rgba(255, 248, 164, 1); /*黄色字体*/
+@whiteFontColor: rgba(255, 255, 255, 1); /*白色字体*/
+@tableHeadColor: rgba(86, 92, 105, 1); /*表格头部及按钮所在尾部颜色，表单头部及尾部颜色*/
+@tableBodyColor: rgba(62, 67, 80, 1); /*表格中间，表单中间内容，选择框底色*/
+@tableBorderColor: rgba(78, 82, 91, 1); /*下划线*/
+@tableTitleColor: rgba(70, 76, 88, 1); /*表格顶部标题*/
+@tableInnerHeadColor: rgba(79, 83, 96, 1); /*表单内部表格头部*/
+@tableInnerBodyColor: rgba(46, 50, 60, 1); /*表单内部表格中间*/
+@editTeamBoxColor: rgba(75, 80, 92, 1); /*编辑队伍处背景色*/
+@btnFontColor: rgba(255, 247, 221, 1);
+@fontFamiliar: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+
+/*----------------------------------------------档案---------------------------------------------------------------*/
+.Record {
+  width: 100%;
+  height: 100%;
+  header {
+    width: 100%;
+    height:8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: @checkInputColor;
+  }
+  footer {
+    width: 100%;
+    height: 3%;
+    background: @checkInputColor;
+  }
+  .boxlmInfo {
+    width: 100%;
+    height: 84%;
+    background: @tableBodyColor;
+    .px2rem(font-size, 38);
+    overflow-y: scroll;
+    p {
+      width: 100%;
+      .px2rem(height, 110);
+      .px2rem(line-height, 110);
+      border-bottom: 2px solid @tableBorderColor;
+      display: inline-block;
+      position: relative;
+    }
+    p span {
+      color: @yellowFontColor;
+    }
+    p i, div i {
+      display: inline-block;
+      .px2rem(width, 300);
+      text-align: right;
+    }
+    p .allianceName {
+      .px2rem(font-size, 44);
+    }
+    p .boss {
+      font-weight: 100;
+      position: absolute;
+      left: 40%;
+    }
+    p .vcTotal {
+      font-weight: 100;
+      position: absolute;
+      left: 40%;
+    }
+    p .vcNum {
+      float: right;
+      margin-right: 8%;
+      font-weight: 100;
+      //position: absolute;
+      //left: 40%;
+    }
+    p i, div i {
+      color: @whiteFontColor;
+      font-style: normal;
+    }
+    p b em {
+      display: inline-block;
+      .px2rem(width, 240);
+      text-align: right;
+      font-style: normal;
+      color: @whiteFontColor;
+    }
+    div {
+      .px2rem(margin-top, 30);
+    }
+    div i.lmIntro {
+      vertical-align: top;
+    }
+    div textarea {
+      font-family: @fontFamiliar;
+      display: inline-block;
+      width: 74%;
+      .px2rem(height, 420);
+      background: @checkInputColor;
+      color: @whiteFontColor;
+      .px2rem(font-size, 34);
+      border: 0;
+      padding: 1% 1%;
+      resize: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+      .px2rem(margin-bottom, 30);
+    }
+  }
+}
+
+.ywcNewTask {
+  footer {
+    width: 100%;
+    height: 12%;
+    background: @checkInputColor;
+  }
+  .boxlmInfo {
+    height: 80%;
+  }
+  .boxlmInfo p i, .boxlmInfo div i {
+    width: 16.14847409rem;
+  }
+  .boxlmInfo p span {
+    margin: 0 0.5rem 0 0;
+  }
+  .boxlmInfo div textarea {
+    height: 14rem;
+  }
+  .addLeader {
+    .px2rem(width, 38);
+    .px2rem(height, 37);
+    display: inline-block;
+    background: url(../i/addPerson.png) no-repeat center;
+    background-size: 100% 100%;
+    vertical-align: text-bottom;
+    border: 0;
+    cursor: pointer;
+  }
+  .addLeader:active {
+    .px2rem(width, 38);
+    .px2rem(height, 37);
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  .deadline {
+    width: 13.44105038rem;
+    height: 1.88646321rem;
+    line-height: 1.88646321rem;
+    color: @whiteFontColor;
+    padding-left: 0.7074237rem;
+    font-size: 1.22620109rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-overflow: "";
+    border: 1px solid rgba(198, 198, 198, 0.5);
+    border-radius: 0.4716158rem;
+    background-color: rgba(89, 89, 89, 0);
+    &:nth-of-type(1) {
+      margin-right: 4.8rem;
+    }
+    &:nth-of-type(2) {
+      margin-left: 4.8rem;
+    }
+  }
+}

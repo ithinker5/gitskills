@@ -1,0 +1,1408 @@
+@charset "utf-8";
+/*输入框可编辑，按钮划过色值*/
+/*输入框不可编辑*/
+/*上传附件按钮*/
+/*黄色字体*/
+/*白色字体*/
+/*表格头部及按钮所在尾部颜色，表单头部及尾部颜色*/
+/*表格中间，表单中间内容，选择框底色*/
+/*下划线*/
+/*表格顶部标题*/
+/*表单内部表格头部*/
+/*表单内部表格中间*/
+/*编辑队伍处背景色*/
+/*--------------------------------------------任务列表------------------------------------------------------*/
+.taskList .change2 .table2 tbody tr td:nth-of-type(2) {
+  width: 10rem;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  text-align: center;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  white-space: normal;
+  word-break: break-all;
+}
+.taskList .change2 .table2 tbody tr td.dataTables_empty:nth-of-type(2) {
+  display: table-cell !important;
+}
+.taskList .change2 .table2 tbody tr td img {
+  width: 1.17903951rem;
+  height: 1.69781689rem;
+  vertical-align: middle;
+  margin-bottom: 0.14148474rem;
+}
+.taskList .change2 .table2 thead tr th:nth-of-type(2) {
+  width: 10rem;
+}
+.taskList .change2 .boxBottom3 {
+  justify-content: flex-end;
+}
+.taskList .change2 .boxBottom3 .fbtask {
+  margin-right: 3.77292642rem;
+}
+/*--------------------------------------------编辑,发布任务------------------------------------------------------*/
+.tempTaskEdit .taskcontentBox .form_colon label.radioImg {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.tempTaskEdit input[type='radio']:checked + label.radioImg {
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce2.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.tempTaskEdit input#applicant_id,
+.tempTaskEdit input#noLeader {
+  display: none;
+}
+.tempTaskEdit .taskcontentBox .select_box input.PTaskType {
+  font-size: 1.69781689rem;
+}
+/*----------------------------------------------任务详情---------------------------------------------------------------*/
+.tempTaskDetail #accountTable1_wrapper .table thead tr th:nth-of-type(1) {
+  width: 20rem !important;
+}
+.tempTaskDetail #accountTable1_wrapper .table tbody tr td span.teamWidth {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: center;
+  white-space: normal;
+  word-break: break-all;
+  float: right;
+  margin-right: 7.2rem;
+}
+.tempTaskDetail #accountTable1_wrapper .table tbody tr td.dataTables_empty span.teamWidth {
+  display: table-cell !important;
+}
+.changeBoxTask {
+  width: 100%;
+  height: 100%;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.changeBoxTask .taskDetailItem div p:nth-child(2) label {
+  display: inline-block;
+  width: 11.79039507rem;
+  text-align: right;
+}
+.changeBoxTask .form_colon label {
+  display: inline-block;
+  width: 8.2rem;
+  text-align: right;
+}
+.changeBoxTask .form_colon label.label2 {
+  display: inline-block;
+  width: 11.79039507rem;
+  text-align: right;
+}
+.changeBoxTask .task-item2 h2 {
+  margin-bottom: 0.94323161rem;
+}
+.changeBoxTask .taskcontentBox {
+  width: 100%;
+  height: 81.7%;
+  background: #3e4350;
+  overflow-y: scroll;
+  text-align: left;
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+  color: #ffffff;
+  font-size: 1.60349373rem;
+  overflow-x: hidden;
+}
+.changeBoxTask .taskcontentBox .addLeader {
+  width: 1.79214005rem;
+  height: 1.74497847rem;
+  display: inline-block;
+  background: url(../i/addPerson.png) no-repeat center;
+  background-size: 100% 100%;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+.changeBoxTask .taskcontentBox .form-item {
+  margin-top: 0.94323161rem;
+  position: relative;
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+}
+.changeBoxTask .taskcontentBox .form-item h3 {
+  font-weight: 100;
+}
+.changeBoxTask .taskcontentBox .form-item .select_box input {
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+}
+.changeBoxTask .taskcontentBox .form-item label,
+.changeBoxTask .taskcontentBox .form-item h2 {
+  margin-left: 4%;
+}
+.changeBoxTask .taskcontentBox .form-item p {
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+}
+.changeBoxTask .taskcontentBox .form-item h2 {
+  font-size: 1.79214005rem;
+}
+.changeBoxTask .taskcontentBox .form-item label {
+  display: inline-block;
+  width: 8.2rem;
+  text-align: right;
+  vertical-align: top;
+}
+.changeBoxTask .taskcontentBox .form-item select {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-overflow: "";
+  padding: 0 1%;
+  background: url(../i/unfold.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  text-align: left;
+  color: #ffffff;
+  border-radius: 0.4716158rem;
+  font-size: 1.32052425rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  cursor: pointer;
+}
+.changeBoxTask .taskcontentBox .form-item .unfold {
+  width: 1.22620109rem;
+  height: 0.7074237rem;
+  display: inline-block;
+  position: absolute;
+  right: 3.6%;
+  top: 38.5%;
+  background: url(../i/unfold.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.changeBoxTask .taskcontentBox .form-item select::-ms-expand {
+  display: none;
+}
+.changeBoxTask .taskcontentBox .form-item select.taskType {
+  width: 14.14847409rem;
+  height: 2.26375585rem;
+  line-height: 2.26375585rem;
+  margin-left: 4%;
+}
+.changeBoxTask .taskcontentBox .form-item input.taskName {
+  height: 2.82969482rem;
+  color: #232323 !important;
+  width: 78%;
+  border: 1px solid #5d5859;
+  background: #979ea9;
+  font-size: 1.41484741rem;
+}
+.changeBoxTask .taskcontentBox .form-item input.taskName ::-webkit-input-placeholder {
+  color: #000000;
+}
+.changeBoxTask .taskcontentBox .form-item .taskLevel {
+  width: 14.14847409rem;
+  height: 1.88646321rem;
+  line-height: 0rem;
+  margin-left: 0 !important;
+}
+.changeBoxTask .taskcontentBox .form-item .adddata {
+  width: 1.13187793rem;
+  height: 1.22620109rem;
+  display: inline-block;
+  background: url(../i/calender.png) no-repeat center;
+  background-size: 100% 100%;
+  vertical-align: sub;
+  margin-left: 0;
+  cursor: pointer;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item1 {
+  padding-top: 0.4716158rem;
+  width: 100%;
+  height: 9.43231606rem;
+  border-top: 2px solid #4e525b;
+  border-bottom: 2px solid #4e525b;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item1 label {
+  vertical-align: top;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item1 .taskTarget {
+  width: 77.8%;
+  overflow: auto;
+  height: 8.48908445rem;
+  font-size: 1.41484741rem;
+  resize: none;
+  border: 0;
+  word-wrap: break-word;
+  background-color: #979ea9;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item2 input,
+.changeBoxTask .taskcontentBox .select_box input {
+  width: 13.44105038rem;
+  height: 1.88646321rem;
+  line-height: 1.88646321rem;
+  color: #ffffff;
+  padding-left: 0.7074237rem;
+  font-size: 1.22620109rem;
+  -webkit-appearance: none;
+  /*Removes default chrome and safari style*/
+  -moz-appearance: none;
+  text-overflow: "";
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  border-radius: 0.4716158rem;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item3 {
+  padding: 0.75458528rem;
+  /*width: 100%;*/
+  border-top: 2px solid #4e525b;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item3 select {
+  width: 14.14847409rem;
+  height: 1.88646321rem;
+  line-height: 1.88646321rem;
+  margin-left: 0;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item4 {
+  width: 100%;
+  position: absolute;
+  left: 45%;
+  top: -0.4716158rem;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item5 {
+  width: 100%;
+  position: absolute;
+  left: 45%;
+  top: 2.16943269rem;
+}
+.changeBoxTask .taskcontentBox .form-item.task-item4 label.rightLabel,
+.changeBoxTask .taskcontentBox .task-item5 label.rightLabel {
+  width: 11.79039507rem;
+  display: inline-block;
+  text-align: right;
+}
+.changeBoxTask .taskcontentBox .memberInfo .tableBox p {
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+  font-size: 1.9205rem;
+}
+.changeBoxTask .taskcontentBox .memberInfo label {
+  display: inline-block;
+  margin: 1.2% 0 1.2% 4%;
+}
+.changeBoxTask .taskcontentBox .memberInfo h3 {
+  font-family: '微软雅黑', 'Microsoft YaHei' !important;
+  font-weight: 100;
+  margin: 1% 0 0 4%;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper {
+  width: 91.5%;
+  margin: 0 auto;
+  position: relative;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper {
+  margin-bottom: 2%;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper {
+  margin-bottom: 7%;
+}
+.changeBoxTask .taskcontentBox .memberInfo input {
+  display: inline-block;
+}
+.changeBoxTask .taskcontentBox .memberInfo span.addLeader {
+  vertical-align: middle;
+}
+.changeBoxTask .taskcontentBox .memberInfo .EditTeam {
+  width: 7.54585285rem;
+  height: 2.45240218rem;
+  line-height: 2.12227111rem;
+  border: 2px solid #4e525b;
+  background: #3e4350;
+  color: #ffffff;
+  border-radius: 0.37729264rem;
+  text-align: center;
+  position: absolute;
+  right: 4%;
+  bottom: -3.53711852rem;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.32052425rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.changeBoxTask .taskcontentBox .memberInfo .EditTeam:active {
+  width: 7.54585285rem;
+  height: 2.45240218rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.changeBoxTask .taskcontentBox .memberInfo .EditTeam:hover {
+  background: #979ea9;
+  color: #272727;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper table thead {
+  font-size: 1.93362479rem;
+  line-height: 2.07510953rem;
+  font-weight: 100;
+  padding: 1% 0;
+  color: #fff7dd;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper table tbody {
+  font-size: 0.94323161rem;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper table tbody td {
+  text-align: center;
+}
+.changeBoxTask .taskcontentBox .memberInfo .dataTables_wrapper table thead th {
+  text-align: center;
+}
+.changeBoxTask .radio_box ul {
+  font-size: 1.22620109rem;
+  color: #ffffff;
+}
+.changeBoxTask .radio_box ul li {
+  width: 1.41484741rem;
+  height: 1.41484741rem;
+  display: inline-block;
+  background: url(../i/singleChioce.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  vertical-align: text-top;
+  cursor: pointer;
+}
+.changeBoxTask .radio_box ul li.selected {
+  background: url(../i/singleChioce2.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+}
+.changeBoxTask .task-item5 {
+  height: 1.88646321rem;
+  line-height: 1.88646321rem;
+  position: relative;
+}
+.changeBoxTask .task-item5 .item {
+  width: 18.86463212rem;
+  margin-bottom: 0.7074237rem;
+}
+.changeBoxTask .task-item5 .item .fileText {
+  cursor: pointer;
+  display: inline-block;
+  width: 7.07423704rem;
+  height: 1.98078637rem;
+  font-size: 1.22620109rem !important;
+  line-height: 1.98078637rem;
+  text-align: center;
+  border: 2px solid #8c8c8c;
+  background: #676b77;
+  color: #dedede;
+  margin-left: 0;
+}
+.changeBoxTask .task-item5 .item .fileText:active {
+  width: 7.07423704rem;
+  height: 1.98078637rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.changeBoxTask .task-item5 .item .item2 {
+  margin-bottom: 0.7074237rem;
+}
+.changeBoxTask .task-item5 .item .hintT {
+  color: #7e7e7e;
+  font-size: 1.22620109rem !important;
+}
+.changeBoxTask .task-item5 .item .filename {
+  border-radius: 0.4716158rem;
+  padding-left: 0.56593896rem;
+  padding-right: 0.94323161rem;
+  font-size: 1.22620109rem;
+  line-height: 1.41484741rem;
+  width: 12.26201088rem;
+  height: 1.41484741rem;
+  vertical-align: middle;
+  color: #ffffff;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*-----------发布任务相关Start--------------*/
+#taskLevel {
+  height: 1.41484741rem;
+}
+.taskAddDetail {
+  margin-left: 2%;
+}
+.taskAddDetail span,
+.taskAddDetail label {
+  color: #ffffff;
+  font-size: 1.41484741rem;
+}
+.taskAddDetail .taskAddItem {
+  margin-bottom: 1.3rem;
+}
+.taskAddDetail .leftContent {
+  float: left;
+  width: 45%;
+}
+.taskAddDetail .rightContent {
+  float: left;
+  width: 50%;
+}
+.taskAddDetail .rightContent .taskAddItem label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+}
+.taskAddDetail .rightContent .taskAddItem .deadline {
+  display: inline-block;
+  width: 65%;
+  margin-left: -1%;
+}
+.taskAddDetail .rightContent .taskAddItem .deadline input[type='date'] {
+  border-radius: 0.4716158rem;
+  padding-left: 0.94323161rem;
+  padding-right: 0.94323161rem;
+  font-size: 1.22620109rem;
+  line-height: 1.41484741rem;
+  width: 12.26201088rem;
+  height: 1.41484741rem;
+  vertical-align: middle;
+  color: #ffffff;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.taskAddDetail .rightContent .taskAddItem .deadline span.adddata {
+  vertical-align: middle;
+}
+.taskAddDetail .rightContent #file_c label {
+  float: left;
+  display: inline-block;
+  width: 30%;
+}
+.taskAddDetail .rightContent #file_c #fileContainer {
+  float: left;
+}
+.taskAddDetail .rightContent #file_c #fileContainer .item2 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.taskAddDetail .rightContent #file_c #fileContainer .filename {
+  border-radius: 0.4716158rem;
+  padding-left: 0.94323161rem;
+  padding-right: 0.94323161rem;
+  font-size: 1.22620109rem;
+  line-height: 1.41484741rem;
+  width: 12.26201088rem;
+  height: 1.41484741rem;
+  vertical-align: middle;
+  color: #ffffff;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.taskAddDetail .rightContent #file_c #fileContainer .fileText {
+  cursor: pointer;
+  display: inline-block;
+  width: 7.07423704rem;
+  height: 1.98078637rem;
+  font-size: 1.22620109rem !important;
+  line-height: 1.98078637rem;
+  text-align: center;
+  border: 2px solid #8c8c8c;
+  background: #676b77;
+  color: #dedede;
+}
+.taskAddDetail .rightContent #file_c #fileContainer .fileText:active {
+  width: 7.07423704rem;
+  height: 1.98078637rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+/*历史记录强制换行*/
+#historyList p {
+  width: 89%;
+  word-wrap: break-word;
+  display: inline-block;
+}
+.input {
+  border-radius: 0.4716158rem;
+  padding-left: 0.94323161rem;
+  padding-right: 0.94323161rem;
+  font-size: 1.22620109rem;
+  line-height: 1.41484741rem;
+  width: 12.26201088rem;
+  height: 1.41484741rem;
+  vertical-align: middle;
+  color: #ffffff;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.taskFactions label.text {
+  float: left;
+}
+.taskFactions #factions {
+  float: left;
+  width: 80%;
+  font-size: 1.22620109rem;
+  padding-top: 0.3rem;
+}
+.taskFactions #factions span {
+  float: left;
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 20%;
+}
+.taskFactions #factions span.detail {
+  font-size: 1.41484741rem;
+  display: inline;
+  margin-right: 0.5rem;
+  width: 8rem;
+}
+.taskFactions #factions span label {
+  margin-right: 1rem;
+  vertical-align: baseline;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: url("../i/pitch.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.taskFactions #factions span input[type=checkbox]:checked + label {
+  margin-right: 1rem;
+  vertical-align: baseline;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: url("../i/pitch2.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.taskFactions #factions span input {
+  display: none;
+}
+/*-----------发布任务相关End--------------*/
+/*-----------任务详情相关Strat--------------*/
+.taskDetailColor {
+  color: #fff8a4;
+}
+.taskItem {
+  width: 100%;
+  border-bottom: 2px solid #4e525b;
+}
+.taskItem2 {
+  padding-top: 0.6716158rem;
+  width: 100%;
+  border-top: 2px solid #4e525b;
+}
+.clearFix {
+  zoom: 1;
+}
+.clearFix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.taskcontentBox .title {
+  font-size: 1.6rem;
+  width: 77%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.taskDetailTarget label {
+  float: left;
+}
+.taskDetailTarget div {
+  float: left;
+  color: #efefef;
+  padding: 0.5rem;
+  height: 80% !important;
+  background-color: #565c69 !important;
+}
+.taskDetailItem {
+  border-bottom: 2px solid #4e525b;
+}
+.taskDetailItem div {
+  color: #dedede;
+  margin-left: 4%;
+  font-size: 1.60349373rem;
+}
+.taskDetailItem div label {
+  text-align: left;
+  margin-left: 0 !important;
+  color: #ffffff;
+  vertical-align: top;
+}
+.taskDetailItem div p {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  display: inline-block;
+  width: 40%;
+}
+.taskDetailItem div p span {
+  color: #fff8a4;
+}
+.taskDetailItem div p:nth-child(2) label {
+  display: inline-block;
+  width: 11.79039507rem !important;
+  text-align: right;
+}
+.taskDetailFile {
+  padding-bottom: 1rem;
+}
+.taskDetailFile label.taskDetailFileTitle {
+  float: left;
+  color: #ffffff;
+  vertical-align: top;
+  font-size: 1.60349373rem;
+}
+.taskDetailFile .fileList {
+  float: left;
+  margin-top: -0.3rem;
+}
+.taskDetailFile .fileList .fileItem {
+  width: 100%;
+  font-size: 1rem;
+  color: #ffffff;
+}
+.taskDetailFile .fileList .fileItem label {
+  display: inline-block;
+  text-align: left;
+  margin-left: 0.5rem;
+  border: 1px solid rgba(208, 208, 208, 0.5);
+  border-radius: 8px;
+  width: 12rem;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+.taskDetailFile .fileList .fileItem a {
+  display: inline-block;
+  width: 3.30131062rem;
+  height: 2.35807901rem;
+  vertical-align: middle;
+  cursor: pointer;
+  background: url("../i/down2.png") no-repeat center;
+  background-size: 2.35807901rem;
+}
+.taskDetailFile .fileList .fileItem a:hover {
+  background: url("../i/down1.png") no-repeat center;
+  background-size: 2.35807901rem;
+}
+.taskDetailFile .fileList .fileItem span {
+  display: inline-block;
+  text-align: center;
+  min-width: 7rem;
+  font-size: 1.41484741rem;
+  vertical-align: sub;
+}
+/*编辑队伍*/
+.memberInfo {
+  position: relative;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+}
+.memberInfo .editTeamBox {
+  width: 90.5%;
+  margin: -7% auto 6%;
+  padding: 0.5% 0.5%;
+  background: #4b505c;
+  padding-bottom: 1.88646321rem;
+  font-size: 1.41484741rem;
+}
+.memberInfo .editTeamBox i {
+  font-style: normal;
+  margin-left: 0.94323161rem;
+  margin-bottom: 0.75458528rem;
+}
+.memberInfo .editTeamBox b {
+  font-weight: 100;
+  width: 22%;
+  display: inline-block;
+  line-height: 1.88646321rem;
+}
+.memberInfo .editTeamBox b .pitch {
+  display: inline-block;
+  width: 1.32052425rem;
+  height: 1.32052425rem;
+  vertical-align: sub;
+  margin-right: 0.37729264rem;
+  background: url(../i/pitch.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin-left: 0;
+}
+.memberInfo .editTeamBox b .activeImg3 {
+  display: inline-block;
+  width: 1.32052425rem;
+  height: 1.32052425rem;
+  vertical-align: sub;
+  margin-right: 0.37729264rem;
+  background: url(../i/pitch2.png) no-repeat scroll right center rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.memberInfo .editTeamBox b span {
+  margin-left: 0.94323161rem;
+}
+.memberInfo .editTeamBox b i {
+  font-style: normal;
+  width: 5.8rem;
+  display: inline-block;
+  margin: 0;
+  margin-right: -0.84890845rem;
+}
+.memberInfo .editTeamBox b em {
+  font-style: normal;
+  /*float: right;
+        margin-right:1.571616rem;*/
+}
+.memberInfo .editTeamBox input {
+  width: 2.82969482rem;
+  height: 1.22620109rem;
+  line-height: 1.41484741rem;
+  font-size: 1.22620109rem;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid rgba(159, 159, 159, 0.8);
+  border-radius: 0.2358079rem;
+  background: rgba(0, 0, 0, 0);
+}
+.memberInfo .editTeamBox .recruit {
+  cursor: pointer;
+  width: 2.07510953rem;
+  height: 2.02794795rem;
+  position: absolute;
+  bottom: 5%;
+  right: 0.8%;
+  background: url(../i/addPerson.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.memberInfo .editTeamBox .recruit:active {
+  width: 2.07510953rem;
+  height: 2.02794795rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.memberInfo .editTeamBox2 {
+  width: 90.5%;
+  margin: 0 auto 2.5%;
+  padding: 0.5% 0.5%;
+  background: rgba(0, 0, 0, 0);
+}
+.memberInfo .editTeamBox2 label {
+  margin: 0 !important;
+}
+.memberInfo .editTeamBox2 .recruit2 {
+  cursor: pointer;
+  width: 2.07510953rem;
+  height: 2.02794795rem;
+  position: absolute;
+  bottom: -19%;
+  right: 5%;
+  background: url(../i/addPerson.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.memberInfo .editTeamBox2 .recruit2:active {
+  width: 2.07510953rem;
+  height: 2.02794795rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.memberInfo .editTeamBox2 p {
+  line-height: 2.26375585rem;
+}
+.memberInfo .editTeamBox2 b {
+  line-height: 2.26375585rem;
+}
+.memberInfo .EditBtn {
+  position: absolute;
+  right: 4.5%;
+  bottom: -18%;
+}
+.memberInfo .EditBtn .cancel {
+  display: inline-block;
+  width: 3.30131062rem;
+  height: 1.88646321rem;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.88646321rem;
+  border: 1px solid rgba(159, 159, 159, 0.8);
+  border-radius: 0.2358079rem;
+  font-size: 1.13187793rem;
+  cursor: pointer;
+}
+.memberInfo .EditBtn :hover {
+  background: #979ea9;
+  color: #272727;
+}
+.memberInfo .EditBtn .cancel:active {
+  width: 3.30131062rem;
+  height: 1.88646321rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.memberInfo .EditBtn .confirm {
+  display: inline-block;
+  width: 3.30131062rem;
+  height: 1.88646321rem;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.88646321rem;
+  border: 1px solid rgba(159, 159, 159, 0.8);
+  border-radius: 0.2358079rem;
+  font-size: 1.13187793rem;
+  margin-left: 0.94323161rem;
+  cursor: pointer;
+}
+.memberInfo .EditBtn :hover {
+  background: #979ea9;
+  color: #272727;
+}
+.memberInfo .EditBtn .confirm:active {
+  width: 3.30131062rem;
+  height: 1.88646321rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.memberInfo label.radioImg {
+  margin-left: 0.5rem !important;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.memberInfo input[type='radio']:checked + label.radioImg {
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce2.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.memberInfo input#applicant_id,
+.memberInfo input#noLeader {
+  display: none;
+}
+#teamName,
+#teamLeader {
+  color: #fff8a4;
+}
+.changeBoxTask2 .g-Popup {
+  width: 28rem;
+}
+.changeBoxTask2 .g-Popup .m-Popup-title {
+  height: 3.39563378rem;
+  line-height: 3.39563378rem;
+  font-size: 1.41484741rem;
+}
+.changeBoxTask2 .g-Popup .m-Popup-con {
+  height: 7.4rem;
+  line-height: 8.5rem;
+  font-size: 1.32052425rem;
+}
+.changeBoxTask2 .g-Popup .m-Popup-con .nameBtn {
+  border: 1px solid rgba(159, 159, 159, 0.8);
+  outline: none;
+  width: 14.14847409rem;
+  height: 1.41484741rem;
+  line-height: 1.41484741rem;
+  border-radius: 0.37729264rem;
+  background: rgba(0, 0, 0, 0);
+  font-size: 1.13187793rem;
+  color: #c8c8c8;
+}
+.changeBoxTask2 .g-Popup .m-Popup-con span {
+  display: inline-block;
+  line-height: 1.50917057rem;
+}
+.changeBoxTask2 .g-Popup .m-Popup-footer a {
+  font-size: 1.32052425rem;
+  margin-top: 0;
+  width: 8.34759971rem;
+}
+.changeBoxTask2 .g-Popup .m-Popup-footer a:active {
+  height: 3.48995694rem;
+  width: 8.34759971rem;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.taskMemberLeader h3 {
+  margin-left: 4%;
+  margin-bottom: 1rem;
+}
+.taskMemberLeader p {
+  margin-bottom: 0.94323161rem;
+}
+.taskMemberLeader p #leader_grade,
+.taskMemberLeader p #leader_level {
+  color: #fff8a4;
+}
+.taskMember {
+  border-bottom: 2px solid #4e525b;
+}
+.taskMember div {
+  color: #dedede;
+  margin-left: 4%;
+  font-size: 1.60349373rem;
+}
+.taskMember div label {
+  text-align: left;
+  margin-left: 0 !important;
+  color: #ffffff;
+  vertical-align: top;
+}
+.taskMember div p {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  display: inline-block;
+  width: 40%;
+}
+.taskMember div p span {
+  color: #fff8a4;
+}
+.taskMember div p:nth-child(2) label {
+  display: inline-block;
+  width: 11.79039507rem !important;
+  text-align: right;
+}
+.taskMember h3 {
+  margin-left: 4%;
+  margin-bottom: 1rem;
+}
+.taskMember table {
+  float: left;
+  width: 90%;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #878787;
+}
+.taskMember table td,
+.taskMember table th {
+  text-align: center;
+}
+.taskMember table thead tr {
+  background-color: rgba(127, 127, 127, 0.4);
+}
+.taskMember table thead tr th {
+  width: 10%;
+  color: #fff8a4;
+  text-align: center;
+  border-bottom-width: 0;
+}
+.taskMember table tbody {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.taskMember .option {
+  float: left;
+  width: 6%;
+}
+.teamWidth {
+  width: 8.48908445rem;
+  display: inline-block;
+}
+.historyList {
+  margin-left: 4%;
+  margin-bottom: 0.5rem;
+}
+.historyList .historyItem {
+  color: #ffffff;
+  vertical-align: top;
+  font-size: 1.91484741rem;
+}
+.historyList .historyItem span {
+  color: #fff8a4;
+}
+.historyList .historyItem p:nth-of-type(1) {
+  margin-top: 0 !important;
+}
+.taskCheck h3 {
+  text-align: center;
+  color: #ffffff;
+}
+.taskCheck label {
+  width: 8.145853rem;
+  display: inline-block;
+  text-align: right;
+}
+.taskDetailFileTitle {
+  width: 7.845853rem;
+  display: inline-block;
+  text-align: right;
+}
+.taskReview {
+  border-bottom: 2px solid #4e525b;
+}
+.taskReview div {
+  color: #dedede;
+  margin-left: 4%;
+  font-size: 1.60349373rem;
+}
+.taskReview div label {
+  text-align: left;
+  margin-left: 0 !important;
+  color: #ffffff;
+  vertical-align: top;
+}
+.taskReview div p {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  display: inline-block;
+  width: 40%;
+}
+.taskReview div p span {
+  color: #fff8a4;
+}
+.taskReview div p:nth-child(2) label {
+  display: inline-block;
+  width: 11.79039507rem !important;
+  text-align: right;
+}
+.taskReview div p {
+  font-size: 1.6rem;
+  width: 30%;
+}
+.taskReview div.oneItem p {
+  width: 80%;
+}
+.taskReview div.oneItem p label {
+  width: 8.245853rem;
+  display: inline-block;
+  text-align: right;
+}
+.taskReview div p label {
+  width: 8.245853rem;
+  display: inline-block;
+  text-align: right;
+}
+/*.taskReward {
+  .taskDetailItem;
+  h3 {
+    text-align: center;
+  }
+  div p {
+    span {
+      color: @whiteFontColor !important;
+      margin-left: 1rem;
+      &:first-child {
+        color: @yellowFontColor !important;
+        margin-left: 0;
+      }
+    }
+  }
+  .rewardTable {
+    margin-left: 4%;
+  }
+  table {
+    background-color: transparent;
+    font-size: 1.3rem;
+    td, th {
+      width: 10%;
+      text-align: center;
+      &:last-child {
+        width: 20%;
+      }
+      &:first-child {
+        text-align: left;
+      }
+    }
+    thead {
+      th {
+        color: @yellowFontColor;
+      }
+    }
+
+    tbody {
+      tr {
+        height: 1.5rem;
+      }
+      td {
+        font-size: 1rem;
+        span {
+          display: inline-block;
+          width: 80%;
+          border: 1px solid rgba(198, 198, 198, .8);
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}*/
+.changeBoxTask .taskcontentBox .awardBox {
+  width: 100%;
+  text-align: center;
+  font-size: 1.60349373rem;
+}
+.changeBoxTask .taskcontentBox .awardBox p {
+  margin-top: 0.7074237rem;
+  font-size: 1.79214005rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .awardCont {
+  margin-left: 4%;
+  text-align: left;
+}
+.changeBoxTask .taskcontentBox .awardBox .awardCont p {
+  text-align: left;
+  display: inline-block;
+  line-height: 1.88646321rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .awardCont p b {
+  font-weight: 100;
+  color: #fff8a4;
+  font-size: 1.520524rem;
+  margin-right: 1.41484741rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .awardCont p span {
+  font-size: 1.50917057rem;
+  margin-right: 1.69781689rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper {
+  width: 92%;
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .dataTables_scrollHead {
+  height: inherit;
+  color: #fff8a4;
+  font-size: 1.29781689rem;
+  font-family: '华文楷体', STKaiti, '楷体', serif, '楷体_GB2312', KaiTi_GB2312 !important;
+  background: #4f5360;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .dataTables_scrollBody {
+  height: inherit;
+  background: #2e323c;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table thead {
+  line-height: 2.16943269rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table thead th {
+  text-align: center;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody tr {
+  border: 0;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody :hover {
+  background: none;
+  cursor: inherit;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td {
+  text-align: center;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .awardInput {
+  width: 6.03668228rem;
+  height: 1.69781689rem;
+  line-height: 1.69781689rem;
+  border: 1px solid rgba(207, 208, 208, 0.5);
+  border-radius: 0.4716158rem;
+  background: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  font-size: 1.22620109rem;
+  text-align: center;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .awardInput2 {
+  width: 20.114413rem;
+  color: #ffffff;
+  font-size: 1.22620109rem;
+  text-align: center;
+  padding-left: 0.37729264rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .select_box #leader_grade {
+  width: 4.62183487rem;
+  height: 1.69781689rem;
+  line-height: 1.69781689rem;
+  outline: none;
+  border: 1px solid rgba(207, 208, 208, 0.5);
+  border-radius: 0.4716158rem;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.22620109rem;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .select_box ul {
+  width: 4.62183487rem !important;
+  /*top: 0;*/
+  position: absolute;
+  z-index: 99;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .select_box ul li {
+  width: 4.48035013rem !important;
+  padding: 0;
+  cursor: pointer;
+  background: #3e4350;
+}
+.changeBoxTask .taskcontentBox .awardBox .dataTables_wrapper .table tbody td .select_box ul :hover {
+  background: #979ea9;
+}
+.awardInput2 {
+  width: 15.09170569rem;
+  color: #ffffff;
+  font-size: 1.22620109rem;
+}
+#deadline::-webkit-inner-spin-button {
+  visibility: hidden;
+}
+#deadline::-webkit-calendar-picker-indicator {
+  background: rgba(0, 0, 0, 0);
+}
+/*-----------任务详情相关End--------------*/
+/*-----------任务验收--------------*/
+#willReceipt .form-item.resultContainer span {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 1rem;
+}
+#willReceipt .form-item.resultContainer label.item {
+  margin-left: 0;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+#willReceipt .form-item.resultContainer input[type=radio]:checked + label {
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.27336267rem;
+  height: 1.27336267rem;
+  background: url("../i/singleChioce2.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+#willReceipt .form-item.resultContainer input {
+  display: none;
+}
+#willReceipt .taskDetailItem2 div {
+  margin-left: 0 !important;
+}
+#willReceipt .taskDetailItem {
+  border: none;
+}
+#willReceipt .taskDetailItem div {
+  display: inline-block;
+  color: #dedede;
+  margin-left: 0;
+  width: 77.8%;
+  font-size: 1.60349373rem;
+}
+#willReceipt .taskDetailItem div label {
+  text-align: right;
+  margin-left: 0 !important;
+  color: #ffffff !important;
+  vertical-align: top;
+}
+#willReceipt .taskDetailItem div p {
+  padding: 0;
+  display: inline-block;
+  width: 24.3%;
+}
+#willReceipt .taskDetailItem div p span {
+  color: #ffffff;
+}
+#willReceipt .taskDetailItem div p input {
+  padding-left: 0.7074237rem;
+  margin-top: -0.5rem;
+  width: 58%;
+  height: 1.41484741rem;
+  line-height: 1.41484741rem;
+  color: #ffffff;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: "";
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  border-radius: 0.4716158rem;
+}
+#willReceipt .taskDetailItem div p:nth-child(2) {
+  width: 33.3%;
+}
+#willReceipt .taskDetailItem div p:nth-child(2) label {
+  display: inline;
+}
+#willReceipt .taskDetailItem div p:nth-child(3) {
+  float: right;
+  width: 33.3%;
+}
+#willReceipt .taskDetailItem div p:nth-child(3) label {
+  display: inline-block;
+  width: 37%;
+  text-align: right;
+}
+#willReceipt .taskDetailItem div p:nth-child(3) input {
+  margin-top: 0.1rem;
+  float: right;
+}
+#willReceipt .leaderEvaluate {
+  width: 77.6%;
+  height: 1.886463rem;
+  line-height: 1.886463rem;
+  padding-left: 0.7074237rem;
+  color: #ffffff;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: "";
+  border: 1px solid rgba(198, 198, 198, 0.5);
+  border-radius: 0.4716158rem;
+}
+/*-----------任务验收End--------------*/
+/*-----------公共样式--------------*/
+.footer input + input {
+  margin-left: 2rem;
+}
+/*----------------------------------------新手任务---------------------------------------------*/
+.newPersonBox .change2 .table2 tbody tr td:nth-of-type(2) {
+  width: 28rem;
+  margin-left: 0;
+}
+.newPersonBox .change2 .table2 thead tr th:nth-of-type(2) {
+  width: 25rem;
+}
+.newPersonBox .boxBottom3 {
+  height: 4%;
+}
+.newPersonBox .boxList {
+  height: 96%;
+}
+/*---------------------黑名单--------------------------------------------------------------------*/
+.blackList .change2 .table2 tbody tr td:nth-of-type(4) {
+  width: 36rem;
+  margin-left: 0;
+}
+.blackList .change2 .table2 thead tr th:nth-of-type(4) {
+  width: 36rem;
+}
+.blackList .change2 .table2 tbody tr td:nth-of-type(5) {
+  width: 18rem;
+  margin-left: 0;
+}
+.blackList .change2 .table2 thead tr th:nth-of-type(5) {
+  width: 18rem;
+}

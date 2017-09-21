@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/task.css"/>
+  <!--<link rel="stylesheet" href="../../c/xy.css"/>-->
+  <script type="text/javascript" src="../../vendors/culScreen.js"></script>
+  <script src="../../vendors/art-template.js"></script>
+  <title>问题详情</title>
+</head>
+<body>
+<div  id="container" class="changeBoxTask tempTaskDetail changeBoxTask2 userSelect"></div>
+<div class="feehideBox"></div>
+<script id="dataContainer" type="text/html">
+  <div class="boxTask">
+    <header>
+      <p class="taskTitle">{{fromPage=='judge'?'诉讼详情':'投诉详情'}}</p>
+      <div class="btnBack"></div>
+    </header>
+    <div class="taskcontentBox">
+      <div class="form-item" style="border: none;">
+        <label>标题：</label>
+        <span id="title" data-id={{obj._id}} class="taskDetailColor title">{{obj.title}}</span>
+      </div>
+      <div class="form-item task-item1 taskDetailTarget" style="border: none">
+        <label>说明：</label>
+        <div class="taskTarget intro">{{obj.content}}</div>
+      </div>
+      <div class="form-item taskDetailItem taskDetailItem2" style="border: none">
+        <div>
+          <p><label>上诉人：</label><span>{{obj.author.name}}</span></p>
+          <p><label>{{fromPage=='judge'?'上诉':'投诉'}}日期：</label><span>{{obj.created_at|dateChange}}</span></p>
+        </div>
+      </div>
+      {{if hasAnswer&&fromPage=='judge'}}
+      <div class="form-item taskDetailItem taskDetailItem2" style="border-bottom: none">
+        <div>
+          <p><label>调解人：</label><span>{{obj.judger.name}}</span></p>
+          <p><label>调解日期：</label><span>{{obj.updated_at|dateChange}}</span></p>
+        </div>
+      </div>
+      <div class="form-item task-item1 taskDetailTarget" style="border: none">
+        <label>说明：</label>
+        <div class="taskTarget">{{obj.judge}}</div>
+      </div>
+      {{/if}}
+      {{if hasAnswer&&fromPage=='complain'}}
+      <div class="form-item taskDetailItem taskDetailItem2" style="border-bottom: none">
+        <div>
+          <p><label>回复人：</label><span>{{obj.replyer.name}}</span></p>
+          <p><label>回复日期：</label><span>{{obj.updated_at|dateChange}}</span></p>
+        </div>
+      </div>
+      <div class="form-item task-item1 taskDetailTarget" style="border: none">
+        <label>说明：</label>
+        <div class="taskTarget">{{obj.reply}}</div>
+      </div>
+      {{/if}}
+      <div id="toAnswer" class="form-item task-item1 dis_n" style="border: none">
+        <label>说明：</label>
+        <textarea id="answer" class="taskTarget input-text"></textarea>
+      </div>
+    </div>
+    <div class="footer" id="footer">
+      {{if canClose}}
+      <input id="close" class="btnStyle subBtn" type="button" value={{fromPage=='judge'?'关闭诉讼':'关闭投诉'}} />
+      {{/if}}
+      {{if canAnswer}}
+      <input id="edit" class="btnStyle subBtn" type="button" value={{@fromPage=='judge'?'调&nbsp;&nbsp;解':'回&nbsp;&nbsp;复'}} />
+      {{/if}}
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../vendors/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../dist/s/mid.js"></script>
+<script type="text/javascript" src="../../dist/s/xy.js"></script>
+<script src="../../dist/ctrl/xy/detail.js"></script>
+<script src="../../dist/ctrl/common.js"></script>
+</body>
+</html>

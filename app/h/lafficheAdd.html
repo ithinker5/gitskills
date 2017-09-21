@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/laffiche.css">
+  <script type="text/javascript" src="../vendors/culScreen.js"></script>
+  <title>发布公告</title>
+</head>
+<body>
+<div class="changeBox lafficheAdd userSelect">
+  <header>
+    <p class="title">发布公告</p>
+    <div class="btnBack"></div>
+  </header>
+  <div class="contentBox">
+    <div class="form-item form-item0">
+      <label>公告名称：</label>
+      <input type="text" class="textAdd input-text" id="name" maxlength="25" placeholder="请输入公告名称">
+    </div>
+    <div class="form-item form-item3">
+      <label>公告内容：</label>
+      <textarea id="content" class="fileTextAdd input-text"></textarea>
+    </div>
+    <div class="form-item form-item4" id="file_c" style="position: relative;">
+      <label>上传附件：</label>
+      <div id="fileContainer" style="display: inline-block">
+        <div class="item">
+          <label for="file" class="fileText">选择文件</label>
+          <!--<span class="hintT">未选择任何文件</span>-->
+        </div>
+      </div>
+      <input type="file" id="file" name="filename" style="display: none">
+    </div>
+  </div>
+  <footer>
+    <div class="buttons">
+      <input id="submit" class="btnStyle subBtn" type="button" value="提&nbsp;&nbsp;交"/>
+    </div>
+  </footer>
+</div>
+<div class="feehideBox"></div>
+<script type="text/javascript" src="../vendors/jquery.min.js"></script>
+<script type="text/javascript" src="../vendors/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../dist/ctrl/getData.js"></script>
+<script type="text/javascript" src="../dist/s/mid.js"></script>
+<script type="text/javascript" src="../dist/s/laffiche.js"></script>
+<script src="../dist/ctrl/lafficheAdd.js"></script>
+<script src="../dist/ctrl/common.js"></script>
+</body>
+</html>
